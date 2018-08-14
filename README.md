@@ -11,7 +11,7 @@ maintaining the expensive team of blockchain experts and within the shortest tim
 
 TokenD Knowledge Base contains information which is helpful for both developers who are starting to work with TokenD and customers who would like to have deep understanding of the system.
 
-## Platform Overview
+## Overview
 
 TokenD is a highly modular system built using the microservices architecture. All services can be grouped into two sets:
 
