@@ -24,15 +24,4 @@ Interaction with backbone of the network is performed in two ways: read-only req
 
 Auxillary modules support both read and write operations via REST API.
 
-Detailed description of modules is available [here](./architecture.md).
-
-## Platform Features
-
-* [Consensus](./consensus.md)
-* [Authorization](./auth.md)
-* Signing Rules
-
-## Useful links
-
-* [Glossary](./glossary.md)
-* Architecture
+Detailed description of modules is available [here](architecture.md).
