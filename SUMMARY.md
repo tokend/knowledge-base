@@ -21,9 +21,9 @@
     * Transactions
     * Operations
     * Consensus
-    * [Web client reference implementation](https://github.com/tokend/client-scaffold)
-    * SDKs
+    * Dev Tools:
+        * [Web client reference implementation](https://github.com/tokend/client-scaffold)
         * [JS SDK](https://github.com/tokend/js-sdk)
         * Golang SDK
-    * iOS wallet reference implementation
-    * Android reference implementation
+        * iOS wallet reference implementation
+        * Android reference implementation

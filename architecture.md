@@ -13,7 +13,7 @@ Core is a replicated state machine that maintains a local copy of a cryptographi
 
 ### Horizon
 
-Horizon is the client facing API server. It acts as the interface between stellar-core and applications that want to access the network. It allows to submit transactions to the network, check the status of accounts, view transaction history. Requires PostgreSQL database to store history of transactions. Horizon is only entrypoint into instance.
+Horizon is the client facing API server. It acts as the interface between core and applications that want to access the network. It allows to submit transactions to the network, check the status of accounts, view transaction history. Requires PostgreSQL database to store history of transactions. Horizon is only entrypoint into instance.
 
 ## Payment Services Integration Module (PSIM) Cluster
 
@@ -36,7 +36,7 @@ Withdraw is module which monitors state of TokenD system and reflects withdrawal
 
 Min number of instances: 1;
 Recommended number of instances: 2;
-RateSync is module which pulls exchange rates data from External Systems (Poloniex, CoinmarketCap, etc.). Finds consens between providers on current exchange rate and using multisignature sends exchange rates to core of Suntri. Does not require any additional store; No publically available entry points. 
+RateSync is module which pulls exchange rates data from External Systems (Poloniex, CoinmarketCap, etc.). Finds consens between providers on current exchange rate and using multisignature sends exchange rates to core of the system. Does not require any additional store; No publically available entry points.
 
 ## API Cluster
 
