@@ -1,4 +1,5 @@
 # Table of contents
 
-* [Overview](README.md)
+* [General Overview](README.md)
+* [Architecture Overview](architecture.md)
 
