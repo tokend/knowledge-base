@@ -44,7 +44,7 @@ __Note__: source account must be the owner of the asset to create issuance reque
 | INSUFFICIENT_AVAILABLE_FOR_ISSUANCE_AMOUNT | 1     |Set in case of issuance request which amount exceeds `available_for_issuance`|
 | ISSUANCE_MANUAL_REVIEW_REQUIRED            | 2     |Set in case of policy `ISSUANCE_MANUAL_REVIEW_REQUIRED` been active|
 
-## Possible errors
+### Possible errors
 
 | Error                       | Code | Description                                                                              |
 |-----------------------------|------|------------------------------------------------------------------------------------------|
@@ -60,7 +60,7 @@ __Note__: source account must be the owner of the asset to create issuance reque
 | REQUIRES_KYC                |  -10 | Asset requires receiver to have KYC                                                      |
 | REQUIRES_VERIFICATION       |  -11 | Asset requires receiver to be verified                                                   |
 
-## Successful result
+### Successful result
 
 Successful result has the following fields:
 
@@ -69,3 +69,30 @@ Successful result has the following fields:
 * __Receiver__: id of the balance to recieve issued amount of asset.
 
 * __Fulfilled__: if true - request was created and reviewed right away.
+
+## General Deposit Flow
+
+High level description of deposit flow. For more details see:
+
+* BTC Family Flow
+* ETH Flow
+* ERC20 Flow
+
+### Preparations
+
+1. Admin of the system have created token which represents asset from external system;
+1. Admin of the system have assigned specific `external system ID`. Which will be used to link asset in the TokenD system and external system asset; For more details on how to perform this step see `MANAGE_ASSET`
+1. Admin of the system generates set of address (identifiers) of the external system, which will allow automated module to link transfer performed in external system to user account in TokenD system;
+1. Admin submits set of generated address to the core of the system with `external system ID` selected on second step using operation `MANAGE_EXTERNAL_SYSTEM_ACCOUNT_ID_POOL_ENTRY`
+1. Admin specifies expiration period of the external system account id using operation [MANAGE_KEY_VALUE](tech/manage_key_value.md)
+
+### Flow
+
+1. User binds external system account id using `BIND_EXTERNAL_SYSTEM_ACCOUNT_ID`;
+1. User initiates transfer in external system to specified account id;
+1. Automated module `deposit` monitors the external system for new incoming transfer. If new one is confirmed, `deposit` crafts TokenD `create issuance request` transaction with corresponding details, unique reference of the deposit and `null` tasks, signs it and sends to `core`;
+1. `core` creates an issuance request with default tasks taken from `KeyValue` table. Assume that the value of tasks is `DEPOSIT_VERIFY`;
+1. User is now able to see deposit operation in TokenD system;
+1. `deposit_verify` retrieves request from `core`, finds the corresponding transfer in the external system, ensures that they are matching and submits the transaction, that removes `DEPOSIT_VERIFY` flag, to TokenD;
+1. While transaction being processed, if tasks equal to `0` - `core` tries to fulfill issuance request. If the amount for issuance is insufficient, `core` will set `INSUFFICIENT_AVAILABLE_FOR_ISSUANCE_AMOUNT` flag in tasks bitmask. If asset to be issued has policy `ISSUANCE_MANUAL_REVIEW_REQUIRED`, `core` will set `ISSUANCE_MANUAL_REVIEW_REQUIRED` flag in tasks bitmask. The request will be fulfilled iff tasks equal to `0` after review.
+1. `funnel` module monitors state of external system; on new incoming transfer if total amount of funds does not exceeds threshold performs transfer to Hot Wallet otherwise to Cold Wallet;
