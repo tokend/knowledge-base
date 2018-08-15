@@ -6,20 +6,20 @@
     * [Tokens Management](features/tokens_management.md)
     * [Tokens Issuance](features/tokens_issuance.md)
     * [External Systems Interconnection](features/exsys_connection.md)
-    * DEX
-    * Know Your Customer
-    * Atomic Swaps
-    * Platform customization and Application development
-    * System Requirements
-    * Fees Management
-    * Limits Management
+    * [DEX](features/dex.md)
+    * [Know Your Customer](features/kyc.md)
+    * [Atomic Swaps](coming_soon.md)
+    * [Platform customization and Application development](coming_soon.md)
+    * [System Requirements](coming_soon.md)
+    * [Fees Management](coming_soon.md)
+    * [Limits Management](coming_soon.md)
 * Technical Details
     * [Security](tech/security.md)
     * [Accounts](tech/accounts.md)
     * [Signers](tech/signers.md)
-    * Transactions
-    * Operations
-    * Consensus
+    * [Transactions](coming_soon.md)
+    * [Operations](coming_soon.md)
+    * [Consensus](coming_soon.md)
     * Dev Tools:
         * [Web client reference implementation](https://github.com/tokend/client-scaffold)
         * [JS SDK](https://github.com/tokend/js-sdk)
