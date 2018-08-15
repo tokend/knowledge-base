@@ -3,14 +3,13 @@
 * [General Overview](README.md)
 * [Architecture Overview](architecture.md)
 * Platform Features
-    * [Tokens Management](/features/tokens_management.md)
-    * [Tokens Issuance](/features/tokens_issuance.md)
-    * [External Systems Interconnection]()
+    * [Tokens Management](features/tokens_management.md)
+    * [Tokens Issuance](features/tokens_issuance.md)
+    * [External Systems Interconnection](features/exsys_connection.md)
     * DEX
     * Know Your Customer
     * Atomic Swaps
     * Platform customization and Application development
-    * External Systems Integration
     * System Requirements
     * Fees Management
     * Limits Management
