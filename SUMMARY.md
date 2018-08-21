@@ -9,7 +9,7 @@
     * [DEX](features/dex.md)
     * [Know Your Customer](features/kyc.md)
     * [Atomic Swaps](features/atomic_swaps.md)
-    * [Platform customization and Application development](customization.md)
+    * [Platform customization and Application development](features/customization.md)
     * [System Requirements](coming_soon.md)
     * [Fees Management](coming_soon.md)
     * [Limits Management](coming_soon.md)
