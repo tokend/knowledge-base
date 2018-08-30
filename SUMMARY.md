@@ -13,6 +13,7 @@
     * [System Requirements](coming_soon.md)
     * [Fees Management](coming_soon.md)
     * [Limits Management](coming_soon.md)
+    * [AML Alerts](features/aml_alerts.md)
 * Technical Details
     * [Security](tech/security.md)
     * [Accounts](tech/accounts.md)
