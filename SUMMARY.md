@@ -10,7 +10,7 @@
     * [Know Your Customer](features/kyc.md)
     * [Atomic Swaps](features/atomic_swaps.md)
     * [Platform customization and Application development](features/customization.md)
-    * [System Requirements](coming_soon.md)
+    * [System Requirements](features/sys_requirements.md)
     * [Fees Management](coming_soon.md)
     * [Limits Management](coming_soon.md)
     * [AML Alerts](features/aml_alerts.md)
