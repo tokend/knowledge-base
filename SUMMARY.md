@@ -27,3 +27,8 @@
         * Golang SDK
         * iOS wallet reference implementation
         * Android reference implementation
+* Guides
+    * [About](guides/about.md)
+    * [Create your first token](guides/create_token.md)
+    * [Issuance](guides/issuance.md)
+    * [Trading](guides/trading.md)
