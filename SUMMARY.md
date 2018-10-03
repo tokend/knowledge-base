@@ -31,4 +31,5 @@
     * [About](guides/about.md)
     * [Create your first token](guides/create_token.md)
     * [Issuance](guides/issuance.md)
+    * [Transfers](guides/transfer.md)
     * [Trading](guides/trading.md)
