@@ -1,11 +1,10 @@
 # KYC identification
 
-
 KYC data format as well as flow details is contract between clients and possible integration service implementation. TokenD platform does not impose any limits and provides versatile infrastructure for your use case.
 
 Below is given a generic flow of how one could implement KYC identification on the platform.
 
-### Key points
+## Key points
 
 KYC verification process starts with choosing right account type to apply for. Different types enables different functionality.
 
