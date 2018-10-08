@@ -31,6 +31,7 @@
     * [About](guides/about.md)
     * [Sign up](guides/sign_up.md)
     * [Sign in](guides/sign_in.md)
+    * [Password change / Recovery](guides/password_change_recovery.md)
     * [KYC identification](guides/kyc.md)
     * [Create your first token](guides/create_token.md)
     * [Issuance](guides/issuance.md)
