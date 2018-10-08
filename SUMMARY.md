@@ -33,3 +33,5 @@
     * [Issuance](guides/issuance.md)
     * [Transfers](guides/transfer.md)
     * [Trading](guides/trading.md)
+* Operations
+    * [Set options](operations/set_options.md)
