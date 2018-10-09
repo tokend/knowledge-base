@@ -5,8 +5,8 @@ Manage offer adds an offer to secondary market order book.
 
 | Parameter    | Type   | Description           |
 |--------------|--------|-----------------------|
-| baseBalance  | string | The base balance of your account. Should be valid [Balance ID][balance_id]|
-| quoteBalance | string | The quote balance of your account. Should be valid [Balance ID][balance_id] |
+| baseBalance  | string | The base balance of your account. Should be valid [Balance ID][1]|
+| quoteBalance | string | The quote balance of your account. Should be valid [Balance ID][1] |
 | orderBookID  | string | The ID of the order book, always `'0'` for secondary market |
 | isBuy        | string | If true, offer is about buying base asset, if false - about selling |
 | amount       | string | The amount of `base asset`, no matter if offer is buy of sell |
@@ -28,4 +28,4 @@ await horizon.transactions.submitOperations(operation)
 ```
 
 
-[balance_id]: /coming_soon.md
+[1]: /coming_soon.md

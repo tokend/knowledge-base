@@ -14,8 +14,8 @@ Transaction fees, on the other hand, allow only fixed part to be set.
 |--------------|--------|-----------------------|
 | fixedFee     | string | Fixed fee that will be charged for every operation |
 | percentFee   | string | Percent fee that will be charged for every operation |
-| feeType      | int    | The [XDR][xdr] type of the fee |
-| subtype      | int    | The [XDR][xdr] subtype of the fee (some fees have their subtypes, for example `paymentV2` has `incoming` and `outgoing` subtypes) |
+| feeType      | int    | The [XDR][1] type of the fee |
+| subtype      | int    | The [XDR][1] subtype of the fee (some fees have their subtypes, for example `paymentV2` has `incoming` and `outgoing` subtypes) |
 | asset        | string | The operation asset (fees will apply to operations with specific asset) |
 | lowerBound   | string | The lower bound of the operation. It means fee rule won't be applied to operations with lower amount |
 | upperBound   | string | The upper bound of the operation. It means fee rule won't be applied to operations with higher amount |
@@ -45,4 +45,4 @@ const operation = base.Operation.SetFees({
   percentFee: '0.001000' // and (opAmount * 0.001) ETH percent fee
 })
 ```
-[xdr]: /operations/xdr_enums.md
+[1]: /operations/xdr_enums.md
