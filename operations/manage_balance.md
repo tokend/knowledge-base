@@ -5,8 +5,8 @@ Adds a balance to account.
 | Parameter    | Type   | Description           |
 |--------------|--------|-----------------------|
 | asset        | string | The balance will hold tokens for this code |
-| destination  | string | The [Account id][account_id] that will own the balance
-| action       | int    | The [XDR][xdr] manage balance action |
+| destination  | string | The [Account id][1] that will own the balance
+| action       | int    | The [XDR][2] manage balance action |
 
 > Note: for now, the deletion of balance is not allowed despite the fact there is an XDR action for this.
 
@@ -23,5 +23,5 @@ const operation = base.Operation.ManageBalance({
 await horizon.transaction.submitOperations(operation)
 ```
 
-[account_id]: /coming_soon.md
-[xdr]: /operations/xdr_enums.md
+[1]: /coming_soon.md
+[2]: /operations/xdr_enums.md
