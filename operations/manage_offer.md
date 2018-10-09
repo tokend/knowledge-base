@@ -2,6 +2,11 @@
 
 Manage offer adds an offer to secondary market order book.
 
+## Source account details
+
+> TODO: add source account details
+
+## Parameters
 
 | Parameter    | Type   | Description           |
 |--------------|--------|-----------------------|
@@ -12,7 +17,9 @@ Manage offer adds an offer to secondary market order book.
 | amount       | string | The amount of `base asset`, no matter if offer is buy of sell |
 | price        | string | The price in `quote asset`: `1 base = 1 quote * price` |
 
-Example. We want to sell 3 `ETH` for `BTC` with price `1 ETH = 0.25 BTC`:
+## Examples
+
+We want to sell 3 `ETH` for `BTC` with price `1 ETH = 0.25 BTC`:
 
 ```javascript
 const operation = base.ManageOfferBuilder.manageOffer({
@@ -26,6 +33,10 @@ const operation = base.ManageOfferBuilder.manageOffer({
 
 await horizon.transactions.submitOperations(operation)
 ```
+
+## Possible errors
+
+> TODO: add possible errors
 
 
 [1]: /coming_soon.md
