@@ -34,6 +34,9 @@
     * [Transfers](guides/transfer.md)
     * [Trading](guides/trading.md)
 * Operations
+    * [Manage Balance](operations/manage_balance.md)
+    * [Manage Offer](operations/manage_offer.md)
+    * [Set fees](operations/set_fees.md)
     * [Set options](operations/set_options.md)
 * Other
     * [Participants](other/participants.md)
