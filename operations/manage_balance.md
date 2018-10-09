@@ -1,6 +1,12 @@
 # Manage balance
 
-Adds a balance to account.  
+Adds a balance to the account.  
+
+## Source account details
+
+> TODO: add source account details
+
+## Parameters
 
 | Parameter    | Type   | Description           |
 |--------------|--------|-----------------------|
@@ -9,6 +15,8 @@ Adds a balance to account.
 | action       | int    | The [XDR][2] manage balance action |
 
 > Note: for now, the deletion of balance is not allowed despite the fact there is an XDR action for this.
+
+## Examples
 
 For example, we are the owner of `GANIVSARNMANTE7QRWZIB7543YHTF4243IHJGLZTSCJ4MRBWJZLPLG5J` account ID and we want to 
 create the balance for holding `QTK` tokens. Simply doing this:
@@ -22,6 +30,10 @@ const operation = base.Operation.ManageBalance({
 
 await horizon.transaction.submitOperations(operation)
 ```
+
+## Possible errors
+
+> TODO: add possible errors
 
 [1]: /coming_soon.md
 [2]: /operations/xdr_enums.md

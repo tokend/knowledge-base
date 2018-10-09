@@ -43,5 +43,10 @@
     * [Manage Offer](operations/manage_offer.md)
     * [Set fees](operations/set_fees.md)
     * [Set options](operations/set_options.md)
+    * Reviewable requests:
+        * [Issuance](operations/requests/create_issuance.md)
+        * [Update KYC](operations/requests/update_kyc.md)
+        * [Review (default)](operations/requests/review.md)
+        * [Review (KYC)](operations/requests/review_kyc.md)
 * Other
     * [Participants](other/participants.md)

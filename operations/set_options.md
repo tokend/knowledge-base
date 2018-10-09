@@ -2,7 +2,11 @@
 
 Sets the options for an account. Mainly used for managing account signers. 
 
-The list of parameters:
+## Source account details
+
+> TODO: add source account details
+
+## Parameters
 
 | Parameter             | Type | Description        |
 |-----------------------|------|--------------------|
@@ -123,3 +127,7 @@ const operation = base.Operation.setOptions({
   weight: 0
 })
 ```
+
+## Possible errors
+
+> TODO: add possible errors
