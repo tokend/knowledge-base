@@ -35,3 +35,5 @@
     * [Trading](guides/trading.md)
 * Operations
     * [Set options](operations/set_options.md)
+* Other
+    * [Participants](other/participants.md)
