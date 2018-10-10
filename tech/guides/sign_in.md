@@ -40,6 +40,6 @@ After this, SDK will automatically sign every request and operations with your
 signing keypair. That means now you can provide your user with all the 
 functionality TokenD has.
 
-[1]: /guides/sign_in.md
-[2]: /tech/wallets.md
+[1]: /tech/guides/sign_in.md
+[2]: /tech/key_entities/wallet.md
 [3]: https://tokend.gitlab.io/new-js-sdk/Wallet.html

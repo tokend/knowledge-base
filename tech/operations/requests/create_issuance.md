@@ -1,5 +1,7 @@
 # Issuance Request
 
+> TODO: threshold
+
 This operation creates new `issuance request`.
 
 > *Note*: source account must be the owner of the asset to create issuance request.

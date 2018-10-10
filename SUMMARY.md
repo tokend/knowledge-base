@@ -16,38 +16,44 @@
     * [AML Alerts](features/aml_alerts.md)
 * Technical Details
     * [Security](tech/security.md)
-    * [Accounts](tech/accounts.md)
-    * [Wallets](tech/wallets.md)
-    * [Signers](tech/signers.md)
-    * [Transactions](coming_soon.md)
-    * [Operations](coming_soon.md)
     * [Consensus](coming_soon.md)
-    * Dev Tools:
+    * Key entities
+        * [Account](tech/key_entities/accounts.md)
+        * [Asset](tech/key_entities/asset.md)
+        * [Signer](tech/key_entities/signer.md)
+        * [Wallet](tech/key_entities/wallet.md)
+        * [Transaction](tech/key_entities/transaction.md)
+        * [Operation](tech/key_entities/operation.md)
+    * Guides
+        * [Introduction](tech/guides/intro.md)
+        * [Sign up](tech/guides/sign_up.md)
+        * [Sign in](tech/guides/sign_in.md)
+        * [Password change / Recovery](tech/guides/password_change_recovery.md)
+        * [KYC identification](tech/guides/kyc.md)
+        * [Create your first token](tech/guides/create_token.md)
+        * [Issuance](tech/guides/issuance.md)
+        * [Transfers](tech/guides/transfer.md)
+        * [Trading](tech/guides/trading.md)
+    * Operations
+        * [XDR](tech/operations/xdr_enums.md)
+        * [Manage Balance](tech/operations/manage_balance.md)
+        * [Manage Offer](tech/operations/manage_offer.md)
+        * [Set fees](tech/operations/set_fees.md)
+        * [Set options](tech/operations/set_options.md)
+        * [Payment](tech/operations/payment.md)
+        * Reviewable requests:
+            * [Issuance](tech/operations/requests/create_issuance.md)
+            * [Update KYC](tech/operations/requests/update_kyc.md)
+            * [Review (default)](tech/operations/requests/review.md)
+            * [Review (KYC)](tech/operations/requests/review_kyc.md)
+    * Other
+        * [Participants](tech/other/participants.md)        
+* Dev Tools:
         * [Web client reference implementation](https://github.com/tokend/client-scaffold)
         * [JS SDK](https://github.com/tokend/js-sdk)
         * Golang SDK
         * iOS wallet reference implementation
         * Android reference implementation
-* Guides
-    * [Introduction](guides/intro.md)
-    * [Sign up](guides/sign_up.md)
-    * [Sign in](guides/sign_in.md)
-    * [Password change / Recovery](guides/password_change_recovery.md)
-    * [KYC identification](guides/kyc.md)
-    * [Create your first token](guides/create_token.md)
-    * [Issuance](guides/issuance.md)
-    * [Transfers](guides/transfer.md)
-    * [Trading](guides/trading.md)
-* Operations
-    * [XDR](operations/xdr_enums.md)
-    * [Manage Balance](operations/manage_balance.md)
-    * [Manage Offer](operations/manage_offer.md)
-    * [Set fees](operations/set_fees.md)
-    * [Set options](operations/set_options.md)
-    * Reviewable requests:
-        * [Issuance](operations/requests/create_issuance.md)
-        * [Update KYC](operations/requests/update_kyc.md)
-        * [Review (default)](operations/requests/review.md)
-        * [Review (KYC)](operations/requests/review_kyc.md)
-* Other
-    * [Participants](other/participants.md)
+
+
+

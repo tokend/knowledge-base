@@ -1,5 +1,7 @@
 # Review update kyc request
 
+> TODO: threshold
+
 This operation creates new or deletes existing `update_kyc_request`.
 
 ## Source account details
