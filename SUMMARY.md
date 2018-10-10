@@ -17,6 +17,7 @@
 * Technical Details
     * [Security](tech/security.md)
     * [Accounts](tech/accounts.md)
+    * [Wallets](tech/wallets.md)
     * [Signers](tech/signers.md)
     * [Transactions](coming_soon.md)
     * [Operations](coming_soon.md)
@@ -50,4 +51,3 @@
         * [Review (KYC)](operations/requests/review_kyc.md)
 * Other
     * [Participants](other/participants.md)
-    * [Wallets](other/wallets.md)
