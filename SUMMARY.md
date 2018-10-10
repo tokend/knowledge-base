@@ -28,7 +28,7 @@
         * iOS wallet reference implementation
         * Android reference implementation
 * Guides
-    * [About](guides/about.md)
+    * [Introduction](guides/intro.md)
     * [Sign up](guides/sign_up.md)
     * [Sign in](guides/sign_in.md)
     * [Password change / Recovery](guides/password_change_recovery.md)
@@ -50,3 +50,4 @@
         * [Review (KYC)](operations/requests/review_kyc.md)
 * Other
     * [Participants](other/participants.md)
+    * [Wallets](other/wallets.md)
