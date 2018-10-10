@@ -17,6 +17,7 @@
 * Technical Details
     * [Security](tech/security.md)
     * [Accounts](tech/accounts.md)
+    * [Wallets](tech/wallets.md)
     * [Signers](tech/signers.md)
     * [Transactions](coming_soon.md)
     * [Operations](coming_soon.md)
@@ -28,7 +29,7 @@
         * iOS wallet reference implementation
         * Android reference implementation
 * Guides
-    * [About](guides/about.md)
+    * [Introduction](guides/intro.md)
     * [Sign up](guides/sign_up.md)
     * [Sign in](guides/sign_in.md)
     * [Password change / Recovery](guides/password_change_recovery.md)
