@@ -89,8 +89,8 @@ Specifies account which brought user into the system.
 
 
 [1]: /coming_soon.md
-[2]: /tech/signers.md
+[2]: /tech/key_entities/signer.md
 [3]: /tech/operations/set_options.md
-[4]: /tech/signers.md#signer-types
+[4]: /tech/key_entities/signer.md#signer-types
 [5]: /coming_soon.md
 [6]: /coming_soon.md
