@@ -74,7 +74,7 @@ async function performIssuance () {
 HOW TO FIND BALANCE BY ACCOUNT ID
 HOW TO FIND BALANCE BY EMAIL
 
-[token_creation](/guides/create_token.md)
+[token_creation](/tech/guides/create_token.md)
 [reviewable_requests](/coming_soon.md)
 [signer_types](/coming_soon.md)
 [pre_issuance](/coming_soon.md)

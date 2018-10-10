@@ -34,5 +34,5 @@ To find out some use cases, see our guides on [How to sign up][2] and
 
 
 [1]: https://tokend.gitlab.io/docs/?http#wallets
-[2]: /guides/sign_up.md
-[3]: /guides/sign_in.md
+[2]: /tech/guides/sign_up.md
+[3]: /tech/guides/sign_in.md
