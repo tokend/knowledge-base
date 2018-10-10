@@ -55,7 +55,7 @@ Here is the list of all existing signer types at the moment:
 <!--5. Balances-->
 <!--6. Limits-->
 
-[1]: /tech/accounts.md
+[1]: /tech/key_entities/accounts.md
 [2]: /coming_soon.md
 [3]: /coming_soon.md
 [4]: /coming_soon.md
