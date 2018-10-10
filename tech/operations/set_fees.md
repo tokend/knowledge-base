@@ -1,6 +1,6 @@
 # Set fees
 
-> TODO: threshold
+Threshold: `high`
 
 Manage fees that will be charged from TokenD accounts, includes:
 
