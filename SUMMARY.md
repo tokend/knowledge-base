@@ -21,6 +21,7 @@
     * [Consensus](coming_soon.md)
     * Key entities
         * [Account](tech/key_entities/accounts.md)
+        * [Asset](tech/key_entities/asset.md)
         * [Signer](tech/key_entities/signer.md)
         * [Wallet](tech/key_entities/wallet.md)
     * Guides
