@@ -16,14 +16,13 @@
     * [AML Alerts](features/aml_alerts.md)
 * Technical Details
     * [Security](tech/security.md)
-    
-    * [Wallets](tech/wallets.md)
     * [Signers](tech/signers.md)
     * [Transactions](coming_soon.md)
     * [Operations](coming_soon.md)
     * [Consensus](coming_soon.md)
     * Key entities
         * [Account](tech/key_entities/accounts.md)
+        * [Wallet](tech/key_entities/wallet.md)
     * Guides
         * [Introduction](tech/guides/intro.md)
         * [Sign up](tech/guides/sign_up.md)

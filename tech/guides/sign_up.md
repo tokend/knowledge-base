@@ -50,6 +50,6 @@ await api.users.create(accountId) // will create both user and account
 ```
 
 [1]: https://tokend.gitlab.io/docs#create-wallet
-[2]: /tech/wallets.md
+[2]: /tech/key_entities/wallet.md
 [3]: https://tokend.gitlab.io/docs#wallets
 [4]: /tech/guides/password_change_recovery.md
