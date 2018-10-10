@@ -40,6 +40,7 @@
         * [Manage Offer](tech/operations/manage_offer.md)
         * [Set fees](tech/operations/set_fees.md)
         * [Set options](tech/operations/set_options.md)
+        * [Payment](tech/operations/payment.md)
         * Reviewable requests:
             * [Issuance](tech/operations/requests/create_issuance.md)
             * [Update KYC](tech/operations/requests/update_kyc.md)

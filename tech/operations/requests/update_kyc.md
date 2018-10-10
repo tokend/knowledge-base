@@ -1,5 +1,7 @@
 # Update kyc request
 
+> TODO: threshold
+
 This operation creates new or update existing `update KYC request`.
 
 ## Source account details

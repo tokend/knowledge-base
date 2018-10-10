@@ -1,5 +1,7 @@
 # Set fees
 
+> TODO: threshold
+
 Manage fees that will be charged from TokenD accounts, includes:
 
 * Creating new fee;

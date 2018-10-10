@@ -1,5 +1,7 @@
 # Set options  
 
+Threshold: `High`
+
 Sets the options for an account. Mainly used for managing account signers. 
 
 ## Source account details
@@ -130,4 +132,15 @@ const operation = base.Operation.setOptions({
 
 ## Possible errors
 
-> TODO: add possible errors
+| Error                       | Code | Description                                                                               |
+|-----------------------------|:----:|--------------------------------------------------------------------------|
+| TOO_MANY_SIGNERS	          | -1   | Max number of signers already reached.
+| THRESHOLD_OUT_OF_RANGE	  | -2   | Bad value for weight or threshold.
+| BAD_SIGNER	              | -3   | The operations signer is a master key but signer cannot be a master key.
+| INVALID_SIGNER_VERSION	  | -7   | The signer version is higher than ledger version.
+
+
+	
+	
+	
+	

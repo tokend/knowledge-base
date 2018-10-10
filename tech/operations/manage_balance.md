@@ -1,5 +1,7 @@
 # Manage balance
 
+> TODO: threshold
+
 Adds a balance to the account.  
 
 ## Source account details
