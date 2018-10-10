@@ -38,4 +38,4 @@ await horizon.transaction.submitOperations(operation)
 > TODO: add possible errors
 
 [1]: /coming_soon.md
-[2]: /tech/operations/xdr_enums.md
+[2]: /tech/xdr.md
