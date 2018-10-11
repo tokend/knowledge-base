@@ -1,12 +1,14 @@
 # Set options  
 
-Threshold: `High`
-
 Sets the options for an account. Mainly used for managing account signers. 
 
 ## Source account details
 
-> TODO: add source account details
+| Property              | Value              |
+|-----------------------|--------------------|
+| Threshold             | `HIGH`           |
+| Account types         | `GENERAL`, `NOT_VERIFIED`, `SYNDICATE`, `MASTER` |
+| Signer types          | `ACCOUNT_MANAGER`  |
 
 ## Parameters
 

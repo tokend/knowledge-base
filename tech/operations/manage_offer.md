@@ -1,12 +1,14 @@
 ## Manage offer
 
-Threshold: `Medium`
-
 Manage offer adds an offer to secondary market order book.
 
 ## Source account details
 
-> TODO: add source account details
+| Property              | Value              |
+|-----------------------|--------------------|
+| Threshold             | `MEDIUM`           |
+| Account types         | `GENERAL`, `NOT_VERIFIED`, `SYNDICATE` |
+| Signer types          | `BALANCE_MANAGER`  |
 
 ## Parameters
 

@@ -6,7 +6,11 @@ Sends an amount from a source to destination Balance ID or Account ID.
 
 ## Source account details
 
-> TODO: add source account details
+| Property              | Value              |
+|-----------------------|--------------------|
+| Threshold             | `MEDIUM`           |
+| Account types         | `GENERAL`, `NOT_VERIFIED`, `SYNDICATE` |
+| Signer types          | `BALANCE_MANAGER`  |
 
 ## Parameters
 
@@ -19,8 +23,7 @@ Sends an amount from a source to destination Balance ID or Account ID.
 | subject     | string | Payment subject (description)                                                                      |
 | reference   | string | Used to create unique payments. Payments with duplicated non-empty reference will be rejected.     | 
 
-
-
+## Possible errors
 
 | Error  | Code   | Description                                                                                        |
 |--------|--------|----------------------------------------------------------------------------------------------------|
