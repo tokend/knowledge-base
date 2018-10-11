@@ -1,6 +1,6 @@
 # Set fees
 
-> TODO: threshold
+Threshold: `high`
 
 Manage fees that will be charged from TokenD accounts, includes:
 
@@ -85,4 +85,4 @@ const operation = base.Operation.SetFees({
 | ASSET_PAIR_NOT_FOUND 	      | -15  | There is no asset pair for such asset and fee asset.		                         |
 | INVALID_ASSET_PAIR_PRICE    | -16  | Price of asset pair can not be less than zero.		                                 |
 
-[1]: /tech/operations/xdr_enums.md
+[1]: /tech/xdr.md

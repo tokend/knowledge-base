@@ -1,19 +1,21 @@
 # Manage balance
 
-> TODO: threshold
-
-Adds a balance to the account.  
+Adds a balance to the account. 
 
 ## Source account details
 
-> TODO: add source account details
+| Property              | Value              |
+|-----------------------|--------------------|
+| Threshold     | `HIGH`             |
+| Account types | `GENERAL`, `NOT_VERIFIED`, `SYNDICATE` - if `source` and `destination` are the same, `MASTER` - if not |
+| Signer types  | `BALANCE_MANAGER`  |
 
 ## Parameters
 
 | Parameter    | Type   | Description           |
 |--------------|--------|-----------------------|
 | asset        | string | The balance will hold tokens for this code |
-| destination  | string | The [Account id][1] that will own the balance
+| destination  | string | The [Account id][1] that will own the balance |
 | action       | int    | The [XDR][2] manage balance action |
 
 > Note: for now, the deletion of balance is not allowed despite the fact there is an XDR action for this.
@@ -35,7 +37,13 @@ await horizon.transaction.submitOperations(operation)
 
 ## Possible errors
 
-> TODO: add possible errors
+| Error                       | Code | Description                                                                               |
+|-----------------------------|:----:|-------------------------------------------------------------------------------------------|
+| MALFORMED | -1 | The action is temporarily disabled, 
+| DESTINATION_NOT_FOUND | -3 | Destination `account ID` doesn't exist in the system
+| ASSET_NOT_FOUND | -4 | There is no such asset in the system
+| INVALID_ASSET | -5 | Provided asset code is invalid
+| BALANCE_ALREADY_EXISTS | -6 | The balance for such asset already exists (will be thrown only with `createUnique` action)
 
-[1]: /coming_soon.md
-[2]: /tech/operations/xdr_enums.md
+[1]: /tech/key_entities/accounts.md#account-id
+[2]: /tech/xdr.md

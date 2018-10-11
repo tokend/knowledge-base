@@ -17,6 +17,7 @@
 * Technical Details
     * [Security](tech/security.md)
     * [Consensus](coming_soon.md)
+    * [XDR](tech/xdr.md)
     * Key entities
         * [Account](tech/key_entities/accounts.md)
         * [Asset](tech/key_entities/asset.md)
@@ -35,7 +36,6 @@
         * [Transfers](tech/guides/transfer.md)
         * [Trading](tech/guides/trading.md)
     * Operations
-        * [XDR](tech/operations/xdr_enums.md)
         * [Manage Balance](tech/operations/manage_balance.md)
         * [Manage Offer](tech/operations/manage_offer.md)
         * [Set fees](tech/operations/set_fees.md)
