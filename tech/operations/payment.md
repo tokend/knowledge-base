@@ -1,7 +1,5 @@
 # Payment
 
-Threshold: `Medium`
-
 Sends an amount from a source to destination Balance ID or Account ID.
 
 ## Source account details
@@ -22,6 +20,30 @@ Sends an amount from a source to destination Balance ID or Account ID.
 | fee         | object |                                                                                                    |
 | subject     | string | Payment subject (description)                                                                      |
 | reference   | string | Used to create unique payments. Payments with duplicated non-empty reference will be rejected.     | 
+
+## Examples
+
+```javascript
+ const opertaion = PaymentV2Builder.paymentV2({
+    sourceBalanceId: 'BCQOBAIMVNNH7RHZTD4OVSRUX2W575VUK4RUYELRHDPXSXJ5TMS2BHAV',
+    destination: 'GBHL73YWIHZWBLFBCHEGGQZQ3WVCPW76DLO67HAITO3BXOGPLKPG7FRM',
+    amount: '10.000000',
+    feeData: {
+      sourceFee: {
+        maxPaymentFee: '0.100000',
+        fixedFee: '3.000000',
+        feeAsset: 'QTK'
+      },
+      destinationFee: {
+        maxPaymentFee: '1.001',
+        fixedFee: '0.001',
+        feeAsset: 'QTK'
+      }
+    },
+    subject: 'The description of the payment',
+    reference: 'Some unique random string'
+  })
+```
 
 ## Possible errors
 

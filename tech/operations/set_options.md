@@ -111,8 +111,8 @@ const addSignerOperation = base.SetOptionsBuilder.setOptions({
     pubKey: 'GBOVLETLPZEAQZLH5LANCTAFTN3XCJ446KEHLCD3TNDPR6YDSPCBUMBW',
     signerType: signerTypeAll(),
     weight: 255,
-    identity: '',
-    name: ''
+    identity: 1,
+    name: 'my signer'
   }
 })
 ```
@@ -123,7 +123,7 @@ const signer = {
   pubKey: 'GBOVLETLPZEAQZLH5LANCTAFTN3XCJ446KEHLCD3TNDPR6YDSPCBUMBW',
   weight: 255,
   identity: 1,
-  signerType: 16
+  signerType: signerTypeAll()
 }
 
 const operation = base.Operation.setOptions({

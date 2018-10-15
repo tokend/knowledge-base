@@ -1,7 +1,5 @@
 # Set fees
 
-Threshold: `high`
-
 Manage fees that will be charged from TokenD accounts, includes:
 
 * Creating new fee;
@@ -18,7 +16,7 @@ fixed and percent parts and the percent part of the fee will be dependable of am
 
 | Property              | Value              |
 |-----------------------|--------------------|
-| Threshold             | high               |
+| Threshold             | `HIGH`               |
 | Allowed account types | `MASTER`	     |
 | Allowed signer types  | `FEES_MANAGER`     |
 
@@ -43,24 +41,28 @@ Let's, for example create global fees on withdrawals:
 
 ```javascript
 const operation = base.Operation.SetFees({
-  feeType: xdr.FeeType.withdrawalFee(), // every withdrawal
-  asset: 'BTC', // of BTC
-  lowerBound: '0.05', // that 0.05 BTC or higher
-  upperBound: '4', // and 4 BTC or lower
-  fixedFee: '0.100000', // will charge 0.1 BTC fee
-  percentFee: '0.050000', // and (opAmount * 0.05) percent fee
-  subtype: 0 // Withdrawal fees have no subtypes
+  fee: {
+    feeType: xdr.FeeType.withdrawalFee(), // every withdrawal
+      asset: 'BTC', // of BTC
+      lowerBound: '0.05', // that 0.05 BTC or higher
+      upperBound: '4', // and 4 BTC or lower
+      fixedFee: '0.100000', // will charge 0.1 BTC fee
+      percentFee: '0.050000', // and (opAmount * 0.05) percent fee
+      subtype: 0 // Withdrawal fees have no subtypes
+  }
 })
 ```
 Or some fees only on outgoing payments (it means we define fees paid by sender)
 
 ```javascript
 const operation = base.Operation.SetFees({
-  feeType: xdr.FeeType.paymentFee(), // every payment
-  subtype: xdr.PaymentFeeType.outgoing().value, // that is outgoing,
-  asset: 'ETH', // and is ETH payment
-  fixedFee: '0.050000', // will charge 0.05 ETH fee
-  percentFee: '0.001000' // and (opAmount * 0.001) ETH percent fee
+  fee: {
+    feeType: xdr.FeeType.paymentFee(), // every payment
+    subtype: xdr.PaymentFeeType.outgoing().value, // that is outgoing,
+    asset: 'ETH', // and is ETH payment
+    fixedFee: '0.050000', // will charge 0.05 ETH fee
+    percentFee: '0.001000' // and (opAmount * 0.001) ETH percent fee
+  }
 })
 ```
 
