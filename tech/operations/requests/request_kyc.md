@@ -28,7 +28,7 @@ To review update kyc request, please use [Review KYC][3] operation.
 
 ## Tasks
 
-The KYC requests comes up with the `Tasks` feature. It means that every 
+The KYC requests comes up with the [Tasks][4] feature. It means that every 
 request may contain set of pending tasks, that should be resolved by master.
 The request may become approved only if all tasks are resolved. 
 
@@ -69,3 +69,4 @@ const operation = CreateUpdateKYCRequestBuilder.createUpdateKYCRequest({
 [1]: https://tokend.gitlab.io/docs/#blobs
 [2]: https://tokend.gitlab.io/docs/#key-value-storage
 [3]: /tech/operations/requests/review_kyc.md
+[4]: review.md#tasks

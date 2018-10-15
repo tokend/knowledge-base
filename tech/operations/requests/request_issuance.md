@@ -29,7 +29,7 @@ To review issuance request, please use [Review issuance][2] operation.
 
 ## Tasks
 
-The issuance requests comes up with the `Tasks` feature. It means that every 
+The issuance requests comes up with the [Tasks][3] feature. It means that every 
 request may contain set of pending tasks, that should be resolved by master.
 The request may become approved only if all tasks are resolved. 
 
@@ -82,3 +82,4 @@ const operation = base.CreateIssuanceRequestBuilder.createIssuanceRequest({
 
 [1]: https://tokend.gitlab.io/docs/#key-value-storage
 [2]: /tech/operations/requests/review_issuance.md
+[3]: review.md#tasks
