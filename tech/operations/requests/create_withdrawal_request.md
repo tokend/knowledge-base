@@ -2,7 +2,7 @@
 
 This operation creates new `withdrawal request`.
 
-> Although it's techically possible to make cross-asset withdrawals, the feature
+> Although it's technically possible to make cross-asset withdrawals, the feature
 is temporary disabled in TokenD.
 
 ## Source account requirements
