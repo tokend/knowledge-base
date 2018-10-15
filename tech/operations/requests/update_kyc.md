@@ -1,14 +1,12 @@
 # Update kyc request
 
-> TODO: threshold
-
 This operation creates new or update existing `update KYC request`.
 
 ## Source account details
 
 | Property              | Value                                                                                                         |
 |-----------------------|---------------------------------------------------------------------------------------------------------------|
-| Threshold             | high                                                                                                          |
+| Threshold             | `HIGH`                                                                                                          |
 | Allowed account types | `NOT_VERIFIED`, `VERIFIED`, `GENERAL`, `INSTITUTIONAL_INVESTOR`, `ACCREDITED_INVESTOR`, `SYNDICATE`, `MASTER` |
 | Allowed signer types  | `KYC_SUPER_ADMIN`, `KYC_ACC_MANAGER`, `ACCOUNT_MANAGER`                                                       |
 

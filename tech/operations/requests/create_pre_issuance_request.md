@@ -1,0 +1,37 @@
+# Create Issuance Request
+
+The operation creates new `pre issuance request`.
+
+## Source account details
+
+| Property              | Value                 |
+|-----------------------|-----------------------|
+| Threshold             | high                  |
+| Allowed account types | `MASTER`, `SYNDICATE` |
+| Allowed signer types  | `ISSUANCE_MANAGER`    |
+
+## Parameters
+
+| Parameter |       Type         | Description                       |
+|:---------:|:------------------:|:---------------------------------:|
+|  request  | PreIssuanceRequest | Body of the request to be created |
+
+## Possible errors
+
+| Error                 | Code | Description                                                                                            |
+|-----------------------|:----:|--------------------------------------------------------------------------------------------------------|
+| ASSET_NOT_FOUND       | -1   | Asset not found in core database or asset code is invalid.                                             |
+| REFERENCE_DUPLICATION | -2   | Request with such reference already exists.                                                            |
+| NOT_AUTHORIZED_UPLOAD | -3   | Operation source account isn't the owner of asset.                                                     |
+| INVALID_SIGNATURE     | -4   | Signature of operation was not created by asset pre issued signer.                                     |
+| EXCEEDED_MAX_AMOUNT   | -5   | Amount to be pre issued + available for issuance amount + issued amount more than max issuance amount. |
+| INVALID_AMOUNT        | -6   | Amount to be pre issued can not be zero.                                                               |
+| INVALID_REFERENCE     | -7   | Reference can not be empty.                                                                            |
+
+## Successful result
+
+Successful result has the following fields:
+
+* __Request ID__: id of the request generated in core.
+
+* __Fulfilled__: if true - request was created and reviewed right away.

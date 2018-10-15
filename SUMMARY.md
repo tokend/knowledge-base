@@ -42,10 +42,18 @@
         * [Set options](tech/operations/set_options.md)
         * [Payment](tech/operations/payment.md)
         * Reviewable requests:
+            * [Pre issuance](tech/operations/requests/create_pre_issuance_request.md)
             * [Issuance](tech/operations/requests/create_issuance.md)
             * [Update KYC](tech/operations/requests/update_kyc.md)
+            * [Asset create/update](tech/operations/requests/create_asset_request.md)
+            * [Withdrawal](tech/operations/requests/create_withdrawal_request.md)
             * [Review (default)](tech/operations/requests/review.md)
             * [Review (KYC)](tech/operations/requests/review_kyc.md)
+            * [Review (Asset create)](tech/operations/requests/review_asset_creation_request.md)
+            * [Review (Asset update)](tech/operations/requests/review_asset_update_request.md)
+            * [Review (Issuance)](tech/operations/requests/review_issuance_request.md)
+            * [Review (Pre issuance)](tech/operations/requests/review_pre_issuance_request.md)
+            * [Review (Withdrawal)](tech/operations/requests/review_withdrawal_request.md)
     * Other
         * [Participants](tech/other/participants.md)        
 * Dev Tools:
