@@ -2,6 +2,10 @@
 
 This operation creates new or update existing `update KYC request`.
 
+## Review operation
+
+To review update kyc request, please use [Review KYC][3] operation.
+
 ## Source account details
 
 | Property              | Value                                                   |
@@ -64,3 +68,4 @@ const operation = CreateUpdateKYCRequestBuilder.createUpdateKYCRequest({
 
 [1]: https://tokend.gitlab.io/docs/#blobs
 [2]: https://tokend.gitlab.io/docs/#key-value-storage
+[3]: /tech/operations/requests/review_kyc.md

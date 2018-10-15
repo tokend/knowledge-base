@@ -2,6 +2,10 @@
 
 The operation creates new `pre issuance request`.
 
+## Review operation
+
+To review pre issuance request, please use [Review pre issuance][1] operation.
+
 ## Source account requirements
 
 | Property              | Value                 |
@@ -27,3 +31,5 @@ The operation creates new `pre issuance request`.
 | EXCEEDED_MAX_AMOUNT   | -5   | Amount to be pre issued + available for issuance amount + issued amount more than max issuance amount. |
 | INVALID_AMOUNT        | -6   | Amount to be pre issued can not be zero.                                                               |
 | INVALID_REFERENCE     | -7   | Reference can not be empty.                                                                            |
+
+[1]: /tech/operations/requests/review_pre_issuance_request.md

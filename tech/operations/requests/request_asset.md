@@ -8,6 +8,11 @@ This operation allows such actions with the [asset](/tech/key_entities/asset.md)
 - Change asset signer;
 - Update max issuance amount;
 
+## Review operations
+
+To review asset creation request, please use [Review asset creation][1] operation.  
+To review asset update request, please use [Review asset update][2] operation.  
+
 ## Source account requirements
 
 | Property              | Value                 |
@@ -179,3 +184,7 @@ const operation = base.ManageAssetBuilder.changeAssetPreIssuer({
 | STATS_ASSET_ALREADY_EXISTS             |  -10 | Asset with `STATS_QUOTE_ASSET` policy must be only one in the system |
 | INITIAL_PREISSUED_EXCEEDS_MAX_ISSUANCE |  -11 | Initial pre issued amount exceeds max issuance amount. |
 | INVALID_DETAILS                        |  -12 | Details must be a valid JSON string. If you see this error, it's probably a bug in js-sdk code that serializes the object |
+
+
+[1]: /tech/operations/requests/review_asset_update_request.md
+[2]: /tech/operations/requests/review_asset_creation_request.md

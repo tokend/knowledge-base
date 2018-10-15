@@ -5,6 +5,10 @@ This operation creates new `withdrawal request`.
 > Although it's technically possible to make cross-asset withdrawals, the feature
 is temporary disabled in TokenD.
 
+## Review operation
+
+To review withdrawal request, please use [Review withdrawal][1] operation.
+
 ## Source account requirements
 
 | Property              | Value                                              |
@@ -61,3 +65,5 @@ const operation = base.CreateWithdrawRequestBuilder.createWithdrawWithAutoConver
 | LIMITS_EXCEEDED                   | -13  | Source account limits exceeded.                                                                 |
 | INVALID_PRE_CONFIRMATION_DETAILS  | -14  | Pre confiramtion details must be empty.                                                         | 
 | LOWER_BOUND_NOT_EXCEEDED          | -15  | Amount to be withdrawn is less than min withdrawn amount.                                       |
+
+[1]: /tech/operations/requests/review_withdrawal_request.md
