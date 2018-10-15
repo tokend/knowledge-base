@@ -50,6 +50,12 @@ Here are some key moments about review actions:
 * It's not allowed to have 2 pending [Asset requests][1] for one asset;
 * It's not allowed to have 2 rejected [Asset requests][1] for one asset;
 
+## Reason
+
+To reject/reject permanently any request, you'll need to provide the `rejectReason`.
+It is a simple string with a human-readable text with max-length 256 symbols.
+When approving request, the `reason` must be empty.
+
 ## Tasks
 
 Some of the reviewable requests has the `tasks` property, that is actually 
