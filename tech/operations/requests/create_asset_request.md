@@ -22,13 +22,18 @@ This operation allows such actions with the [asset](/tech/key_entities/asset.md)
 
 Parameter                | Type       | Description                                |
 ---                      | ---        | ---                                        |
-| requestID              | uint64     | Zero to create new request, else to update |
-| code                   | AssetCode  | The code of asset to create                |
-| preissuedAssetSigner   | AccountID  | The created asset's preissued signer       |
-| maxIssuanceAmount      | uint64     | The created asset's max issuance amount    |
-| initialPreissuedAmount | uint64     | The created asset's initial amount         |
-| policies               | uint64     | Bit mask of existing asset policies        |
-| details                | longstring | The created asset's details                |
+| requestID              | uint64     | Zero to create new request, request ID - to update |
+| code                   | string     | The code of new asset, maximum 16 UTF-8 symbols |
+| preissuedAssetSigner   | string     | Asset preissued signer     |
+| maxIssuanceAmount      | uint64     | The maximum amount that is possible to issue  |
+| initialPreissuedAmount | uint64     | The initial amount to be issued |
+| policies               | uint64     | Bit mask of asset policies |
+| details                | longstring | Asset details object (SDK will serialize it to JSON) |
+
+> IMPORTANT: asset code is immutable once the request is created. It means that
+if you want to update an existing `asset creation request` (NOT the asset 
+itself, asset doesn't exist at this moment) it won't be possible
+to update the asset code.
 
 ### Examples
 
@@ -36,7 +41,7 @@ Create new `asset creation request`:
 
 ```javascript
 const operation = base.ManageAssetBuilder.assetCreationRequest({
-  requestID: '0', // saying it's a new request
+  requestID: '0', // it's a new request
   code: 'QTK',
   preissuedAssetSigner: 'GCDRDBHZNXS5ODJKSEXWRABKKHAGHJGOXWO75CMNEEUUQYFSDYARG5YP',
   maxIssuanceAmount: '1000.000000',
@@ -58,7 +63,7 @@ Update pending/rejected `asset creation request` (NOT the asset itself):
 
 ```javascript
 const operation = base.ManageAssetBuilder.assetCreationRequest({
-  requestID: '213', // saying we will update existing request
+  requestID: '213', // we will update existing request
   code: 'QTK',
   preissuedAssetSigner: 'GCDRDBHZNXS5ODJKSEXWRABKKHAGHJGOXWO75CMNEEUUQYFSDYARG5YP',
   maxIssuanceAmount: '1000.000000',
@@ -82,7 +87,7 @@ const operation = base.ManageAssetBuilder.assetCreationRequest({
 
 | Parameter              | Type       | Description                                |
 | ---                    | ---        | ---                                        |
-| requestID              | uint64     | Zero to create new request, else to update |
+| requestID              | uint64     | Zero to create new request, request ID - to update |
 | code                   | AssetCode  | A new asset code to replace the old one    |
 | details                | longstring | New details to replace the old ones        |
 | policies               | uint64     | New policies to replace the old ones       |
@@ -137,13 +142,21 @@ const operation = base.ManageAssetBuilder.assetUpdateRequest({
 
 ## Change preissued asset signer
 
-
 ### Parameters
 
 | Parameter              | Type       | Description                                |
 | ---                    | ---        | ---                                        |
 | code                   | AssetCode  | The code of preisssuer's asset             |
 | accountID              | AccountID  | The account id of a new preissuer          |
+
+### Examples
+
+```javascript
+const operation = base.ManageAssetBuilder.changeAssetPreIssuer({
+  accountID: 'GDUV7QHM4SMHZXXFHN5QIOYWTPCGYEOR47NXE22DUJTGTLUHQZZUH7MJ', // new signer
+  code: 'QTK'
+})
+```
 
 ## Update max issuance amount
 
