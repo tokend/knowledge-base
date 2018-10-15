@@ -49,6 +49,11 @@ parameter is neither defined, nor being set to `0`), tasks will be taken
 from the [Key Value storage][2] by key `{request_type}_tasks:{asset code}` 
 (e.g. `issuance_tasks:BTC`);
 
+Here is the list of requests types that are currently come up with `Tasks` feature:
+
+* [Issuance request][2]
+* [KYC request][4]
+
 ## Possible errors
 
 | Error                        | Code | Description                                                                                         |
