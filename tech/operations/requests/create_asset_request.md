@@ -126,16 +126,16 @@ const operation = base.ManageAssetBuilder.assetUpdateRequest({
 
 | Error                                  | Code | Description                                            |
 | ---                                    | ---  | ---                                                    |
-| REQUEST_NOT_FOUND                      |  -1  | There is no request with such id.                      |
-| ASSET_ALREADY_EXISTS                   |  -3  | Cannot find asset with such a code.                    |
-| INVALID_MAX_ISSUANCE_AMOUNT            |  -4  | Cannot be 0.                                           |
-| INVALID_CODE                           |  -5  | Cannot validate the asset code.                        |
+| REQUEST_NOT_FOUND                      |  -1  | You're trying to update request which doesn't exist.   |
+| ASSET_ALREADY_EXISTS                   |  -3  | The asset you're trying to create already exists in the system |
+| INVALID_MAX_ISSUANCE_AMOUNT            |  -4  | Max issuance amount should be greated than `0`         |
+| INVALID_CODE                           |  -5  | The asset code contains more than 16 UTF-8 symbols     |
 | INVALID_POLICIES                       |  -7  | Cannot validate the policies.                          |
-| ASSET_NOT_FOUND                        |  -8  | Cannot find asset with the code                        |
-| REQUEST_ALREADY_EXISTS                 |  -9  | The reference is already exists.                       |
-| STATS_ASSET_ALREADY_EXISTS             |  -10 | Statistics quote asset already exists.                 |
+| ASSET_NOT_FOUND                        |  -8  | You're trying to update an asset that doesn't exist    |
+| REQUEST_ALREADY_EXISTS                 |  -9  | The request to create such asset already exists and has `pending`/`rejected` state. To create the new, fulfill the latest one (approve or reject permanently) |
+| STATS_ASSET_ALREADY_EXISTS             |  -10 | Asset with `STATS_QUOTE_ASSET` policy must be only one in the system |
 | INITIAL_PREISSUED_EXCEEDS_MAX_ISSUANCE |  -11 | Initial pre issued amount exceeds max issuance amount. |
-| INVALID_DETAILS                        |  -12 | Details must be a valid json.                          |
+| INVALID_DETAILS                        |  -12 | Details must be a valid JSON string. If you see this error, it's probably a bug in js-base, which serializes the object |
 
 ## Successful result
 
