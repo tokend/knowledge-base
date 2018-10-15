@@ -10,10 +10,6 @@ This operation allows review `issuance request`.
 | Allowed account types | `MASTER`, `SYNDICATE`                             |
 | Allowed signer types  | `USER_ISSUANCE_MANAGER`, `SUPER_ISSUANCE_MANAGER` |
 
-## Request details
-
-No request details needed to review such request
-
 ## Possible errors
 
 | Error                        | Code | Description                                                              |
