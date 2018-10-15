@@ -1,13 +1,8 @@
 # Issuance Request
 
-> TODO: threshold
-
 This operation creates new `issuance request`.
 
 > *Note*: source account must be the owner of the asset to create issuance request.
-* If source has not provided any tasks, tasks will be taken from the 'KeyValue' table by key '`issuance_tasks:%asset code%'` (e.g. `issuance_tasks:BTC`);
-* If tasks bitmask equals `0`, issuance request will be auto-reviewed, else - just created;
-* If the amount for issuance is insufficient or issuance requires manual review, etc., the corresponding flag will be set to `allTasks`, see [Possible allTasks flags](##possible-alltasks-flags);
 
 ## Source account details
 
@@ -19,30 +14,49 @@ This operation creates new `issuance request`.
 
 ## Parameters
 
-| Parameter |       Type      |                              Description                              |
-|:---------:|:---------------:|:---------------------------------------------------------------------:|
-|  request  | IssuanceRequest |                   Body of the request to be created                   |
-| reference |     string64    |               Unique identifier of the issuance request               |
-|  allTasks |     uint32*     | Bitmask of all tasks which must be completed for the request approval |
+| Parameter       |  Type    |                              Description                               |
+|-----------------|----------|------------------------------------------------------------------------|
+| asset           | string   | Asset to be issued                                                     |
+| amount          | string   | Amount to be issued                                                    |
+| receiver        | string   | The valid `Balance ID` of the receiver                                 |
+| externalDetails | object   | External details needed for PSIM to process withdraw operation         |
+| reference       | string64 | Unique identifier of the issuance request                              |
+| allTasks        | int32*   | Bit mask of all tasks which must be completed for the request approval |
 
-## Possible `allTasks` flags
+## Tasks
 
-### Core flags
+The issuance requests comes up with the `Tasks` feature. It means that every 
+request may contain set of pending tasks, that should be resolved by master.
+The request may become approved only if all tasks are resolved. 
+
+To make the request approved automatically, source needs to create with 
+`allTasks` set to `0`. If source hasn't provided any tasks (the `allTasks` 
+parameter is neither defined, nor being set to `0`), tasks will be taken
+from the [KeyValue][1] storage by key `issuance_tasks:{asset code}` 
+(e.g. `issuance_tasks:BTC`);
+
+### Possible tasks
 
 Source is not allowed to set core flags.
 
-| Name                                       | Value |
-|--------------------------------------------|-------|
-| INSUFFICIENT_AVAILABLE_FOR_ISSUANCE_AMOUNT | 1     |
-| ISSUANCE_MANUAL_REVIEW_REQUIRED            | 2     |
+| Name                                       | Value | Description                                                                                                                                       | Note                                   |
+|--------------------------------------------|-------| ------------------------------------------------------------------------------------------------------------------------------------------------- |----------------------------------------|
+| INSUFFICIENT_AVAILABLE_FOR_ISSUANCE_AMOUNT | 1     | Is being set automatically, if the amount for issuance is insufficient. Will be resolved automatically when reviewing                             | Source is NOT allowed to set this task | 
+| ISSUANCE_MANUAL_REVIEW_REQUIRED            | 2     | Is being set automatically, if the amount for issuance is insufficient or asset has policy `MANUAL_REVIEW_REQUIRED`. Can be resolved by reviewer  | Source is NOT allowed to set this task |
+| DEPOSIT_VERIFY                             | 4     | Will verify if deposit limit of issuance destination is not exceeded                                                                              | Source is allowed to set this task     |
 
-### Other flags
+## Examples
 
-This flags can be set by source
-
-| Name                                       | Value |
-|--------------------------------------------|-------|
-| DEPOSIT_VERIFY                             | 4     |
+```javascript
+const operation = base.CreateIssuanceRequestBuilder.createIssuanceRequest({
+  asset: 'QTK',
+  amount: '10.000000',
+  receiver: 'GAIEBMXUPSGW2J5ELJFOY6PR5IWXXJNHIJSDKTDHK76HHRNYRL2QYU4O',
+  reference: '',
+  externalDetails: '',
+  allTasks: ''
+})
+```
 
 ## Possible errors
 
@@ -62,12 +76,4 @@ This flags can be set by source
 | ISSUANCE_TASKS_NOT_FOUND    | -12  | Issuance tasks have not been provided by the source and don't exist in `KeyValue` table  |
 | SYSTEM_TASKS_NOT_ALLOWED    | -13  | Source is trying to set one of the core flags                                            |
 
-## Successful result
-
-Successful result has the following fields:
-
-* __Request ID__: id of the request generated in core.
-
-* __Receiver__: id of the balance to recieve issued amount of asset.
-
-* __Fulfilled__: if true - request was created and reviewed right away.
+[1]: https://tokend.gitlab.io/docs/#key-value-storage
