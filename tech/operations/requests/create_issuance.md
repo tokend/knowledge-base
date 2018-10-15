@@ -8,7 +8,7 @@ This operation creates new `issuance request`.
 
 | Property              | Value                                        |
 |-----------------------|----------------------------------------------|
-| Threshold             | high                                         |
+| Threshold             | `HIGH`                                         |
 | Allowed account types | `MASTER`, `SYNDICATE`                        |
 | Allowed signer types  | `ISSUANCE_MANAGER`, `SUPER_ISSUANCE_MANAGER` |
 

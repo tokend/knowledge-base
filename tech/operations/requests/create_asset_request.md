@@ -179,10 +179,3 @@ const operation = base.ManageAssetBuilder.changeAssetPreIssuer({
 | STATS_ASSET_ALREADY_EXISTS             |  -10 | Asset with `STATS_QUOTE_ASSET` policy must be only one in the system |
 | INITIAL_PREISSUED_EXCEEDS_MAX_ISSUANCE |  -11 | Initial pre issued amount exceeds max issuance amount. |
 | INVALID_DETAILS                        |  -12 | Details must be a valid JSON string. If you see this error, it's probably a bug in js-sdk code that serializes the object |
-
-## Successful result
-
-Successful creation result has the following field:
-
-- __Request ID__: id of the request generated in core.
-- __Fullfilled__: boolean value representing whether the request is fullfilled.
