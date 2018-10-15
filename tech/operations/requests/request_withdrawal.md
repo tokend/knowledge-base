@@ -66,4 +66,4 @@ const operation = base.CreateWithdrawRequestBuilder.createWithdrawWithAutoConver
 | INVALID_PRE_CONFIRMATION_DETAILS  | -14  | Pre confiramtion details must be empty.                                                         | 
 | LOWER_BOUND_NOT_EXCEEDED          | -15  | Amount to be withdrawn is less than min withdrawn amount.                                       |
 
-[1]: /tech/operations/requests/review_withdrawal_request.md
+[1]: /tech/operations/requests/review_withdrawal.md

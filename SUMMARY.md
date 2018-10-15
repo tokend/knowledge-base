@@ -44,16 +44,16 @@
         * Reviewable requests:
             * [Request (Pre issuance)](tech/operations/requests/request_pre_issuance.md)
             * [Request (Issuance)](tech/operations/requests/request_issuance.md)
-            * [Request (KYC)](tech/operations/requests/request_update_kyc.md)
+            * [Request (KYC)](tech/operations/requests/request_kyc.md)
             * [Request (Asset)](tech/operations/requests/request_asset.md)
             * [Request (Withdrawal)](tech/operations/requests/request_withdrawal.md)
             * [Review (default)](tech/operations/requests/review.md)
             * [Review (KYC)](tech/operations/requests/review_kyc.md)
-            * [Review (Asset create)](tech/operations/requests/review_asset_creation_request.md)
-            * [Review (Asset update)](tech/operations/requests/review_asset_update_request.md)
-            * [Review (Issuance)](tech/operations/requests/review_issuance_request.md)
-            * [Review (Pre issuance)](tech/operations/requests/review_pre_issuance_request.md)
-            * [Review (Withdrawal)](tech/operations/requests/review_withdrawal_request.md)
+            * [Review (Asset create)](tech/operations/requests/review_asset_creation.md)
+            * [Review (Asset update)](tech/operations/requests/review_asset_update.md)
+            * [Review (Issuance)](tech/operations/requests/review_issuance.md)
+            * [Review (Pre issuance)](tech/operations/requests/review_pre_issuance.md)
+            * [Review (Withdrawal)](tech/operations/requests/review_withdrawal.md)
     * Other
         * [Participants](tech/other/participants.md)        
 * Dev Tools:

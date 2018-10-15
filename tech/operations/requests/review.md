@@ -53,11 +53,11 @@ ReviewDetails has following fields:
 [1]: request_asset.md
 [2]: request_issuance.md
 [3]: request_pre_issuance.md
-[4]: request_update_kyc.md
+[4]: request_kyc.md
 [5]: request_withdrawal.md
-[6]: review_asset_creation_request.md
-[7]: review_asset_update_request.md
-[8]: review_issuance_request.md
-[9]: review_pre_issuance_request.md
+[6]: review_asset_creation.md
+[7]: review_asset_update.md
+[8]: review_issuance.md
+[9]: review_pre_issuance.md
 [10]: review_kyc.md
-[11]: review_withdrawal_request.md
+[11]: review_withdrawal.md

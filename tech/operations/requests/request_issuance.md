@@ -81,4 +81,4 @@ const operation = base.CreateIssuanceRequestBuilder.createIssuanceRequest({
 | SYSTEM_TASKS_NOT_ALLOWED    | -13  | Source is trying to set one of the core flags                                            |
 
 [1]: https://tokend.gitlab.io/docs/#key-value-storage
-[2]: /tech/operations/requests/review_issuance_request.md
+[2]: /tech/operations/requests/review_issuance.md
