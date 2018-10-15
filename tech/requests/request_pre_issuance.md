@@ -32,4 +32,4 @@ To review pre issuance request, please use [Review pre issuance][1] operation.
 | INVALID_AMOUNT        | -6   | Amount to be pre issued can not be zero.                                                               |
 | INVALID_REFERENCE     | -7   | Reference can not be empty.                                                                            |
 
-[1]: /tech/operations/requests/review_pre_issuance.md
+[1]: /tech/requests_issuance.md

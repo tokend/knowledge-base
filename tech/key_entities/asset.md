@@ -50,4 +50,4 @@ such policies:
 
 [1]: /coming_soon.md
 [2]: /tech/key_entities/accounts.md
-[3]: /tech/operations/requests/request_issuance.md
+[3]: /tech/requests/request_issuance.md
