@@ -49,14 +49,6 @@ parameter is neither defined, nor being set to `0`), tasks will be taken
 from the [Key Value storage][2] by key `{request_type}_tasks:{asset code}` 
 (e.g. `issuance_tasks:BTC`);
 
-### Review Details fields
-
-ReviewDetails has following fields:
-
-* __Tasks to add__: bit masks of tasks, that will be added to request pending tasks.
-* __Tasks to remove__: bit masks of tasks, that will be removed from request pending tasks.
-* __External details__: string details, that will be added to request details.
-
 ## Possible errors
 
 | Error                        | Code | Description                                                                                         |
