@@ -1,12 +1,15 @@
 # Create your first token
 
-Let's suppose, Bob has a box of bananas. He now wants to create a token that will represent the banana and start 
-sharing them with everybody, or even trade his bananas on coconuts. Lets write the simple app that will allow Bob to
+Let's suppose, Bob has a box of bananas. He now wants to create a token that 
+will represent the banana and start sharing them with everybody or even trade 
+his bananas on coconuts. Let's write the simple app that will allow Bob to
 distribute his bananas to everyone in the world.
 
-As you know, TokenD itself is a private blockchain, so not everyone is allowed to mutate the ledger. For example, to be
-able to create tokens, user must pass KYC procedure and verify that he is a trusted authority. In technical terms,
-the account who creates the token must have `Syndicate` [account type][1].  
+As you know, TokenD itself is a private blockchain, so not everyone is allowed 
+to mutate the ledger. For example, to be able to create tokens, your user must 
+pass the KYC procedure and verify that he is a trusted authority. In technical 
+terms, the account who creates the token must have 
+`Syndicate` [account type][1].  
 
 For more technical details about KYC submission, read the [KYC docs][2]
 
