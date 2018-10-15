@@ -6,11 +6,11 @@ easier to use because of encapsulating composing request and review details.
 
 Such reviewable requests has the specific review operation: 
 
-[Asset create/update requests][1] - Use [Review asset creation][6] or [Review asset update][7] to review
-[Issuance requests][2] - Use [Review issuance][8]
-[Pre issuance requests][3] - Use [Review pre issuance][9]
-[KYC requests][4] - Use [Review KYC][10]
-[Withdrawal requests][5] - Use [Review withdrawal][11]
+[Asset create/update requests][1] - Use [Review asset creation][6] or [Review asset update][7] to review  
+[Issuance requests][2] - Use [Review issuance][8]  
+[Pre issuance requests][3] - Use [Review pre issuance][9]  
+[KYC requests][4] - Use [Review KYC][10]  
+[Withdrawal requests][5] - Use [Review withdrawal][11]  
 
 ## Source account details
 
