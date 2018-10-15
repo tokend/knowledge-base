@@ -42,12 +42,3 @@ ReviewDetails has following fields:
 | INVALID_EXTERNAL_DETAILS     |  -7  | External details has not represented as stringified json struct or details too long.                |
 | REQUESTOR_IS_BLOCKED         |  -8  | Request cannot be approved while requestor has `SUSPICIOUS_BEHAVIOR` block reason.                  |
 | PERMANENT_REJECT_NOT_ALLOWED |  -9  | Use `REJECT`.    									            |
-
-## Successful result
-
-Successful creation result has the following field:
-
-* __Extended result__: 
-	* __Fulfilled__: true if request does not have any pending tasks and now request has `APPROVED` state
-	* __Type ext__: Depends on `reviewable request type`
-

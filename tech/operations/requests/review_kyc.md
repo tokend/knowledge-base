@@ -23,9 +23,3 @@ This operation creates new or deletes existing `update_kyc_request`.
 ## Possible errors
 
 > TODO: add possible errors
-
-## Successful result
-
-Successful creation result has the following field:
-
-* __Request ID__: id of the request generated in core.

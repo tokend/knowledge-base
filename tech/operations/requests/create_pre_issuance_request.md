@@ -6,7 +6,7 @@ The operation creates new `pre issuance request`.
 
 | Property              | Value                 |
 |-----------------------|-----------------------|
-| Threshold             | high                  |
+| Threshold             | `HIGH`                  |
 | Allowed account types | `MASTER`, `SYNDICATE` |
 | Allowed signer types  | `ISSUANCE_MANAGER`    |
 
@@ -27,11 +27,3 @@ The operation creates new `pre issuance request`.
 | EXCEEDED_MAX_AMOUNT   | -5   | Amount to be pre issued + available for issuance amount + issued amount more than max issuance amount. |
 | INVALID_AMOUNT        | -6   | Amount to be pre issued can not be zero.                                                               |
 | INVALID_REFERENCE     | -7   | Reference can not be empty.                                                                            |
-
-## Successful result
-
-Successful result has the following fields:
-
-* __Request ID__: id of the request generated in core.
-
-* __Fulfilled__: if true - request was created and reviewed right away.

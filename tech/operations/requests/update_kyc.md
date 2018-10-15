@@ -43,13 +43,3 @@ UpdateKYCRequestData has the following fields:
 | INVALID_UPDATE_KYC_REQUEST_DATA    |  -7  | Update kyc request allows update only `KYC data`.                                     |
 | INVALID_KYC_DATA                   |  -8  | `KYC data` must be represended as stringified json struct.                            |
 | KYC_RULE_NOT_FOUND                 |  -9  | There is no key value with rules for existing account type and `Account type to set`. |
-
-
-## Successful result
-
-Successful result has the following field:
-
-* __Request ID__: id of the request generated in core.
-
-* __Fulfilled__: true if request was auto approved.
-

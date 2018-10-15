@@ -35,10 +35,3 @@ This operation creates new `withdrawal request`.
 | LIMITS_EXCEEDED                   | -13  | Source account limits exceeded.                                                                 |
 | INVALID_PRE_CONFIRMATION_DETAILS  | -14  | Pre confiramtion details must be empty.                                                         | 
 | LOWER_BOUND_NOT_EXCEEDED          | -15  | Amount to be withdrawn is less than min withdrawn amount.                                       |
-
-## Successful result
-
-Successful result has the following fields:
-
-* __Request ID__: id of the request generated in core.
-
