@@ -27,6 +27,29 @@ Depends on `reviewable request type`
 | requestDetails | object                    | Depends on `reviewable request type`                                                                       |
 | reviewDetails  | object                    | Details, that affect reviewable request                                                                    |
 
+## Action
+
+Every review operation may be used to perform any the actions, that update request
+state:
+
+* Approve
+* Reject
+* Reject Permanently
+
+Every action is taken from corresponding XDR enum, to read more, visit the
+[XDR][14] documentation.
+
+Here are some key moments about review actions:
+
+* Rejected requests are the only one that can be updated;
+* Permanently rejected requests can't be updated at all;
+* Pending requests must be rejected first, before requestor can update it;
+* Approving pending request will left it's state `pending` if there are any pending tasks left;
+* It's not allowed to have 2 pending [KYC requests][4] from one requestor;
+* It's not allowed to have 2 rejected (not permanently) [KYC requests][4] from one requestor;
+* It's not allowed to have 2 pending [Asset requests][1] for one asset;
+* It's not allowed to have 2 rejected [Asset requests][1] for one asset;
+
 ## Tasks
 
 Some of the reviewable requests has the `tasks` property, that is actually 
@@ -82,3 +105,4 @@ Here is the list of requests types that are currently come up with `Tasks` featu
 [11]: review_withdrawal.md
 [12]: /tech/key_entities/signer.md
 [13]: https://tokend.gitlab.io/docs/#key-value-storage
+[14]: /tech/xdr.md
