@@ -27,6 +27,28 @@ Depends on `reviewable request type`
 | requestDetails | object                    | Depends on `reviewable request type`                                                                       |
 | reviewDetails  | object                    | Details, that affect reviewable request                                                                    |
 
+## Tasks
+
+Some of the reviewable requests has the `tasks` property, that is actually 
+a bit mask, where every bit of defines the task that is linked an action 
+performed by the system module, external service or a real person. Here is
+some tasks we used for [KYC requests][4]:
+
+* Verify that documents provided during verification process is valid;
+* Receive the confirmation from external service that verifies if user is 
+accredited investor;
+* Wait for super admin review.
+
+Every task may be unset by the [signer][12] of master account. To set or unset 
+tasks you will need to perform a review operation with the required signer type. 
+Request can not be approved until all of it's pending tasks are resolved.
+
+To try to make the request approved automatically, the requestor needs to create 
+request with `allTasks` set to `0`. If source hasn't provided any tasks (the `allTasks` 
+parameter is neither defined, nor being set to `0`), tasks will be taken
+from the [Key Value storage][2] by key `{request_type}_tasks:{asset code}` 
+(e.g. `issuance_tasks:BTC`);
+
 ### Review Details fields
 
 ReviewDetails has following fields:
@@ -61,3 +83,5 @@ ReviewDetails has following fields:
 [9]: review_pre_issuance.md
 [10]: review_kyc.md
 [11]: review_withdrawal.md
+[12]: /tech/key_entities/signer.md
+[13]: https://tokend.gitlab.io/docs/#key-value-storage
