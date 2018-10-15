@@ -1,18 +1,18 @@
-# Manage Asset
+# Asset management requests
 
 This operation allows such actions with the `asset`:
 
 - Create asset creation request;
 - Create asset update request;
-- Cancel asset request;
-- Change preissued signer;
-- Update max issuance;
+- Cancel asset creation/update request;
+- Change preissued asset signer;
+- Update max issuance amount;
 
 ## Manage Sale Details
 
 | Property              | Value                 |
 | ---                   | ---                   |
-| Threshold             | high                  |
+| Threshold             | `HIGH`                |
 | Allowed account types | `MASTER`, `SYNDICATE` |
 | Allowed signer types  | `ASSET_MANAGER`       |
 
@@ -35,6 +35,92 @@ This operation allows such actions with the `asset`:
 | Change preissued signer       | accountID              | AccountID  | The account id of a new preissuer          |
 | Update max issuance           | assetCode              | AssetCode  | The code of asset to update issuance       |
 | Update max issuance           | maxIssuanceAmount      | uint64     | A new max issuance amount                  |
+
+## Examples
+
+### Request asset creation
+
+Create new `asset creation request`:
+
+```javascript
+const operation = base.ManageAssetBuilder.assetCreationRequest({
+  requestID: '0', // saying it's a new request
+  code: 'QTK',
+  preissuedAssetSigner: 'GCDRDBHZNXS5ODJKSEXWRABKKHAGHJGOXWO75CMNEEUUQYFSDYARG5YP',
+  maxIssuanceAmount: '1000.000000',
+  policies: 4,
+  initialPreissuedAmount: '1000.000000',
+  details: {
+    name: 'Q-Token',
+    logo: {
+      key: 'dmybfh4infrebjhcost7fvj5qeqmpjtujupkyzpvxhyrdbtujpd7r5n4'
+    },
+    terms: {
+      key: 'dmybfh4infrebjhcost7fvj5qeqmpjtujupkyzpvxhyrdbtujpd7r5n4'
+    }
+  }
+})
+```
+
+Update pending/rejected `asset creation request` (NOT the asset itself): 
+
+```javascript
+const operation = base.ManageAssetBuilder.assetCreationRequest({
+  requestID: '213', // saying we will update existing request
+  code: 'QTK',
+  preissuedAssetSigner: 'GCDRDBHZNXS5ODJKSEXWRABKKHAGHJGOXWO75CMNEEUUQYFSDYARG5YP',
+  maxIssuanceAmount: '1000.000000',
+  policies: 4,
+  initialPreissuedAmount: '1000.000000',
+  details: {
+    name: 'Q-Token',
+    logo: {
+      key: 'dmybfh4infrebjhcost7fvj5qeqmpjtujupkyzpvxhyrdbtujpd7r5n4'
+    },
+    terms: {
+      key: 'dmybfh4infrebjhcost7fvj5qeqmpjtujupkyzpvxhyrdbtujpd7r5n4'
+    }
+  }
+})
+```
+
+### Request asset update
+
+Create new `asset update request`:
+
+```javascript
+const operation = base.ManageAssetBuilder.assetUpdateRequest({
+  requestID: '0',
+  policies: '0',
+  details: {
+    name: 'Q-Token',
+    logo: {
+      key: 'dmybfh4infrebjhcost7fvj5qeqmpjtujupkyzpvxhyrdbtujpd7r5n4'
+    },
+    terms: {
+      key: 'dmybfh4infrebjhcost7fvj5qeqmpjtujupkyzpvxhyrdbtujpd7r5n4'
+    }
+  }
+})
+```
+
+Update pending/rejected `asset update request`:
+
+```javascript
+const operation = base.ManageAssetBuilder.assetUpdateRequest({
+  requestID: '321',
+  policies: '0',
+  details: {
+    name: 'Q-Token',
+    logo: {
+      key: 'dmybfh4infrebjhcost7fvj5qeqmpjtujupkyzpvxhyrdbtujpd7r5n4'
+    },
+    terms: {
+      key: 'dmybfh4infrebjhcost7fvj5qeqmpjtujupkyzpvxhyrdbtujpd7r5n4'
+    }
+  }
+})
+```
 
 ## Possible errors
 
