@@ -16,12 +16,6 @@ This operation allows such actions with the [asset](/tech/key_entities/asset.md)
 | Allowed account types | `MASTER`, `SYNDICATE` |
 | Allowed signer types  | `ASSET_MANAGER`       |
 
-## Default Parameters
-
-| Parameter              | Type       | Description                                |
-| ---                    | ---        | ---                                        |
-| requestID              | uint64     | Zero to create new request, else to update |
-
 ## Request asset creation
 
 ### Parameters
