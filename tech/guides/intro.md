@@ -9,14 +9,13 @@ platform. Complete reference for javascript SDK is available [here][1].
 To avoid code duplication, we will suppose this snippet is included into every example listed in guides: 
 
 ```js
-    import { TokenD } from 'tokend-sdk'
+    import { TokenD, base } from 'tokend-sdk'
 
     const sdk = await TokenD.create('https://<tokend-backend-url>')
 
-    const base = sdk.base // the module for crafting transactions
     const horizon = sdk.horizon // the middleware for sending requests to horizon server
     const api = sdk.api // the middleware for sending requests to api server
-    const xdr = sdk.base.xdr
+    const xdr = base.xdr
 ```
 
 If you prefer not using the Javascript SDK, this guides may not be very helpful for and we can recommend 

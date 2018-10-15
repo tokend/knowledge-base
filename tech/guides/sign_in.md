@@ -1,6 +1,6 @@
 # Sign in
 
-Signing in is basically a process of acquiring client's signing key from encrypted 
+Signing in is basically a process of acquiring user's signing key from encrypted 
 keychain data. As well as in [Wallet Creation][1], we have encapsulated all
 the tricky actions in our javascript SDK, so all you need to do here is just to
 get your [wallet][2]:
@@ -20,7 +20,6 @@ By doing this, you're asking SDK to perform such actions:
 As a result, you'll get [Wallet][3] instance, that will contain decrypted keys,
 so you can start use them for signing requests and transactions.
 
-
 ```javascript
 console.log(wallet.id) // => 4aadcd4eb44bb845d828c45dbd68d5d1196c3a182b08cd22f05c56fcf15b153c
 console.log(wallet.email) // => foo@bar.com
@@ -37,7 +36,7 @@ sdk.useWallet(wallet)
 ```
 
 After this, SDK will automatically sign every request and operations with your 
-signing keypair. That means now you can provide your user with all the 
+signing keys. That means now you can provide your user with all the 
 functionality TokenD has.
 
 [1]: /tech/guides/sign_in.md

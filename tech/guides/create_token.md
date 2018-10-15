@@ -9,7 +9,7 @@ As you know, TokenD itself is a private blockchain, so not everyone is allowed
 to mutate the ledger. For example, to be able to create tokens, your user must 
 pass the KYC procedure and verify that he is a trusted authority. In technical 
 terms, the account who creates the token must have 
-`Syndicate` [account type][1].  
+`SYNDICATE` [account type][1].  
 
 For more technical details about KYC submission, read the [KYC docs][2]
 
@@ -21,7 +21,7 @@ OK, Bob already has a `Syndicate` account and can start to create his own tokens
 ```js
     async function createBobsBananaToken () {
       const operation = base.ManageAssetBuilder.assetCreationRequest({
-        requestID: '0',
+        requestID: '0',__
         code: 'BNN',
         preissuedAssetSigner: 'GBT3XFWQUHUTKZMI22TVTWRA7UHV2LIO2BIFNRCH3CXWPYVYPTMXMDGC',
         maxIssuanceAmount: '1000.000000',
@@ -66,7 +66,7 @@ To find out more about reviewable requests, check our [Reviewable Requests docum
 ## Review
 
 Now the asset creation request should be reviewed. To review the asset you need to be the [master signer][4] 
-with the `Asset manager` policy. Approving or rejecting request can be performed by [Review Request][5] operation:
+with the `ASSET_MANAGER` policy. Approving or rejecting request can be performed by [Review Request][5] operation:
 
 ```javascript
     function getReviewOp (action, reason) {
@@ -98,18 +98,13 @@ with the `Asset manager` policy. Approving or rejecting request can be performed
 After the `Asset Manager` approved the Bob's bananas, he is able to start distributing them. If the request is rejected,
 Bob will have to update his request so the procedure repeats.
 
-[1]: /coming_soon.md 
+[1]: /tech/key_entities/accounts.md#account-type
 [2]: /coming_soon.md
-[3]: /coming_soon.md
+[3]: /tech/requests/request_asset.md
 [4]: /coming_soon.md
-[5]: /coming_soon.md
-[6]: /coming_soon.md
-[7]: /coming_soon.md
+[5]: /tech/requests/review.md
+[6]: https://tokend.gitlab.io/docs/#reviewable-requests
+[7]: /tech/requests
 
-<!--1: account types-->
 <!--2: kyc-->
-<!--3: Asset creation request-->
 <!--4: Master signers-->
-<!--5: Review request operation-->
-<!--6: Horizon /requests-->
-<!--7: Reviewable requests-->
