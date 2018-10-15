@@ -1,25 +1,51 @@
-# Create Issuance Request
+# Create Withdrawal Request
 
 This operation creates new `withdrawal request`.
 
-## Source account details
+> Although it's techically possible to make cross-asset withdrawals, the feature
+is temporary disabled in TokenD.
 
-| Property              | Value                                                                                                                          |
-|-----------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| Threshold             | `MEDIUM`                                                                                                                         |
-| Allowed account types | `SYNDICATE`, `GENERAL`, `ACCREDITED_INVESTOR`, `INSTITUTIONAL_INVESTOR`, `VERIFIED`, `NOT_VERIFIED`, `OPERATIONAL`, `EXCHANGE` |
-| Allowed signer types  | `BALANCE_MANAGER`                                                                                                              |
+## Source account requirements
+
+| Property              | Value                                              |
+|-----------------------|----------------------------------------------------|
+| Threshold             | `MEDIUM`                                           |
+| Allowed account types | `SYNDICATE`, `GENERAL`, `VERIFIED`, `NOT_VERIFIED` |
+| Allowed signer types  | `BALANCE_MANAGER`                                  |
 
 ## Parameters
 
-| Parameter |       Type        | Description                       |
-|:---------:|:-----------------:|:---------------------------------:|
-|  request  | WithdrawalRequest | Body of the request to be created |
+| Parameter               | Type   | Description                                                                                                          |
+|-------------------------|--------|----------------------------------------------------------------------------------------------------------------------|
+| balance                 | string | `Balance ID` from which withdraw will be performed                                                                   |
+| amount                  | string | Amount to be charged from specified balance (does not include fees)                                                  |
+| fee                     | object | Fee to be charged                                                                                                    |
+| fee.fixed               | string | Fixed fee to be charged                                                                                              |
+| fee.percent             | string | Percent fee to be charged                                                                                            |
+| externalDetails         | object | External details needed for PSIM to process withdraw operation                                                       |
+| destAsset               | string | Asset that requestor will receive in his external wallet (for now, use the same as `amount`)                         |
+| expectedDestAssetAmount | string | Amount that requestor will receive in his external wallet (for now, use the asset specified `balanceID` belongs to)  |
+
+## Examples
+
+```javascript
+const operation = base.CreateWithdrawRequestBuilder.createWithdrawWithAutoConversion({
+    balance: 'BD2U4FYCQ6TEVXJZAFP2VB22NKFBLJKKVM625DEM4BXMQN6AOZFTHQAB', // BTC
+    amount: '1.000',
+    fee: {
+      fixed: '0.010000',
+      percent: '0.020000'
+    },
+    externalDetails: {},
+    destAsset: 'BTC',
+    expectedDestAssetAmount: '1.000'
+})
+```
 
 ## Possible errors
 
 | Error                             | Code | Description                                                                                     |
-|-----------------------------------|:----:|-------------------------------------------------------------------------------------------------|
+|-----------------------------------|------|-------------------------------------------------------------------------------------------------|
 | INVALID_AMOUNT                    | -1   | Amount in request body is zero.                                                                 |
 | INVALID_EXTERNAL_DETAILS          | -2   | External details is not stringified valid json struct or exceeded max permissible length.       |
 | BALANCE_NOT_FOUND                 | -3   | Balance with such id does not exist or does not belong to source account.                       |

@@ -4,7 +4,7 @@ This operation creates new `issuance request`.
 
 > *Note*: source account must be the owner of the asset to create issuance request.
 
-## Source account details
+## Source account requirements
 
 | Property              | Value                                        |
 |-----------------------|----------------------------------------------|
@@ -51,7 +51,7 @@ Source is not allowed to set core flags.
 const operation = base.CreateIssuanceRequestBuilder.createIssuanceRequest({
   asset: 'QTK',
   amount: '10.000000',
-  receiver: 'GAIEBMXUPSGW2J5ELJFOY6PR5IWXXJNHIJSDKTDHK76HHRNYRL2QYU4O',
+  receiver: 'BD2U4FYCQ6TEVXJZAFP2VB22NKFBLJKKVM625DEM4BXMQN6AOZFTHQAB',
   reference: 'qrhevwjkgbwhjejrktiwerlqwrewqrm',
   externalDetails: {},
   allTasks: 0 // will try to auto-approveg

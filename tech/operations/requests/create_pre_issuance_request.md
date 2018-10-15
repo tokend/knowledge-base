@@ -2,7 +2,7 @@
 
 The operation creates new `pre issuance request`.
 
-## Source account details
+## Source account requirements
 
 | Property              | Value                 |
 |-----------------------|-----------------------|
