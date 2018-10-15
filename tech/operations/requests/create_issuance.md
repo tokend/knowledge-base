@@ -39,11 +39,11 @@ from the [KeyValue][1] storage by key `issuance_tasks:{asset code}`
 
 Source is not allowed to set core flags.
 
-| Name                                       | Value | Description                                                                                                                                       | Note                                   |
-|--------------------------------------------|-------| ------------------------------------------------------------------------------------------------------------------------------------------------- |----------------------------------------|
-| INSUFFICIENT_AVAILABLE_FOR_ISSUANCE_AMOUNT | 1     | Is being set automatically, if the amount for issuance is insufficient. Will be resolved automatically when reviewing                             | Source is NOT allowed to set this task | 
-| ISSUANCE_MANUAL_REVIEW_REQUIRED            | 2     | Is being set automatically, if the amount for issuance is insufficient or asset has policy `MANUAL_REVIEW_REQUIRED`. Can be resolved by reviewer  | Source is NOT allowed to set this task |
-| DEPOSIT_VERIFY                             | 4     | Will verify if deposit limit of issuance destination is not exceeded                                                                              | Source is allowed to set this task     |
+| Name                                       | Value | Description                                                                                                                                                                                |
+|--------------------------------------------|-------| ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| INSUFFICIENT_AVAILABLE_FOR_ISSUANCE_AMOUNT | 1     | Is being set automatically, if the amount for issuance is insufficient. Will be resolved automatically when reviewing. Source is NOT allowed to set this task | 
+| ISSUANCE_MANUAL_REVIEW_REQUIRED            | 2     | Is being set automatically, if the amount for issuance is insufficient or asset has policy `MANUAL_REVIEW_REQUIRED`. Can be resolved by reviewer. Source is NOT allowed to set this task |
+| DEPOSIT_VERIFY                             | 4     | Will verify if deposit limit of issuance destination is not exceeded |
 
 ## Examples
 
