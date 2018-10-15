@@ -104,7 +104,7 @@ Bob will have to update his request so the procedure repeats.
 [4]: /coming_soon.md
 [5]: /tech/requests/review.md
 [6]: https://tokend.gitlab.io/docs/#reviewable-requests
-[7]: /tech/requests
+[7]: /tech/requests/intro.md
 
 <!--2: kyc-->
 <!--4: Master signers-->
