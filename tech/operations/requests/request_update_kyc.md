@@ -34,6 +34,20 @@ parameter is neither defined, nor being set to `0`), tasks will be taken
 from the [Key Value storage][2] by key `issuance_tasks:{asset code}` 
 (e.g. `issuance_tasks:BTC`);
 
+## Example
+
+```javascript
+const operation = CreateUpdateKYCRequestBuilder.createUpdateKYCRequest({
+  accountToUpdateKYC: 'GCGR7MRRKUGOKRN7PY4R66LSKESGOAY4CEV6QQFFW4DE3TKQZIXW4RXG',
+  accountTypeToSet: xdr.AccountType.general().value,
+  kycLevelToSet: 0,
+  kycData: {
+    blob_id: '4NSI4HPWFHLZTUB3QPURTUPZMHID4OI6CDUZVJAREUIEAJMRLE6A'
+  },
+  allTasks: 0
+})
+```
+
 ## Possible errors
 
 | Error                              | Code | Description                                                                           |
