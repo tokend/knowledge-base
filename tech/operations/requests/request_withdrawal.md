@@ -1,4 +1,4 @@
-# Create Withdrawal Request
+# Withdrawal Request
 
 This operation creates new `withdrawal request`.
 
