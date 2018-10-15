@@ -135,7 +135,7 @@ const operation = base.ManageAssetBuilder.assetUpdateRequest({
 | REQUEST_ALREADY_EXISTS                 |  -9  | The request to create such asset already exists and has `pending`/`rejected` state. To create the new, fulfill the latest one (approve or reject permanently) |
 | STATS_ASSET_ALREADY_EXISTS             |  -10 | Asset with `STATS_QUOTE_ASSET` policy must be only one in the system |
 | INITIAL_PREISSUED_EXCEEDS_MAX_ISSUANCE |  -11 | Initial pre issued amount exceeds max issuance amount. |
-| INVALID_DETAILS                        |  -12 | Details must be a valid JSON string. If you see this error, it's probably a bug in js-base, which serializes the object |
+| INVALID_DETAILS                        |  -12 | Details must be a valid JSON string. If you see this error, it's probably a bug in js-base code that serializes the object |
 
 ## Successful result
 
