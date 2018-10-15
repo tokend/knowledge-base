@@ -32,7 +32,7 @@ The request may become approved only if all tasks are resolved.
 To make the request approved automatically, source needs to create with 
 `allTasks` set to `0`. If source hasn't provided any tasks (the `allTasks` 
 parameter is neither defined, nor being set to `0`), tasks will be taken
-from the [KeyValue][1] storage by key `issuance_tasks:{asset code}` 
+from the [Key Value storage][1] by key `issuance_tasks:{asset code}` 
 (e.g. `issuance_tasks:BTC`);
 
 ### Possible tasks
