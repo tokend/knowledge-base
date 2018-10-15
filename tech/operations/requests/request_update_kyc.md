@@ -4,31 +4,35 @@ This operation creates new or update existing `update KYC request`.
 
 ## Source account details
 
-| Property              | Value                                                                                                         |
-|-----------------------|---------------------------------------------------------------------------------------------------------------|
-| Threshold             | `HIGH`                                                                                                          |
-| Allowed account types | `NOT_VERIFIED`, `VERIFIED`, `GENERAL`, `INSTITUTIONAL_INVESTOR`, `ACCREDITED_INVESTOR`, `SYNDICATE`, `MASTER` |
-| Allowed signer types  | `KYC_SUPER_ADMIN`, `KYC_ACC_MANAGER`, `ACCOUNT_MANAGER`                                                       |
+| Property              | Value                                                   |
+|-----------------------|---------------------------------------------------------|
+| Threshold             | `HIGH`                                                  |
+| Allowed account types | `NOT_VERIFIED`, `GENERAL`, `SYNDICATE`, `MASTER`        |
+| Allowed signer types  | `KYC_SUPER_ADMIN`, `KYC_ACC_MANAGER`, `ACCOUNT_MANAGER` |
 
 ## Parameters
 
-| Parameter            |       Type           |       Description                           |
-|:--------------------:|:--------------------:|:-------------------------------------------:|
-| requestID            | 	 uint64       | Zero to create, not zero to update existing |
-| updateKYCRequestData | UpdateKYCRequestData | Details of kyc request                      |
+| Parameter            | Type   |       Description                                             |
+|----------------------|--------|-----------------------------------------------------------------------------|
+| requestID            | uint64 | Zero to create, not zero to update existing                                 |
+| accountToUpdateKYC   | string | The ID of account, which account type will be updated                       |
+| accountTypeToSet     | string | New account type that will be set to account after request will be approved |
+| kycLevelToSet        | number | New KYC level of account
+| kycData              | object | Data that proves that user is allowed to update kyc
+| kycData.blob_id      | string | The identifier of [blob][1], that stores user-provided KYC data
+| allTasks             | uint64 | Tasks for kyc request, that can be set only by `KYC_SUPER_ADMIN`.
 
-### Update KYC request data
-UpdateKYCRequestData has the following fields:
+## Tasks
 
-* __Account to update KYC__: account id of user, which account type will be updated.
+The KYC requests comes up with the `Tasks` feature. It means that every 
+request may contain set of pending tasks, that should be resolved by master.
+The request may become approved only if all tasks are resolved. 
 
-* __Account type to set__: new acccount type for such user.
-
-* __KYC level to set__: new kyc level of account.
-
-* __KYC data__: data that proves that user is allowed to udpate kyc.
-
-* __All tasks__: (optional) tasks for kyc request, that can be setted only by `KYC_SUPER_ADMIN` (if not setted use default from key value).
+To make the request approved automatically, source needs to create with 
+`allTasks` set to `0`. If source hasn't provided any tasks (the `allTasks` 
+parameter is neither defined, nor being set to `0`), tasks will be taken
+from the [Key Value storage][2] by key `issuance_tasks:{asset code}` 
+(e.g. `issuance_tasks:BTC`);
 
 ## Possible errors
 
@@ -43,3 +47,6 @@ UpdateKYCRequestData has the following fields:
 | INVALID_UPDATE_KYC_REQUEST_DATA    |  -7  | Update kyc request allows update only `KYC data`.                                     |
 | INVALID_KYC_DATA                   |  -8  | `KYC data` must be represended as stringified json struct.                            |
 | KYC_RULE_NOT_FOUND                 |  -9  | There is no key value with rules for existing account type and `Account type to set`. |
+
+[1]: https://tokend.gitlab.io/docs/#blobs
+[2]: https://tokend.gitlab.io/docs/#key-value-storage
