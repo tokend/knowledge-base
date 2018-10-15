@@ -52,9 +52,9 @@ const operation = base.CreateIssuanceRequestBuilder.createIssuanceRequest({
   asset: 'QTK',
   amount: '10.000000',
   receiver: 'GAIEBMXUPSGW2J5ELJFOY6PR5IWXXJNHIJSDKTDHK76HHRNYRL2QYU4O',
-  reference: '',
-  externalDetails: '',
-  allTasks: ''
+  reference: 'qrhevwjkgbwhjejrktiwerlqwrewqrm',
+  externalDetails: {},
+  allTasks: 0 // will try to auto-approveg
 })
 ```
 
