@@ -108,7 +108,6 @@ enum AccountType
 ```
 
 [1]: https://tools.ietf.org/html/rfc4506.html
-[2]: /coming_soon.md
 [3]: /tech/operations/payment.md
 [4]: /tech/key_entities/transaction.md
 [5]: /tech/key_entities/accounts.md#account-type

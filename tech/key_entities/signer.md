@@ -26,7 +26,7 @@ Here is the list of all existing signer types at the moment:
 | ISSUANCE_MANAGER                        | 128        | Make preissuance request
 | INVOICE_MANAGER                         | 256        | Create payment requests to other accounts
 | PAYMENT_OPERATOR                        | 512        | Review payment requests
-| LIMITS_MANAGER                          | 1024       | Change [limits][6]
+| LIMITS_MANAGER                          | 1024       | Change limits
 | ACCOUNT_MANAGER                         | 2048       | Add/delete signers and trust
 | COMMISSION_BALANCE_MANAGER              | 4096       | Spend from commission balances
 | OPERATIONAL_BALANCE_MANAGER             | 8192       | Spend from operational balances
@@ -48,16 +48,8 @@ Here is the list of all existing signer types at the moment:
 | CONTRACT_MANAGER                        | 536870912  | 
 | ATOMIC_SWAP_MANAGER                     | 1073741824 |  
 
-
-<!--2. Assets-->
-<!--3. Asset pairs-->
-<!--4. Fees-->
-<!--5. Balances-->
-<!--6. Limits-->
-
 [1]: /tech/key_entities/accounts.md
 [2]: /tech/key_entities/asset.md
 [3]: /tech/guides/trading.md#asset-pairs
 [4]: /tech/operations/set_fees.md
 [5]: /tech/operations/manage_balance.md
-[6]: /coming_soon.md
