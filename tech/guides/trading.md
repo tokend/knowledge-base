@@ -154,14 +154,12 @@ offer crosses an existing offer, it is filled at the price of the existing offer
 matched with Alice's offer. Now John is got 2 Bananas, Alice got 6 Apples and she still waiting to sell her 3 Bananas
 left.
 
-[1]: /coming_soon.md
+[1]: /tech/key_entities/signer.md
 [2]: /coming_soon.md
 [3]: /coming_soon.md
 [4]: /coming_soon.md
-[5]: /coming_soon.md
+[5]: /tech/operations/manage_offer.md
 
-<!--1. Master Signers-->
 <!--2. Asset pairs-->
 <!--3. Asset pair policies-->
 <!--4. Manage asset pair op-->
-<!--5. Manage offer op-->

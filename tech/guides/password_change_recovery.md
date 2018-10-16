@@ -32,4 +32,4 @@ From the recovery wallet you can obtain original account ID to load signers for.
 
 Sign the transaction and wallet update request with a keypair initialized from the recovery seed.
 
-**Important notice: it is possible to perform recovery before the account has been created. In this case account signers request will return 404 error so in the transaction just add a new signer.**
+> __Important notice__: it is possible to perform recovery before the account has been created. In this case account signers request will return 404 error so in the transaction just add a new signer.

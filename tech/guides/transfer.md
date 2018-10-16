@@ -9,7 +9,7 @@ Transfers between accounts may require to pay some fees from sender as well as f
 defined by the [Fee manager][1].
 
 Fees may differ for specific accounts account types or specific amounts. To get more detailed description about how 
-to manage fees, look to our [Fees][2] documentation and [Horizon][3] reference
+to manage fees look our [Horizon][3] reference
 
 ### Get concrete fees
 
@@ -89,8 +89,7 @@ fortunately, `0` fixed fee.
 
 ## Send tokens
 
-Sending tokens is available through [Payment v2][4] operation. For now, [Payment v1][5] is available, but it doesn't 
-support sending tokens by account ID, [Fee assets][6], and will be deprecated soon.
+Sending tokens is available through [Payment][4] operation. 
 
 ```javascript
 function sendTokens () {
@@ -118,10 +117,6 @@ function sendTokens () {
 }
 ```
 
-[1]: /coming_soon.md
-[2]: /coming_soon.md
-[3]: /coming_soon.md
-[4]: /coming_soon.md
-[5]: /coming_soon.md
-[6]: /coming_soon.md
-[7]: /coming_soon.md
+[1]: /tech/key_entities/signer.md
+[3]: https://tokend.gitlab.io/docs/#fees
+[4]: /tech/operations/payment.md

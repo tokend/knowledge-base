@@ -99,12 +99,9 @@ After the `Asset Manager` approved the Bob's bananas, he is able to start distri
 Bob will have to update his request so the procedure repeats.
 
 [1]: /tech/key_entities/accounts.md#account-type
-[2]: /coming_soon.md
+[2]: /tech/guides/kyc.md
 [3]: /tech/requests/request_asset.md
-[4]: /coming_soon.md
+[4]: /tech/key_entities/signer.md
 [5]: /tech/requests/review.md
 [6]: https://tokend.gitlab.io/docs/#reviewable-requests
-[7]: /tech/requests/intro.md
-
-<!--2: kyc-->
-<!--4: Master signers-->
+[7]: /tech/requests/request_asset.md

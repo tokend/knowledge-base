@@ -11,12 +11,9 @@
     * [Atomic Swaps](features/atomic_swaps.md)
     * [Platform customization and Application development](features/customization.md)
     * [System Requirements](features/sys_requirements.md)
-    * [Fees Management](coming_soon.md)
-    * [Limits Management](coming_soon.md)
     * [AML Alerts](features/aml_alerts.md)
 * Technical Details
     * [Security](tech/security.md)
-    * [Consensus](coming_soon.md)
     * [XDR](tech/xdr.md)
     * Key entities
         * [Account](tech/key_entities/accounts.md)
@@ -59,9 +56,7 @@
 * Dev Tools:
         * [Web client reference implementation](https://github.com/tokend/client-scaffold)
         * [JS SDK](https://github.com/tokend/js-sdk)
-        * Golang SDK
-        * iOS wallet reference implementation
-        * Android reference implementation
+        * [Android reference implementation](https://android-wallet.readthedocs.io/en/latest/wallet/account/)
 
 
 

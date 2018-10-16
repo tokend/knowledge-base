@@ -19,7 +19,7 @@ In addition, the TokenD API server generally exposes the most important parts of
 they are easier to parse if you are not using an SDK. The XDR data is still included (encoded as a base64 string) 
 inside the JSON in case you need direct access to it.
 
-In most cases, when building client-side part of an application, you'll need only the values of [XDR enums][2] 
+In most cases, when building client-side part of an application, you'll need only the values of XDR enums
 that are exposed by javascript SDK's.
 
 ## Examples
