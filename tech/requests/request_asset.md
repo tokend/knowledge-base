@@ -186,5 +186,5 @@ const operation = base.ManageAssetBuilder.changeAssetPreIssuer({
 | INVALID_DETAILS                        |  -12 | Details must be a valid JSON string. If you see this error, it's probably a bug in js-sdk code that serializes the object |
 
 
-[1]: /tech/requestset_update.md
-[2]: /tech/requestset_creation.md
+[1]: /tech/requests/review_asset_creation.md
+[2]: /tech/requests/review_asset_update.md
