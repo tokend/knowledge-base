@@ -4,7 +4,7 @@ Accounts are the central data structure in TokenD. Accounts are identified by
 a public key and saved in the ledger. Everything else in the ledger, such as 
 assets, offers or KYC data, are owned by a particular account.
 
-Accounts are created with the [Create Account][1] operation.
+Accounts are created with the `Create Account` operation.
 
 Account access is controlled by public/private key cryptography. For an 
 account to perform a transaction – e.g., make a payment – the transaction must 
@@ -83,14 +83,7 @@ account, while `WITHDRAWAL` disables withdrawal operation.
 Specifies account which brought user into the system.
 
 
-<!--1. Create account-->
-<!--5. Asset creation request-->
-<!--6. Asset policies-->
-
-
-[1]: /coming_soon.md
 [2]: /tech/key_entities/signer.md
 [3]: /tech/operations/set_options.md
 [4]: /tech/key_entities/signer.md#signer-types
-[5]: /coming_soon.md
-[6]: /coming_soon.md
+[5]: /tech/requests/request_asset.md

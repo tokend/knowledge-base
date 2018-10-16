@@ -44,10 +44,6 @@ such policies:
 | REQUIRES_KYC                    | If set, all operations with asset requires all counterparties to be `general` or `syndicate` |
 | ISSUANCE_MANUAL_REVIEW_REQUIRED | If set, all [issuance requests][3] should be reviewed by specific signer |
 
-
-
-<!--1. Payment op-->
-
-[1]: /coming_soon.md
+[1]: /tech/operations/payment.md
 [2]: /tech/key_entities/accounts.md
 [3]: /tech/requests/request_issuance.md
