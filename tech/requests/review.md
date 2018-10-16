@@ -75,7 +75,7 @@ Request can not be approved until all of it's pending tasks are resolved.
 To try to make the request approved automatically, the requestor needs to create 
 request with `allTasks` set to `0`. If source hasn't provided any tasks (the `allTasks` 
 parameter is neither defined, nor being set to `0`), tasks will be taken
-from the [Key Value storage][2] by key `{request_type}_tasks:{asset code}` 
+from the [Key Value storage][key_value] by key `{request_type}_tasks:{asset code}` 
 (e.g. `issuance_tasks:BTC`);
 
 Here is the list of requests types that are currently come up with `Tasks` feature:
@@ -112,3 +112,4 @@ Here is the list of requests types that are currently come up with `Tasks` featu
 [12]: /tech/key_entities/signer.md
 [13]: https://tokend.gitlab.io/docs/#key-value-storage
 [14]: /tech/xdr.md
+[key_value]: https://tokend.gitlab.io/docs/#key-value-storage

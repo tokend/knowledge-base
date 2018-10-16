@@ -38,7 +38,7 @@ const operation = base.ReviewRequestBuilder.reviewUpdateKYCRequest({
 })
 ```
 
-git## Possible errors
+## Possible errors
 
 | Error                                | Code | Description                                                        |
 |--------------------------------------|------|--------------------------------------------------------------------|

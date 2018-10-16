@@ -158,7 +158,7 @@ left.
 [2]: /coming_soon.md
 [3]: /coming_soon.md
 [4]: /coming_soon.md
-[5]: /coming_soon.md
+[5]: /tech/operations/manage_offer.md
 
 <!--1. Master Signers-->
 <!--2. Asset pairs-->

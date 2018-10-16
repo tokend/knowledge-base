@@ -22,7 +22,7 @@ Here is the list of all existing signer types at the moment:
 | DIRECT_DEBIT_OPERATOR                   | 8          | Perform direct debit operation
 | ASSET_MANAGER                           | 16         | Create [assets][2], create [asset pairs][3] and update policies, set [fees][4]
 | ASSET_RATE_MANAGER                      | 32         | Set physical asset price
-| BALANCE_MANAGER                         | 64         | Create [balances][4], spend assets from balances
+| BALANCE_MANAGER                         | 64         | Create [balances][5], spend assets from balances
 | ISSUANCE_MANAGER                        | 128        | Make preissuance request
 | INVOICE_MANAGER                         | 256        | Create payment requests to other accounts
 | PAYMENT_OPERATOR                        | 512        | Review payment requests
@@ -56,8 +56,8 @@ Here is the list of all existing signer types at the moment:
 <!--6. Limits-->
 
 [1]: /tech/key_entities/accounts.md
-[2]: /coming_soon.md
-[3]: /coming_soon.md
-[4]: /coming_soon.md
-[5]: /coming_soon.md
+[2]: /tech/key_entities/asset.md
+[3]: /tech/guides/trading.md#asset-pairs
+[4]: /tech/operations/set_fees.md
+[5]: /tech/operations/manage_balance.md
 [6]: /coming_soon.md

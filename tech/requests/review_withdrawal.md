@@ -2,7 +2,7 @@
 
 This operation allows review `withdrawal request`.
 
-__Note__: Review withdrawal request is the final operation to perform withdraw.
+> __Note__: Review withdrawal request is the final operation to perform withdraw.
 
 ## Source account details
 

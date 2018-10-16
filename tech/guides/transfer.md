@@ -120,8 +120,7 @@ function sendTokens () {
 
 [1]: /coming_soon.md
 [2]: /coming_soon.md
-[3]: /coming_soon.md
-[4]: /coming_soon.md
-[5]: /coming_soon.md
+[3]: https://tokend.gitlab.io/docs/#fees
+[4]: /tech/operations/payment.md
+[5]: /tech/operations/payment.md
 [6]: /coming_soon.md
-[7]: /coming_soon.md

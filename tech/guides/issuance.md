@@ -15,7 +15,7 @@ example, if Bob want to issue the `BNN` token to the Alice's account and
 Alice doesn't have the `BNN` balance, Bob won't be able to perform the 
 issuance. If Alice knows about Bob's token and is agreed to hold it, 
 she should create the `BNN` balance first. To do this, 
-Alice needs to perform such operation: 
+Alice needs to perform [balance creation operation][manage_balance_op]: 
 
 ```javascript
 async function createBalance () {
@@ -32,7 +32,7 @@ async function createBalance () {
 After this, Bob can obtain Alice's `BNN` balance ID and issue tokens to her.
 
 > *Note:* The `ManageBalance` operation can be performed not only by Alice 
-but by master signer who has the `BALANCE_MANAGER` policy. 
+but by master signer who has the [`BALANCE_MANAGER`][signer_types] policy. 
 
 ## Issue tokens to specific balance
 
@@ -55,8 +55,10 @@ Let's consider `BNN` token currently has such state:
 
 We can see here it's `available_for_issuance` field, which tells us how much 
 tokens can still be issued. So, Bob wants to issue to Alice `100` tokens. We 
-can see that currently available `500` Banana tokens, so all Bob needs to do is 
-to perform such operation:
+can see that currently available `500` Banana tokens, so all Bob can go on.
+At first he needs to get Alice's BNN balance [by her account ID][get_account_balances] 
+while account ID can be [obtained by email][get_account_by_email].
+All Bob needs to do now is to perform such operation:
 
 ```javascript
 async function performIssuance () {
@@ -74,9 +76,8 @@ async function performIssuance () {
 }
 ```
 
-TODO: HOW TO FIND BALANCE BY ACCOUNT ID  
-TODO: HOW TO FIND BALANCE BY EMAIL
+[manage_balance_op]: /tech/operations/manage_balance.md
+[signer_types]: /tech/key_entities/signer.md#signer-types
+[get_account_balances]: https://tokend.gitlab.io/docs/#get-account-balances
+[get_account_by_email]: https://tokend.gitlab.io/docs/#get-account-id-by-email
 
-[token_creation](/tech/guides/create_token.md)
-[reviewable_requests](/tech/requests/intro.md)
-[signer_types](/tech/key_entities/signer.md)
