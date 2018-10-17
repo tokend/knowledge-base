@@ -155,8 +155,8 @@ matched with Alice's offer. Now John is got 2 Bananas, Alice got 6 Apples and sh
 left.
 
 [1]: /tech/key_entities/signer.md
-[2]: /coming_soon.md
-[3]: /coming_soon.md
+[2]: /tech/key_entities/asset_pair.md
+[3]: /tech/key_entities/asset_pair.md#policies
 [4]: /coming_soon.md
 [5]: /tech/operations/manage_offer.md
 

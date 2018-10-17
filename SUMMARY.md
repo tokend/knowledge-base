@@ -18,6 +18,7 @@
     * Key entities
         * [Account](tech/key_entities/accounts.md)
         * [Asset](tech/key_entities/asset.md)
+        * [Asset pair](tech/key_entities/asset_pair.md)
         * [Signer](tech/key_entities/signer.md)
         * [Wallet](tech/key_entities/wallet.md)
         * [Transaction](tech/key_entities/transaction.md)
