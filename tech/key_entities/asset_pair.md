@@ -14,9 +14,9 @@ price = quote/base
 
 ## Policies
 
-*Asset pair policies* it the properties of asset that define it's behaviour. 
+*Asset pair policies* it the properties of the pair that define it's behaviour. 
 You can think of them as a configuration of the pair. At this time TokenD 
-assets may have such policies:
+asset pairs may have such policies:
 
 | Name                        | Description |
 |-----------------------------|-------------|
