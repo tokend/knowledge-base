@@ -55,9 +55,7 @@
     * Other
         * [Participants](tech/other/participants.md)        
 * Dev Tools:
-        * [Web client reference implementation](https://github.com/tokend/client-scaffold)
-        * [JS SDK](https://github.com/tokend/js-sdk)
-        * [Android reference implementation](https://android-wallet.readthedocs.io/en/latest/wallet/account/)
-
-
-
+    * [Web client reference implementation](https://github.com/tokend/client-scaffold)
+    * [JS SDK](https://github.com/tokend/js-sdk)
+    * [Android client reference implementation](https://github.com/tokend/android-client)
+    * [Kotlin SDK](https://github.com/tokend/kotlin-sdk)
