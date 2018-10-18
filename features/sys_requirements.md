@@ -1,6 +1,6 @@
 # System Requirements
 
-TokenD is a highly modular system built using the microservices architecture. Such approach used on top of FBA ensures high level of scalability and fault tolerance. The table below specifies software and hardware requirements for the TokenD system.
+TokenD is a highly modular system built using the microservices architecture. Such an approach used on top of FBA ensures high level of scalability and fault tolerance. The table below specifies software and hardware requirements for the TokenD system.
 
 |vCPU number|RAM(GiB)|Purpose|Required number|Additional requirements|
 |:----:|:--:|:-----:|:--:|:--:|
