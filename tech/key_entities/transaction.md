@@ -1,10 +1,10 @@
 # Transaction
 
-Transactions are the commands to modify the TokenD's ledger state. All 
+Transaction is joined sequence of commands (operations) to modify the TokenD's ledger state. All 
 actions in the TokenD network can be represented by corresponding transactions.
 For example, transactions are used to send payments, manage orders, change
 account settings and etc. If you think of the ledger as a database, then 
-transactions are SQL commands.
+operations are SQL commands and transactions are database transactions.
 
 ## Transaction attributes
 
