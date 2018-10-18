@@ -12,7 +12,7 @@
     * [Platform customization and Application development](features/customization.md)
     * [System Requirements](features/sys_requirements.md)
     * [AML Alerts](features/aml_alerts.md)
-* Technical Details
+* [Technical Details](tech/guides/intro.md)
     * [Security](tech/security.md)
     * [XDR](tech/xdr.md)
     * Key entities
