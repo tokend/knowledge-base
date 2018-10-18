@@ -12,7 +12,17 @@
     * [Platform customization and Application development](features/customization.md)
     * [System Requirements](features/sys_requirements.md)
     * [AML Alerts](features/aml_alerts.md)
-* [Technical Details](tech/guides/intro.md)
+* Guides
+    * [Introduction](tech/guides/intro.md)
+    * [Sign up](tech/guides/sign_up.md)
+    * [Sign in](tech/guides/sign_in.md)
+    * [Password change / Recovery](tech/guides/password_change_recovery.md)
+    * [KYC identification](tech/guides/kyc.md)
+    * [Create your first token](tech/guides/create_token.md)
+    * [Issuance](tech/guides/issuance.md)
+    * [Transfers](tech/guides/transfer.md)
+    * [Trading](tech/guides/trading.md)
+* Technical Details
     * [Security](tech/security.md)
     * [XDR](tech/xdr.md)
     * Key entities
@@ -23,16 +33,6 @@
         * [Wallet](tech/key_entities/wallet.md)
         * [Transaction](tech/key_entities/transaction.md)
         * [Operation](tech/key_entities/operation.md)
-    * Guides
-        * [Introduction](tech/guides/intro.md)
-        * [Sign up](tech/guides/sign_up.md)
-        * [Sign in](tech/guides/sign_in.md)
-        * [Password change / Recovery](tech/guides/password_change_recovery.md)
-        * [KYC identification](tech/guides/kyc.md)
-        * [Create your first token](tech/guides/create_token.md)
-        * [Issuance](tech/guides/issuance.md)
-        * [Transfers](tech/guides/transfer.md)
-        * [Trading](tech/guides/trading.md)
     * Operations
         * [Manage Balance](tech/operations/manage_balance.md)
         * [Manage Offer](tech/operations/manage_offer.md)
