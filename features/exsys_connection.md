@@ -1,8 +1,19 @@
 # External Systems Interconnection
 
-TokenD provides a consistent sequence of all operations occurring in the system. It can be used to easily integrate various sets of event tracking tools, CRMs, ERPs, and SCMs. Each operation also includes a set of changes applied to the ledger. They allow to easily calculate a partial state of the ledger at a specific moment in time. It can be used by the off-chain applications to calculate interest or demurrage, and perform real-time audit.
+TokenD provides a consistent sequence of all operations occurring in the system.
+It can be used to easily integrate various sets of event tracking tools, CRMs, 
+ERPs, and SCMs. Each operation also includes a set of changes applied to the 
+ledger. They allow to easily calculate a partial state of the ledger at a 
+specific moment in time. It can be used by the off-chain applications to 
+calculate interest or demurrage, and perform real-time audit.
 
-What is more, TokenD system has convenient methods to integrate external payment systems (Core Banking, Fiat Payment Gateways, Cryptocurrency Networks). TokenD on the blockchain level ensures that there is no double spending on withdrawal and each issuance operation corresponds to one deposit operation in the external system. Reference implementation of integrations with popular cryptocurrencies and fiat payment processors and intuitive REST API will significantly reduce the time needed for custom integration.
+What is more, TokenD system has convenient methods to integrate external 
+payment systems (Core Banking, Fiat Payment Gateways, Cryptocurrency Networks). 
+TokenD on the blockchain level ensures that there is no double spending on 
+withdrawal and each issuance operation corresponds to one deposit operation 
+in the external system. Reference implementation of integrations with popular 
+cryptocurrencies and fiat payment processors and intuitive REST API will 
+significantly reduce the time needed for custom integration.
 
 ## General Deposit Flow
 
@@ -15,8 +26,12 @@ High level description of deposit flow. For more details see:
 ### Preparations
 
 1. Admin of the system have created token which represents asset from external system;
-1. Admin of the system have assigned specific `external system ID`. Which will be used to link asset in the TokenD system and external system asset; For more details on how to perform this step see `MANAGE_ASSET`
-1. Admin of the system generates set of address (identifiers) of the external system, which will allow automated module to link transfer performed in external system to user account in TokenD system;
+1. Admin of the system have assigned specific `external system ID`. Which will 
+be used to link asset in the TokenD system and external system asset; For more 
+details on how to perform this step see `MANAGE_ASSET`
+1. Admin of the system generates set of address (identifiers) of the external 
+system, which will allow automated module to link transfer performed in 
+external system to user account in TokenD system;
 1. Admin submits set of generated address to the core of the system with `external system ID` selected on second step using operation `MANAGE_EXTERNAL_SYSTEM_ACCOUNT_ID_POOL_ENTRY`
 1. Admin specifies expiration period of the external system account id using operation [MANAGE_KEY_VALUE](tech/manage_key_value.md)
 
