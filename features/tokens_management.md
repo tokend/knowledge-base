@@ -1,71 +1,36 @@
-# Tokens Management
+# Advanced token management
 
-TokenD system can be used to track track, hold, and transfer any type of asset: dollars, euros, bitcoin, stocks, gold, and other tokens of value. Any asset on the network can be traded and exchanged with any other. What is more, TokenD supports system tokens created by admin of the system (signer of `MASTER` account) and user tokens created by accounts with type `SYNDICATE`. Each user token requires approval from the admin of the system to be created. It's possible to define custom rules for each tokens:
+TokenD system can be used to track, hold, and transfer any type of asset: 
+dollars, euros, bitcoin, stocks, gold, and other tokens of value. Any asset on 
+the network can be traded and exchanged with any other. What is more, TokenD 
+supports system tokens created by the admin of the system and user tokens 
+created by trusted users. By trusted we mean that such user token passed the KYC
+verification procedure and is considered verified.
 
-* should it be transferable;
-* exchangeable with certain tokens;
-* does user needs to complete KYC to be able to hold the token;
-* what limitations for withdrawals, transfers or holdings should be applied;
-* what king of fees should be applied for operations with that token.
+TokenD system provides easy methods to issue tokens, which can be used to 
+distributed the token or, in case of integration with external system token, 
+manually or automatically process deposit operations. To be able to perform 
+issuance of certain amount of tokens `available_for_issuance` must be equal or 
+greater then that amount.
 
-## Token Creation Operation
+To ensure high level of security TokenD allows tokens issuers to easily 
+manage amount of tokens available for issuance in the system.
 
-* **code** &mdash; unique identifier of the token;
-* **preissuedAssetSigner** &mdash; public key of the key pair which is allowed to authorize certain amount of tokens to be available for issuance. This key is only specified on asset creation; signers of the owner of the token are not able to change it.
-* **maxIssuanceAmount** &mdash; maximum amount of tokens to be available in the system.
-* **initialPreissuedAmount** &mdash; amount of tokens available for issuance right after creation of the token.
-* **policies** &mdash; defines the rules of turnover of the token. (Can be update after creation). Following policies are available is the system:
-    * TRANSFERABLE &mdash; can be transferred between accounts able to hold this token.
-    * BASE_ASSET &mdash; one creation of new account balance for such token will be created automatically.
-    * WITHDRAWABLE  &mdash; allows to create withdrawal request.
-    * REQUIRES_KYC  &mdash; only accounts with type `GENERAL` or `SYNDICATE` are allowed to hold such token.
-    * ISSUANCE_MANUAL_REVIEW_REQUIRED &mdash; issuance of such token requires additional confirmation from the admin.
-    * REQUIRES_VERIFICATION  &mdash; only accounts with type `VERIFIED`, `GENERAL` or `SYNDICATE` are allowed to hold such token.
-* **details** &mdash; json object. Can be used to store any additional information for the token. (Can be update after creation).
+So, to summarize, with TokenD your users will be able to do such actions with tokens:
 
-Example of created token
-
-```json
-{
-   "code":"BTC",
-   "owner":"GA4CZMOLWKO6RBKT77V2W4JGKVKYHSUAATVDJYPUYVGTYQ7BLTVH5CBP",
-   "available_for_issuance":"999997769.920000",
-   "preissued_asset_signer":"GBZHP5662QGSAQITTND2VRMMEH5LCTUMGKQWZGG2BJ54IKWXVVTBT2HD",
-   "max_issuance_amount":"1000000000.000000",
-   "issued":"2230.080000",
-   "pending_issuance":"0.000000",
-   "policy":27,
-   "policies":[
-      {
-         "name":"AssetPolicyTransferable",
-         "value":1
-      },
-      {
-         "name":"AssetPolicyBaseAsset",
-         "value":2
-      },
-      {
-         "name":"AssetPolicyWithdrawable",
-         "value":8
-      },
-      {
-         "name":"AssetPolicyTwoStepWithdrawal",
-         "value":16
-      }
-   ],
-   "details":{
-      "external_system_type":"",
-      "logo":{
-         "key":"dpurgh4infnubjhcost7fvpl45vrj3ctszl7z7kqnjk2eyf346b3s6xi",
-         "name":"Bitcoin.png",
-         "type":"image/png"
-      },
-      "name":"BTC",
-      "terms":{
-         "key":"",
-         "name":"",
-         "type":""
-      }
-   }
-}
-```
+* Issue and distribute tokens within a few API calls.
+* Easily manage risks by using offline application for pre-authorization of a 
+certain amount of tokens to be issued.
+* Interconnect your token with the tokens from external systems like ERC20 
+tokens in the Ethereum Network or Stellar Tokens.
+* Define and change the properties of the token in a few API calls: 
+    * should the token be fungible or non-fungible;
+    * should a user initially complete KYC process before holding the tokens;
+    * should the token be transferable or tradeable;
+    * should the token be divisible or indivisible. 
+* Integrate your existing system using REST API to process withdrawal or 
+redemption requests.
+* Define the limits on holdings and transfers to be compliant with regulations.
+* Define the fee rules for the specific account and account type for various 
+range of operations.
+* Securely exchange tokens with assets from external systems using atomic swaps.
