@@ -10,7 +10,7 @@
     * [Atomic swaps](features/atomic_swaps.md)
     * [Platform customization and application development](features/customization.md)
     * [System requirements](features/sys_requirements.md)
-    * [AML alerts](features/aml_alerts.md)
+    * [Anti-mo](features/aml_alerts.md)
 * Guides
     * [Introduction](tech/guides/intro.md)
     * [Sign up](tech/guides/sign_up.md)
