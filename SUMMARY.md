@@ -4,7 +4,6 @@
 * [Architecture Overview](architecture.md)
 * Platform Features
     * [Advanced token management](features/tokens_management.md)
-    * [Tokens issuance](features/tokens_issuance.md)
     * [External systems interconnection](features/exsys_connection.md)
     * [DEX](features/dex.md)
     * [Know your customer](features/kyc.md)
