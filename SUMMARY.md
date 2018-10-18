@@ -10,7 +10,6 @@
     * [Atomic swaps](features/atomic_swaps.md)
     * [Platform customization and application development](features/customization.md)
     * [System requirements](features/sys_requirements.md)
-    * [Anti-mo](features/aml_alerts.md)
 * Guides
     * [Introduction](tech/guides/intro.md)
     * [Sign up](tech/guides/sign_up.md)
@@ -52,6 +51,7 @@
         * [Review (Pre issuance)](tech/requests/review_pre_issuance.md)
         * [Review (Withdrawal)](tech/requests/review_withdrawal.md)
     * Other
+        * [Anti-money laundering](features/aml_alerts.md)
         * [Participants](tech/other/participants.md)        
 * Dev Tools:
     * [Web client reference implementation](https://github.com/tokend/client-scaffold)
