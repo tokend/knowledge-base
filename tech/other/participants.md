@@ -1,23 +1,22 @@
 # Participants
 
-## Manage offer
+## Managing offers
 
-Despite the fact manage offer operation is quite flexible, we need a way to somehow define all matches that was covered
-by on `Manage offer` operation. 
+Despite that manage offer operation is quite flexible, we need a way to somehow define all matches that were covered
+by one `Manage offer` operation. 
 
 
 ### Who is who
 
-Let's consider such example: Bob and Alice want to trade their `ETH` tokens for `BTC` tokens. We have an order book
+Let's consider such example: Bob and Alice want to trade their `ETH` tokens for `BTC` tokens. We have an order book,
 where base asset is `ETH` and quote is `BTC`. They both have made such offers: Bob is selling 1 `ETH` with 
-price equal to 0.3 `BTC` and Alice is selling 1 `ETH` with price equal to 0.2 `BTC`. There is no opposite offers, 
+price equal to 0.3 `BTC` and Alice is selling 1 `ETH` with price equal to 0.2 `BTC`. There are no opposite offers, 
 so Bob and Alice should wait until somebody will come and fulfill their offers.
 
-Now John makes an offer that says he wants to buy 2 `ETH` with price `1 ETH = 0.3 BTC`. After he has created his offer,
-the system automatically matched his offer with Bob's and Alice's ones, so everybody gets what he/she want.
+Now, John makes an offer that says that he wants to buy 2 `ETH` with the price `1 ETH = 0.3 BTC`. After John created this offer, the system automatically matched John's offer with those of Bob and Alice, so everybody gets what they want.
 
-In this situation we'll have a `manage offer` operation in the ledger, that has Bob's account as a source, 
-3 participants (John, Alice and Bob), and 2 matches (John's match with Alice's offer and John's match with Bob's offer).
+In this situation, we have a `manage offer` operation in the ledger, that has Bob's account as a source, 
+3 participants (John, Alice, and Bob), and 2 matches (John's match with Alice's offer and John's match with Bob's offer).
 
 ### Detailed look
 
@@ -199,14 +198,14 @@ John's details
 }
 ```
 
-It looks a lot complicated, so let's look at this object in more detailed way:
+It looks a bit complicated, so let's look at this object in more details:
 
-Look at the root fields: `source_account`, `price`, `amount` and `is_buy`. We can make a conclusion 
+Take a look at the root fields: `source_account`, `price`, `amount`, and `is_buy`. We can make a conclusion 
 that `source_account` (we know it's John) made an offer for selling `amount` (0.2) of base asset with some 
-`price` (0.3) that is calculated in quote asset. It doesn't mean that this price will be in the result, for 
-now we just know that John made such offer.
+`price` (0.3) that is calculated in the quote asset. It doesn't mean that this price will be in the result. For 
+now, we just know that John made such an offer.
 
-Let's find all matches (that is what exactly happened to John's account) by finding John participants:
+Let's find all matches (that is, what exactly happened to John's account) by finding John's participation:
 
 ```javascript
 const johnAccountId = `GDRTADZRZQMZFGU7VKJXHFLLYNQ4IAWG74QDNPTMDP3GDI3RPHN5PGZY`
@@ -271,9 +270,9 @@ Because John's 2 balances participated in this operation, the code above will re
      
 ```
 
-However, we do only need only one participant to define what happened, because all the information they contain is
+However, we only need one participant to define what happened, because all the information they contain is
 similar. Also, when parsing `manage offer`, we know for sure that the array of `effects` will always 
-contain only 1 element. So, all the data we need about john's participation is stored in the first `effect`:
+contain only 1 element. So, all the data we need about John's participation is stored in the first `effect`:
 
 ```javascript
 const effect = johnParticipants[0].effects[0]
