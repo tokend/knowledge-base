@@ -1,21 +1,20 @@
 # Create your first token
 
-Let's suppose, Bob has a box of bananas. He now wants to create a token that 
-will represent the banana and start sharing them with everybody or even trade 
-his bananas on coconuts. Let's write the simple app that will allow Bob to
+Let's suppose, Bob has a box of bananas. He now wants to create a banana-backed token, issue a certain number of it,
+and start sharing them with everybody or even trade. Let's write the simple app that will allow Bob to
 distribute his bananas to everyone in the world.
 
-As you know, TokenD itself is a private blockchain, so not everyone is allowed 
-to mutate the ledger. For example, to be able to create tokens, your user must 
+Essentially, TokenD allows you to build a private blockchain, meanining not everyone is allowed 
+to mutate the ledger. For example, to be able to create tokens, a user must 
 pass the KYC procedure and verify that he is a trusted authority. In technical 
-terms, the account who creates the token must have 
+terms, the account managing to create its custom token must have the 
 `SYNDICATE` [account type][1].  
 
-For more technical details about KYC submission, read the [KYC docs][2]
+For more technical details about KYC procedure, see the [KYC docs][2]
 
 ## Request
 
-OK, Bob already has a `Syndicate` account and can start to create his own tokens. He is able to do this using
+OK, Bob already has a `Syndicate` account and is now able to create his custom token. He will do this the using
 [Asset Creation Request][3] operation:
 
 ```js
@@ -34,7 +33,7 @@ OK, Bob already has a `Syndicate` account and can start to create his own tokens
     }
 ```
 
-Now, Bob can see that his request is created and is waiting for admins review.
+Now, Bob's request is created and is waiting for admins review.
 
 ```json
     {
@@ -65,8 +64,7 @@ To find out more about reviewable requests, check our [Reviewable Requests docum
 
 ## Review
 
-Now the asset creation request should be reviewed. To review the asset you need to be the [master signer][4] 
-with the `ASSET_MANAGER` policy. Approving or rejecting request can be performed by [Review Request][5] operation:
+Now, a particular admin should review the asset creation request. To be able to do this, an admin should be the [master signer][4] with the `ASSET_MANAGER` right. Approving or rejecting the request can be performed by the [Review Request][5] operation:
 
 ```javascript
     function getReviewOp (action, reason) {
@@ -95,8 +93,7 @@ with the `ASSET_MANAGER` policy. Approving or rejecting request can be performed
     }
 ```
 
-After the `Asset Manager` approved the Bob's bananas, he is able to start distributing them. If the request is rejected,
-Bob will have to update his request so the procedure repeats.
+After the `Asset Manager` approved Bob's banana-backed token creation request, Bob is now able to distribute his tokens. If, however, the request is rejected, Bob will have to update it taking into consideration admin's reject reason and submit the request again.
 
 [1]: /tech/key_entities/accounts.md#account-type
 [2]: /tech/guides/kyc.md
