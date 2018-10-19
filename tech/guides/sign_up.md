@@ -1,12 +1,10 @@
 # Sign up
 
-To have full access to the platform client should create own account entity. We 
-suppose that when you reading this guide, you are familiar with [Wallets][2] 
-and took a look our [API reference][3]
+To have full access to the platform a client should create their own account entity. This guide supposes that reader is already familiar with [Wallets][2] and got acquainted with our [API reference][3].
 
-## Create wallet
+## Create a wallet
 
-First of all, you will need to create wallet. It's a quite complex process, but
+Wallet creation is a quite complex process, but
 we have encapsulated all the stuff in our javascript SDK, so all you need to
 do is: 
 
@@ -14,34 +12,32 @@ do is:
 const { wallet, recoverySeed } = await api.wallets.create('vasil@tokend.io', 'p@ssw0rd')
 ```
 
-By doing this, you're asking SDK to:
+By doing this, you ask SDK to:
 
 * Load the actual KDF parameters;
 * Generate account [Ed25519][5] keys;
-* Encrypt them using provided credentials;
+* Encrypt keys using the provided credentials;
 * Generate [recovery][4] and 2FA public keys;
 * Create new wallet entity and put it into the TokenD database.
 
-> If you don't want to use the SDK or want to get deeper into how the things work,
- see [Wallet creation][1] in the TokenD API reference
+> If you don't want to use SDK or want to get deeper into how things work,
+ see [Wallet creation][1] in the TokenD API reference,
 
-## Verify email
+## Verify an email
 
-Each wallet is bound to email address which is user to verify the wallet
-before proceeding with sign up flow (the verification may be required 
-depending on platform settings). Verification consists of submitting the token 
-received in email to the API, for details visit [API docs][6]
+Each wallet is bind to email address of the user, which is to be verified
+before proceeding with the sign up flow (whether the verification is obligatory or not depends on the platform settings). Verification implies submitting the token received in email via API (for details, see [API docs][6]).
 
 ```javascript
 const encodedActionThatCameToEmail = 'eyAic3RhdHVzIjoyMDAsImF...'
 await api.wallets.verifyEmail(encodedActionThatCameToEmail)
 ```
 
-## Create user
+## Create a user
 
-After wallet is created and verified client should [create user][8] in the API 
-database. This will also automatically trigger the creation of [account][7] with
-same identifier on the ledger. Keys generated during wallet creation is now able
+After wallet is created and verified, the client should [create user][8] in the API 
+database. This will also automatically trigger the creation of [account][7] with the
+same identifier on the ledger. Keys generated during wallet creation are now able
 to manage all the three entities.
 
 ```javascript
