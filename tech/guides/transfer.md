@@ -1,17 +1,15 @@
 # Transfers
 
-Transferring tokens between is quite simple on TokenD. You need to do just one things: check the fees and send 
-the payment operation. Here is the simple guide on how to do this.
+Transferring tokens between the accounts is actually simple. All you need to do is check the fees and send 
+the payment operation. Here is a simple guide on how to do this.
 
 ## Fees
 
-Transfers between accounts may require to pay some fees from sender as well as from recipient. All the fees can be
-defined by the [Fee manager][1].
+Token transfers between the accounts can require paying fees (both the sender and the recipient can choose to pay fees for the transfer). The fees present on the platform are defined by the admin with the [Fee manager][1] right.
 
-Fees may differ for specific accounts account types or specific amounts. To get more detailed description about how 
-to manage fees look our [Horizon][3] reference
+Admins can create custom fees, the imposition of which differ according to specific account, account type, types of operation, types of asset, specific amounts, etc. To get more detailed description about the fees management, see our [Horizon][3] reference.
 
-### Get concrete fees
+### Fees example
 
 Let's suppose Alice wants to send Jack 10 Banana Tokens. Let's check how much fees should Alice pay in this case:
 
@@ -47,10 +45,9 @@ async function getAliceFees () {
 }
 ```
 
-Here we can see that for this fee Alice will required to pay `0.1 BNN` fixed fee and `0.3` share from payment amount:
-`10 * 0.3 = 3 BNN` as a percent fee.
+Here, you can see that for this operation, Alice will have to pay a `0.1 BNN` fixed fee and the `0.3` percentage fee (of the transfer amount): `10 * 0.3 = 3 BNN` as a percent fee.
 
-Also we know that Jack may be required to pay some fees too. Let's check his fees for required amount:
+Also, Jack may be required to pay certain fees as well. Let's check his fees for the required amount:
 
 ```javascript
 async function getJackFees () {
@@ -84,12 +81,12 @@ async function getJackFees () {
 }
 ```
 
-As we see, Jack is required to pay some fees to, he will pay `0.1 BNN` as a percent fee (`10 * 0.01 = 0.1`), and,
-fortunately, `0` fixed fee.
+As you can see, Jack is required to pay a `0.1 BNN` as a percent fee (`10 * 0.01 = 0.1`), while the
+fixed fee, fortunately, is `0`.
 
-## Send tokens
+## Sending tokens
 
-Sending tokens is available through [Payment][4] operation. 
+Sending tokens is available through the [Payment][4] operations. 
 
 ```javascript
 function sendTokens () {
