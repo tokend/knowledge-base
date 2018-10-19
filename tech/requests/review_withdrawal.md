@@ -1,8 +1,8 @@
 # Review withdrawal request
 
-This operation allows review `withdrawal request`.
+This operation allows reviewing the `withdrawal request`.
 
-> __Note__: Review withdrawal request is the final operation to perform withdraw.
+> __Note__: Review the withdrawal request is the final operation to perform withdraw.
 
 ## Source account details
 
