@@ -1,10 +1,10 @@
 # Update kyc request
 
-This operation creates new or update existing `update KYC request`.
+This operation creates a new or updates the existing `update KYC request`.
 
 ## Review operation
 
-To review update kyc request, please use [Review KYC][3] operation.
+To review the update kyc request, use [Review KYC][3] operation.
 
 ## Source account details
 
@@ -19,22 +19,22 @@ To review update kyc request, please use [Review KYC][3] operation.
 | Parameter            | Type   |       Description                                             |
 |----------------------|--------|-----------------------------------------------------------------------------|
 | requestID            | uint64 | Zero to create, not zero to update existing                                 |
-| accountToUpdateKYC   | string | The ID of account, which account type will be updated                       |
-| accountTypeToSet     | string | New account type that will be set to account after request will be approved |
+| accountToUpdateKYC   | string | The ID of account, the type of which will be updated                        |
+| accountTypeToSet     | string | New account type that will be set to account after the request is approved  |
 | kycLevelToSet        | number | New KYC level of account
 | kycData              | object | Data that proves that user is allowed to update kyc
-| kycData.blob_id      | string | The identifier of [blob][1], that stores user-provided KYC data
-| allTasks             | uint64 | Tasks for kyc request, that can be set only by `KYC_SUPER_ADMIN`.
+| kycData.blob_id      | string | The identifier of [blob][1] that stores user-provided KYC data
+| allTasks             | uint64 | Tasks for the kyc request, that can be set only by `KYC_SUPER_ADMIN`.
 
 ## Tasks
 
-The KYC requests comes up with the [Tasks][4] feature. It means that every 
-request may contain set of pending tasks, that should be resolved by master.
+The KYC requests comes with the [Tasks][4] feature. It means that every 
+request may contain a set of pending tasks that should be resolved by master.
 The request may become approved only if all tasks are resolved. 
 
-To make the request approved automatically, source needs to create with 
-`allTasks` set to `0`. If source hasn't provided any tasks (the `allTasks` 
-parameter is neither defined, nor being set to `0`), tasks will be taken
+To make the request approved automatically, the source needs to create it with 
+`allTasks` set to `0`. If source has not provided any tasks (the `allTasks` 
+parameter is neither defined nor set to `0`), tasks will be taken
 from the [Key Value storage][2] by key `issuance_tasks:{asset code}` 
 (e.g. `issuance_tasks:BTC`);
 
@@ -58,12 +58,12 @@ const operation = CreateUpdateKYCRequestBuilder.createUpdateKYCRequest({
 |------------------------------------|------|---------------------------------------------------------------------------------------|
 | ACC_TO_UPDATE_DOES_NOT_EXIST       |  -1  | There is no account with such id.                                                     |
 | REQUEST_ALREADY_EXISTS             |  -2  | KYC request for such account already exists.                                          |
-| SAME_ACC_TYPE_TO_SET               |  -3  | Account type to set must be different from existing account type of account.          |
+| SAME_ACC_TYPE_TO_SET               |  -3  | Account type to set must be different from the existing account type of account.          |
 | REQUEST_DOES_NOT_EXIST             |  -4  | There is no request with such id.                                                     |
-| PENDING_REQUEST_UPDATE_NOT_ALLOWED |  -5  | Only rejected kyc requests allowed to update.                                         |
+| PENDING_REQUEST_UPDATE_NOT_ALLOWED |  -5  | Only rejected kyc requests are allowed to be updated.                                         |
 | NOT_ALLOWED_TO_UPDATE_REQUEST      |  -6  | `MASTER` cannot update kyc reviewable requests.                                       |
-| INVALID_UPDATE_KYC_REQUEST_DATA    |  -7  | Update kyc request allows update only `KYC data`.                                     |
-| INVALID_KYC_DATA                   |  -8  | `KYC data` must be represended as stringified json struct.                            |
+| INVALID_UPDATE_KYC_REQUEST_DATA    |  -7  | Update kyc request only allows to update the `KYC data`.                                     |
+| INVALID_KYC_DATA                   |  -8  | `KYC data` must be represended as a stringified json struct.                            |
 | KYC_RULE_NOT_FOUND                 |  -9  | There is no key value with rules for existing account type and `Account type to set`. |
 
 [1]: https://tokend.gitlab.io/docs/#blobs
