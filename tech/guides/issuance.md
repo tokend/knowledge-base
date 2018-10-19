@@ -4,7 +4,7 @@ One of the key advantages TokenD provides for is that users do not need to virtu
 
 Every token has its owner (creator), who defines its issuing policies. The easiest way to perform issuance is to transfer (issue) tokens directly to users' accounts (in fact, the token owner can issue tokens on their own account as well). 
 
-### T balance comes first
+### Balance comes first
 
 The issuance is performed on the balance (not the account). Therefore, Bob will not be able to issue his `BNN` tokens to Alice if she does not have the `BNN` token on her balance. If Alice is interested in Bob's `BNN` token and would like to hold it, she will have to first of all add it to her balance. To do this, Alice needs to perform the [balance creation operation][manage_balance_op]: 
 
