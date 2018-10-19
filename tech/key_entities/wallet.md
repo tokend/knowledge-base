@@ -1,15 +1,15 @@
 # Wallets
 
-`Wallet` is one of the key entities in TokenD that is used to to hold 
-encrypted user data and provide additional authentication means like 2FA and email confirmations. So, every 
-account on TokenD is related to `wallet` that store it's keys encrypted
+`Wallet` is one of the key entities in TokenD that is used to store 
+encrypted user data and provide additional authentication means such as 2FA and email confirmations. Every 
+account in TokenD is associated with the `wallet` that stores its keys encrypted
 with email and password of the real user.
 
-Wallet is identified by wallet ID derived from email and password. Wallet ID
-is actually a SHA256 HMAC of `wallet key`, which is used to decrypt account
+Wallet is identified by the wallet ID derived from email and password. Wallet ID
+is SHA256 HMAC of a `wallet key`, which is used to decrypt account
 keys. 
 
-Wallet representation in JSON looks like:
+Wallet representation in JSON looks as follows:
 
 ```json
 {
