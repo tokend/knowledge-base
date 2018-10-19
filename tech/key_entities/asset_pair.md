@@ -1,11 +1,11 @@
 # Asset pair
 
-Asset pair has such properties:
+Asset pair has the following properties:
 
-## Base, quote and price
+## Base, quote, and price
 
-Every asset pair contains 3 key fields: `base_asset`, `quote_asset` and 
-`price`. This data will be used to perform conversions between assets. 
+Every asset pair contains 3 key fields: `base_asset`, `quote_asset`, and 
+`price`. This data will be used to perform exchanges between assets. 
 The formula for such calculations is:
 
 ```javascript
@@ -14,10 +14,10 @@ price = quote/base
 
 ## Policies
 
-*Asset pair policies* it the properties of the pair that define it's behaviour. 
-You can think of them as a configuration of the pair. At this time TokenD 
-asset pairs may have such policies:
+*Asset pair policies* are the properties of the pair that define its behaviour. 
+It is a kind of configuration of the pair. Currently, TokenD 
+asset pairs have the following properties:
 
 | Name                        | Description |
 |-----------------------------|-------------|
-| TRADEABLE_SECONDARY_MARKET  | If set, it's allowed to trade asset pair on the secondary market |
+| TRADEABLE_SECONDARY_MARKET  | If set, a particular asset pair can be traded on the secondary market |
