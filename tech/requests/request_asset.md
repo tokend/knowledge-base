@@ -1,6 +1,6 @@
 # Asset management requests
 
-This operation allows such actions with the [asset](/tech/key_entities/asset.md):
+This operation allows to provide the following actions with [asset](/tech/key_entities/asset.md):
 
 - Create asset creation request;
 - Create asset update request;
@@ -10,8 +10,8 @@ This operation allows such actions with the [asset](/tech/key_entities/asset.md)
 
 ## Review operations
 
-To review asset creation request, please use [Review asset creation][1] operation.  
-To review asset update request, please use [Review asset update][2] operation.  
+To review asset creation request, use [Review asset creation][1] operation.  
+To review asset update request, use [Review asset update][2] operation.  
 
 ## Source account requirements
 
@@ -28,16 +28,16 @@ To review asset update request, please use [Review asset update][2] operation.
 Parameter                | Type       | Description                                |
 ---                      | ---        | ---                                        |
 | requestID              | uint64     | Zero to create new request, request ID - to update |
-| code                   | string     | The code of new asset, maximum 16 UTF-8 symbols |
+| code                   | string     | The code of the new asset, maximum 16 UTF-8 symbols |
 | preissuedAssetSigner   | string     | Asset preissued signer     |
-| maxIssuanceAmount      | uint64     | The maximum amount that is possible to issue  |
+| maxIssuanceAmount      | uint64     | The maximum amount possible to issue  |
 | initialPreissuedAmount | uint64     | The initial amount to be issued |
 | policies               | uint64     | Bit mask of asset policies |
 | details                | longstring | Asset details object (SDK will serialize it to JSON) |
 
 > IMPORTANT: asset code is immutable once the request is created. It means that
 if you want to update an existing `asset creation request` (NOT the asset 
-itself, asset doesn't exist at this moment) it won't be possible
+itself since asset does not exist at this moment) it won't be possible
 to update the asset code.
 
 ### Examples
@@ -174,16 +174,16 @@ const operation = base.ManageAssetBuilder.changeAssetPreIssuer({
 
 | Error                                  | Code | Description                                            |
 | ---                                    | ---  | ---                                                    |
-| REQUEST_NOT_FOUND                      |  -1  | You're trying to update request which doesn't exist.   |
-| ASSET_ALREADY_EXISTS                   |  -3  | The asset you're trying to create already exists in the system |
-| INVALID_MAX_ISSUANCE_AMOUNT            |  -4  | Max issuance amount should be greated than `0`         |
+| REQUEST_NOT_FOUND                      |  -1  | You're trying to update the request which does not exist.   |
+| ASSET_ALREADY_EXISTS                   |  -3  | The asset you are trying to create already exists in the system |
+| INVALID_MAX_ISSUANCE_AMOUNT            |  -4  | Max issuance amount should be greater than `0`         |
 | INVALID_CODE                           |  -5  | The asset code contains more than 16 UTF-8 symbols     |
 | INVALID_POLICIES                       |  -7  | Cannot validate the policies.                          |
-| ASSET_NOT_FOUND                        |  -8  | You're trying to update an asset that doesn't exist    |
-| REQUEST_ALREADY_EXISTS                 |  -9  | The request to create such asset already exists and has `pending`/`rejected` state. To create the new, fulfill the latest one (approve or reject permanently) |
-| STATS_ASSET_ALREADY_EXISTS             |  -10 | Asset with `STATS_QUOTE_ASSET` policy must be only one in the system |
-| INITIAL_PREISSUED_EXCEEDS_MAX_ISSUANCE |  -11 | Initial pre issued amount exceeds max issuance amount. |
-| INVALID_DETAILS                        |  -12 | Details must be a valid JSON string. If you see this error, it's probably a bug in js-sdk code that serializes the object |
+| ASSET_NOT_FOUND                        |  -8  | You are trying to update an asset that does not exist    |
+| REQUEST_ALREADY_EXISTS                 |  -9  | The request on the creation of such asset already exists and has a  `pending`/`rejected` state. To create the new, fulfill the latest one (approve or reject permanently) |
+| STATS_ASSET_ALREADY_EXISTS             |  -10 | In the system, there can only be one asset with the `STATS_QUOTE_ASSET` policy  |
+| INITIAL_PREISSUED_EXCEEDS_MAX_ISSUANCE |  -11 | Initial pre-issued amount exceeds max issuance amount. |
+| INVALID_DETAILS                        |  -12 | Details must be a valid JSON string. If you see this error, it is probably a bug in the js-sdk code that serializes the object |
 
 
 [1]: /tech/requests/review_asset_creation.md
