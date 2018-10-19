@@ -1,12 +1,12 @@
 # Introduction
 
-This guide sets it's goal to describe all key moment about writing client-side applications. It will include
-code examples written is Javascript so we suppose the person who is reading this guides is familiar with JS.
+The goal of this guide is to to describe the key moments about writing client-side applications. It will include
+code examples written in Javascript (so we suppose that reader is familiar with JS).
 
-All code snippets are using TokenD Javascript SDK, that facilitates client integration into TokenD 
+All code snippets use the TokenD Javascript SDK that facilitates client integration into the TokenD 
 platform. Complete reference for javascript SDK is available [here][1].
 
-To avoid code duplication, we will suppose this snippet is included into every example listed in guides: 
+In order to avoid code duplication, we suppose that this snippet is included into every example listed in subsequent guides: 
 
 ```js
     import { TokenD, base } from 'tokend-sdk'
@@ -18,7 +18,7 @@ To avoid code duplication, we will suppose this snippet is included into every e
     const xdr = base.xdr
 ```
 
-If you prefer not using the Javascript SDK, this guides may not be very helpful for and we can recommend 
+If you prefer not using the Javascript SDK, these guides may not be very helpful for you and we recommend 
 you to take a look into our [API reference][2].
 
 [1]: https://tokend.gitlab.io/new-js-sdk
