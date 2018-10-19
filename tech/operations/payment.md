@@ -49,15 +49,15 @@ Sends an amount from a source to destination Balance ID or Account ID.
 
 | Error  | Code   | Description                                                                                        |
 |--------|--------|----------------------------------------------------------------------------------------------------|
-| MALFORMED                   | -1	| Bad input. |
-| UNDERFUNDED                 | -2	| Not enough funds in source account. |
-| LINE_FULL                   | -3	| Destination would go above their limit. |
+| MALFORMED                   | -1	| Incorrect input. |
+| UNDERFUNDED                 | -2	| Not enough funds in the source account. |
+| LINE_FULL                   | -3	| Destination is above their limit. |
 | FEE_MISMATCHED              | -4	| Payment fee is not equal to expected fee. |
 | BALANCE_NOT_FOUND           | -5	| Destination balance not found. |
 | BALANCE_ACCOUNT_MISMATCHED  | -6	| There was an attempt to make payment using not your balance. |
 | BALANCE_ASSETS_MISMATCHED   | -7	| Source and destination balances have different assets. |
 | SRC_BALANCE_NOT_FOUND       | -8	| Source balance not found. |
-| REFERENCE_DUPLICATION       | -9	| The reference of the payment must be unique. But there is already a payment with this reference. |
+| REFERENCE_DUPLICATION       | -9	| There is already a payment with this reference (the reference of the payment must be unique). |
 | STATS_OVERFLOW              | -10	| Statistics overflowed by the operation. |
 | LIMITS_EXCEEDED             | -11	| The established limit on payments was exceeded. |
 | NOT_ALLOWED_BY_ASSET_POLICY | -12	| The policy of the payment asset does not allow making payments. |
