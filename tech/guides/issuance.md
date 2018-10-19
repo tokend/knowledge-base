@@ -1,21 +1,12 @@
-# Tokens issuance
+# Token issuance
 
-As you know, the key concept is that if user hold your token, he doesn't need to
-hold the actual asset it represents.
+One of the key advantages TokenD provides for is that users do not need to virtually hold the actual asset in order to possess it, they can simply buy a token backed by this asset.
 
-Every token has it's owner and he decides what the politics of issuing the 
-tokens will be. The most straight way is to perform the issuance directly to 
-someones account (it can also be the owner itself). 
+Every token has its owner (creator), who defines its issuing policies. The easiest way to perform issuance is to transfer (issue) tokens directly to users' accounts (in fact, the token owner can issue tokens on their own account as well). 
 
 ### Balance comes first
 
-To prevent spam attacks (TokenD user must be sure that he won't get unwanted 
-tokens), the issuance is performed to balance, not the account itself. So, for 
-example, if Bob want to issue the `BNN` token to the Alice's account and
-Alice doesn't have the `BNN` balance, Bob won't be able to perform the 
-issuance. If Alice knows about Bob's token and is agreed to hold it, 
-she should create the `BNN` balance first. To do this, 
-Alice needs to perform [balance creation operation][manage_balance_op]: 
+The issuance is performed on the balance (not the account). Therefore, Bob will not be able to issue his `BNN` tokens to Alice if she does not have the `BNN` token on her balance. If Alice is interested in Bob's `BNN` token and would like to hold it, she will have to first of all add it to her balance. To do this, Alice needs to perform the [balance creation operation][manage_balance_op]: 
 
 ```javascript
 async function createBalance () {
@@ -29,15 +20,15 @@ async function createBalance () {
 }
 ```
 
-After this, Bob can obtain Alice's `BNN` balance ID and issue tokens to her.
+After this, Bob will ask Alice to pass him her `BNN` balance ID, whereupon Bob can issue his `BNN` tokens to Alice.
 
-> *Note:* The `ManageBalance` operation can be performed not only by Alice 
-but by master signer who has the [`BALANCE_MANAGER`][signer_types] policy. 
+> *Note:* The `ManageBalance` operation can not only be performed by Alice 
+but by the master signer who has the [`BALANCE_MANAGER`][signer_types] right. 
 
-## Issue tokens to specific balance
+## Issue tokens to a specific balance
 
-Now all preparations are done, and bob is ready to issue the tokens to Alice. 
-Let's consider `BNN` token currently has such state:
+Now that all organizational aspects are done, Bob is ready to issue tokens to Alice. 
+Let's consider that `BNN` token has the following state and properties:
 
 ```json
 {
@@ -53,12 +44,8 @@ Let's consider `BNN` token currently has such state:
 }
 ```
 
-We can see here it's `available_for_issuance` field, which tells us how much 
-tokens can still be issued. So, Bob wants to issue to Alice `100` tokens. We 
-can see that currently available `500` Banana tokens, so all Bob can go on.
-At first he needs to get Alice's BNN balance [by her account ID][get_account_balances] 
-while account ID can be [obtained by email][get_account_by_email].
-All Bob needs to do now is to perform such operation:
+Let's say that Bob wants to issue `100` tokens to Alice. The `available_for_issuance` field, which shows how much tokens are currently available for issuance, displays `500`, meaning that Bob won't have any problems with issuing `100` tokens to Alice.
+At first, Bob needs to know Alice's BNN balance [by her account ID][get_account_balances], while the account ID can be [obtained by email][get_account_by_email]. After this, Bob will have to perform the following operation:
 
 ```javascript
 async function performIssuance () {
