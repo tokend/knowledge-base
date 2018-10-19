@@ -18,9 +18,9 @@ This operation creates new or deletes existing `update_kyc_request`.
 | requestHash     | string64                  | Hash depends on reviewable request type and details (body)            |
 | action          | xdr.ReviewRequestOpAction | One of the actions: `APPROVE`, `REJECT`, `PERMANENT_REJECT`           |
 | reason          | longstring                | The reason why request was rejected or permanent rejected             |
-| tasksToAdd      | uint32                    | Bit masks of tasks, that will be added to request pending tasks.      |
-| tasksToRemove   | uint32                    | Bit masks of tasks, that will be removed from request pending tasks.  |
-| externalDetails | string                    | String details, that will be added to request details.                |
+| tasksToAdd      | uint32                    | Bit masks of tasks that will be added to request pending tasks.      |
+| tasksToRemove   | uint32                    | Bit masks of tasks that will be removed from request pending tasks.  |
+| externalDetails | string                    | String details that will be added to request details.                |
 
 ## Examples
 
