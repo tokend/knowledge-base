@@ -140,7 +140,7 @@ async function createOfferToBuyBananas () {
 }
 ```
 
-When the account creates an offer, it is checked against the orderbook. If the created offer matches with any existing ones, it will be fulfilled at the corresponding price. Since John's offer matches with that of Alice, it will be fulfilled automatically and John will eventually have 2 bananas, while Alice will have 6 apples and her 3 remaining bananas.
+When the account creates an offer, it is checked against the orderbook. If the created offer matches with any existing ones, it will be fulfilled at the corresponding price. Since John's offer matches with that of Alice, it will be fulfilled automatically and John will eventually have 2 bananas, while Alice will have 6 apples and her 3 remaining bananas (that are still are about to be sold on secondary market).
 
 [1]: /tech/key_entities/signer.md
 [2]: /tech/key_entities/asset_pair.md
