@@ -1,19 +1,16 @@
 # How to trade your token
 
-Consider now Alice wants to sell her bananas and get some apples. TokenDs secondary market is the good way to trade 
-the tokens you hold. Let's go deeper to how does it work.
+Consider now Alice wants to sell her bananas and get some apples. One of the key benefits of the TokenD-driven platform is that it is equipped with an internal exchange. This means that users can exchange tokens issued on the platform without having to list them on any exernal exchanges. Example: Alice can buy apple-backed tokens with her banana-backed tokens (that's what the secondary market essentially is). So, let's go into the details.
 
 ## Asset pairs
 
-Asset pair is one of the key entities on TokenD. Consider we have our bananas tokens `BNN` in circulation as well as some 
-apple tokens `APL` that were created and are used by other users of our app.
+Asset pair is one of the key entities in TokenD. There again, we have our `BNN` (banana) and `APL` (apple) tokens created and issued on the platform.
 
-### Create asset pair
+### Create an asset pair
 
-First, we want to declare that `BNN` now can be somehow sold for `APL` (and vice versa) and the price is `1 BNN = 2 APL`.
-We will create an [Asset pair][2] for that by using the [ManageAssetPair][4] operation
+First of all, we need to "declare" that `BNN` can now be traded with `APL` and the price is `1 BNN = 2 APL`.
+Therefore, an admin with the `ASSET_MANAGER` right has to create an [Asset pair][2] using the [ManageAssetPair][4] operation
 
-> Only signer with `ASSET_MANAGER` policy is allowed to create/update asset pairs.
 
 ```javascript
 async function createAssetPair() {
@@ -30,8 +27,7 @@ async function createAssetPair() {
   await horizon.transactions.submitOperations(operation)
 }
 ```
-
-And if the transaction was signed by `ASSET_MANAGER` master signer, our pair should be created:
+The pair will be created once the `ASSET_MANAGER` master signer signs the transaction:
 
 ```json
 [
@@ -48,14 +44,11 @@ And if the transaction was signed by `ASSET_MANAGER` master signer, our pair sho
 ]
 ```
 
-### Make pair tradable
+### Make the pair tradable
 
-OK, now we know, that 1 Banana Token equals to 2 Apple Tokens. It's a useful information, but it doesn't mean that 
-anyone can start trading his apples for bananas right now. We must have some regulation mechanisms to prevent some
-unwanted or useless cases. For example, it's not a good idea, to trade, for example, tickets to football matches, 
-as well as lots of utility tokens. And here is where [Asset pair policies][3] are really useful.
+OK, now we know that 1 Banana Token is equal to 2 Apple Tokens. The fact is that, however, users are not yet able to trade apples for bananas. The trading pair should first have an "IsTradable" property enabled. This complementary regulatory mechanism is used to prevent unwanted or useless cases. So, this is where [Asset pair policies][3] are useful.
 
-`ASSET_MANAGER` can update `Asset Pair` policy to make it tradable by using the same [ManageAssetPair][4] operation:
+In this way, in order to make the asset pair available for trading, an admin with the `ASSET_MANAGER` right needs to update the `Asset Pair` properties using the [ManageAssetPair][4] operation:
 
 ```javascript
 async function updatePairPolicy() {
@@ -93,12 +86,11 @@ and after we have updated policy:
 ]
 ```
 
-So now all preparations are done and Alice can finally trade her bananas to get some apples.
+Alice can now trade her bananas to get some apples.
 
 ## Start trading
 
-An account can make offers to buy or sell assets using the [ManageOffer][5] operation. In order to make an offer, 
-the account must hold the asset it wants to sell. So here's how Alice can start selling her bananas for Apples:
+An account can make offers to buy or sell assets using the [ManageOffer][5] operation. Before Alice creates an offer, she has to make sure that she actually holds the asset she wants to sell. The offer creation is as follows:
 
 ```javascript
 async function createOfferToSellBananas () {
@@ -115,7 +107,7 @@ async function createOfferToSellBananas () {
 }
 ```
 
-Alice created her offer and now waits for it to be filled. 
+Alice has created her offer and is now waiting for it to be fulfilled. 
 
 ```json
 {
@@ -131,8 +123,7 @@ Alice created her offer and now waits for it to be filled.
 }
 ```
 
-Now John saw her offer and agreed to Alice's price. He now wants to get 2 Bananas from Alice. John decides to cross
-Alice's offer:
+Let's imagine that John saw her offer and agrees with the price. He now wants to get 2 Bananas.
 
 ```javascript
 async function createOfferToBuyBananas () {
@@ -149,10 +140,7 @@ async function createOfferToBuyBananas () {
 }
 ```
 
-When an account makes an offer, the offer is checked against the existing orderbook for that asset pair. If the 
-offer crosses an existing offer, it is filled at the price of the existing offer. So John's offer was automatically 
-matched with Alice's offer. Now John is got 2 Bananas, Alice got 6 Apples and she still waiting to sell her 3 Bananas
-left.
+When the account creates an offer, it is checked against the orderbook. If the created offer matches with any existing ones, it will be fulfilled at the corresponding price. Since John's offer matches with that of Alice, it will be fulfilled automatically and John will eventually have 2 bananas, while Alice will have 6 apples and her 3 remaining bananas.
 
 [1]: /tech/key_entities/signer.md
 [2]: /tech/key_entities/asset_pair.md
