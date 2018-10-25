@@ -64,12 +64,8 @@ to manage all the three entities.
 const accountId = 'GBYMMGDOS32QIMZ2HX4DYVXNFVDEE4G3IUSKNLM44MCTOFSCYRPF7KDE'
 await api.users.create(accountId) // will create both user and account
 {%- language name="Kotlin", type="kotlin" -%}
-val id = "GBYMMGDOS32QIMZ2HX4DYVXNFVDEE4G3IUSKNLM44MCTOFSCYRPF7KDE"
-
-signedApi
-    .users
-    .create(id, "not_verified")
-    .execute()
+val accountId = "GBYMMGDOS32QIMZ2HX4DYVXNFVDEE4G3IUSKNLM44MCTOFSCYRPF7KDE"
+signedApi.users.create(accountId).execute()
 {%- endcodetabs %}
 
 [1]: https://tokend.gitlab.io/docs#create-wallet
