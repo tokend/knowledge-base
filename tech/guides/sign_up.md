@@ -8,9 +8,21 @@ Wallet creation is a quite complex process, but
 we have encapsulated all the stuff in our javascript SDK, so all you need to
 do is: 
 
-```javascript
+{% codetabs name="JavaScript", type="js" -%}
 const { wallet, recoverySeed } = await api.wallets.create('vasil@tokend.io', 'p@ssw0rd')
-```
+{%- language name="Kotlin", type="kotlin" -%}
+val keyStorage = KeyStorage(api.wallets)
+
+try {
+    val (wallet, rootAccount, recoveryAccount) =
+        keyStorage.createAndSaveWallet(
+            "vasil@tokend.io", 
+            "p@ssw0rd".toCharArray()
+        )
+} catch (e: EmailAlreadyTakenException) {
+    // Email is already taken
+}
+{%- endcodetabs %}
 
 By doing this, you ask SDK to:
 
@@ -28,10 +40,18 @@ By doing this, you ask SDK to:
 Each wallet is bind to email address of the user, which is to be verified
 before proceeding with the sign up flow (whether the verification is obligatory or not depends on the platform settings). Verification implies submitting the token received in email via API (for details, see [API docs][6]).
 
-```javascript
+{% codetabs name="JavaScript", type="js" -%}
 const encodedActionThatCameToEmail = 'eyAic3RhdHVzIjoyMDAsImF...'
 await api.wallets.verifyEmail(encodedActionThatCameToEmail)
-```
+{%- language name="Kotlin", type="kotlin" -%}
+val payload = ClientRedirectPayload.fromUrl(verificationUrl)
+
+if (payload != null 
+        && payload.isSuccessful
+        && payload.type == ClientRedirectType.EMAIL_VERIFICATION) {
+    api.wallets.verify(payload).execute()
+}
+{%- endcodetabs %}
 
 ## Create a user
 
@@ -40,10 +60,17 @@ database. This will also automatically trigger the creation of [account][7] with
 same identifier on the ledger. Keys generated during wallet creation are now able
 to manage all the three entities.
 
-```javascript
+{% codetabs name="JavaScript", type="js" -%}
 const accountId = 'GBYMMGDOS32QIMZ2HX4DYVXNFVDEE4G3IUSKNLM44MCTOFSCYRPF7KDE'
 await api.users.create(accountId) // will create both user and account
-```
+{%- language name="Kotlin", type="kotlin" -%}
+val id = "GBYMMGDOS32QIMZ2HX4DYVXNFVDEE4G3IUSKNLM44MCTOFSCYRPF7KDE"
+
+signedApi
+    .users
+    .create(id, "not_verified")
+    .execute()
+{%- endcodetabs %}
 
 [1]: https://tokend.gitlab.io/docs#create-wallet
 [2]: /tech/key_entities/wallet.md
