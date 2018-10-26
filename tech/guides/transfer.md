@@ -114,6 +114,11 @@ function sendTokens () {
 }
 ```
 
+## Other platforms
+
+[<img src="https://kotlinlang.org/assets/images/favicon.ico" height="16"/> Transfers using Kotlin SDK][5]
+
 [1]: /tech/key_entities/signer.md
 [3]: https://tokend.gitlab.io/docs/#fees
 [4]: /tech/operations/payment.md
+[5]: https://github.com/tokend/kotlin-sdk/wiki/Transfers
