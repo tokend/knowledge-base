@@ -45,6 +45,10 @@ const accountId = 'GBYMMGDOS32QIMZ2HX4DYVXNFVDEE4G3IUSKNLM44MCTOFSCYRPF7KDE'
 await api.users.create(accountId) // will create both user and account
 ```
 
+## Other platforms
+
+[<img src="https://kotlinlang.org/assets/images/favicon.ico" height="16"/> Sign up using Kotlin SDK][9]
+
 [1]: https://tokend.gitlab.io/docs#create-wallet
 [2]: /tech/key_entities/wallet.md
 [3]: https://tokend.gitlab.io/docs#wallets
@@ -53,3 +57,4 @@ await api.users.create(accountId) // will create both user and account
 [6]: https://tokend.gitlab.io/docs#email-verification
 [7]: /tech/key_entities/accounts.md
 [8]: https://tokend.gitlab.io/docs#create-user
+[9]: https://github.com/tokend/kotlin-sdk/wiki/Sign-up
