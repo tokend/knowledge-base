@@ -19,7 +19,7 @@ const { wallet, recoverySeed } = await api.wallets.create('vasil@tokend.io', 'p@
 val keyStorage = KeyStorage(api.wallets)
 try {
     val (wallet, rootAccount, recoveryAccount) =
-        KeyStorage.createAndSaveWallet("vasil@tokend.io", "p@ssw0rd")
+        KeyStorage.createAndSaveWallet("vasil@tokend.io", "p@ssw0rd".toCharArray())
 } catch (e: EmailAlreadyTakenException) {
     // Email is already taken
 }
@@ -79,7 +79,6 @@ await api.users.create(accountId) // will create both user and account
 {% tab title="Kotlin" %}
 ```kotlin
 val accountId = "GBYMMGDOS32QIMZ2HX4DYVXNFVDEE4G3IUSKNLM44MCTOFSCYRPF7KDE"
-
 signedApi.users.create(accountId).execute()
 ```
 {% endtab %} {% endtabs %}
