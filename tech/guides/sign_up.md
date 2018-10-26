@@ -9,7 +9,7 @@ we have encapsulated all the stuff in our javascript SDK, so all you need to
 do is: 
 
 {% tabs %} {% tab title="JavaScript" %}
-```javascript
+```js
 const { wallet, recoverySeed } = await api.wallets.create('vasil@tokend.io', 'p@ssw0rd')
 ```
 {% endtab %}
@@ -43,10 +43,24 @@ By doing this, you ask SDK to:
 Each wallet is bind to email address of the user, which is to be verified
 before proceeding with the sign up flow (whether the verification is obligatory or not depends on the platform settings). Verification implies submitting the token received in email via API (for details, see [API docs][6]).
 
-```javascript
+{% tabs %} {% tab title="JavaScript" %}
+```js
 const encodedActionThatCameToEmail = 'eyAic3RhdHVzIjoyMDAsImF...'
 await api.wallets.verifyEmail(encodedActionThatCameToEmail)
 ```
+{% endtab %}
+
+{% tab title="Kotlin" %}
+```kotlin
+val payload = ClientRedirectPayload.fromUrl(verificationUrl)
+
+if (payload != null 
+        && payload.isSuccessful
+        && payload.type == ClientRedirectType.EMAIL_VERIFICATION) {
+    api.wallets.verify(payload).execute()
+}
+```
+{% endtab %} {% endtabs %}
 
 ## Create a user
 
@@ -55,10 +69,20 @@ database. This will also automatically trigger the creation of [account][7] with
 same identifier on the ledger. Keys generated during wallet creation are now able
 to manage all the three entities.
 
-```javascript
+{% tabs %} {% tab title="JavaScript" %}
+```js
 const accountId = 'GBYMMGDOS32QIMZ2HX4DYVXNFVDEE4G3IUSKNLM44MCTOFSCYRPF7KDE'
 await api.users.create(accountId) // will create both user and account
 ```
+{% endtab %}
+
+{% tab title="Kotlin" %}
+```kotlin
+val accountId = "GBYMMGDOS32QIMZ2HX4DYVXNFVDEE4G3IUSKNLM44MCTOFSCYRPF7KDE"
+
+signedApi.users.create(accountId).execute()
+```
+{% endtab %} {% endtabs %}
 
 ## Other platforms
 
