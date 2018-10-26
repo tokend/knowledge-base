@@ -174,25 +174,25 @@ val payRecipientFee = isPayingRecipientFee()
 // Compose an operation
 val operation = SimplePaymentOpV2(
         sourceBalanceId = sourceBalanceId,
-        destAccountId = recipientAccountId,
+        destAccountId = jackAccountId,
         amount = netParams.amountToPrecised(amount),
         subject = "Sample payment subject",
         feeData = PaymentFeeDataV2(
                 sourceFee = FeeDataV2(
-                        fixedFee = networkParams.amountToPrecised(
+                        fixedFee = netParams.amountToPrecised(
                                 aliceFee.fixed
                         ),
-                        maxPaymentFee = networkParams.amountToPrecised(
+                        maxPaymentFee = netParams.amountToPrecised(
                                 aliceFee.total
                         ),
                         feeAsset = aliceFee.asset,
                         ext = FeeDataV2.FeeDataV2Ext.EmptyVersion()
                 ),
                 destinationFee = FeeDataV2(
-                        fixedFee = networkParams.amountToPrecised(
+                        fixedFee = netParams.amountToPrecised(
                                 jackFee.fixed
                         ),
-                        maxPaymentFee = networkParams.amountToPrecised(
+                        maxPaymentFee = netParams.amountToPrecised(
                                 jackFee.total
                         ),
                         feeAsset = jackFee.asset,
