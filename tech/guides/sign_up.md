@@ -8,9 +8,24 @@ Wallet creation is a quite complex process, but
 we have encapsulated all the stuff in our javascript SDK, so all you need to
 do is: 
 
+{% tabs %} {% tab title="JavaScript" %}
 ```javascript
 const { wallet, recoverySeed } = await api.wallets.create('vasil@tokend.io', 'p@ssw0rd')
 ```
+{% endtab %}
+
+{% tab title="Kotlin" %}
+```kotlin
+val keyStorage = KeyStorage(api.wallets)
+try {
+    val (wallet, rootAccount, recoveryAccount) =
+        KeyStorage.createAndSaveWallet("vasil@tokend.io", "p@ssw0rd")
+} catch (e: EmailAlreadyTakenException) {
+    // Email is already taken
+}
+```
+{% endtab %} {% endtabs %}
+
 
 By doing this, you ask SDK to:
 
