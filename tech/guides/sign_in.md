@@ -38,6 +38,11 @@ sdk.useWallet(wallet)
 After this, SDK will automatically sign every request and operations with your 
 signing keys. Subsequently, new account is created. That means that you can provide your new user with all the TokenD functionalities.
 
+## Other platforms
+
+[<img src="https://kotlinlang.org/assets/images/favicon.ico" height="16"/> Sign in using Kotlin SDK][4]
+
 [1]: /tech/guides/sign_in.md
 [2]: /tech/key_entities/wallet.md
 [3]: https://tokend.gitlab.io/new-js-sdk/Wallet.html
+[4]: https://github.com/tokend/kotlin-sdk/wiki/Sign-in
