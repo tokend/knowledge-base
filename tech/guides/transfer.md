@@ -13,6 +13,7 @@ Admins can create custom fees, the imposition of which differ according to speci
 
 Let's suppose Alice wants to send Jack 10 Banana Tokens. Let's check how much fees should Alice pay in this case:
 
+{% tabs %} {% tab title="JavaScript" %}
 ```javascript
 async function getAliceFees () {
   const feeType = FEE_TYPES.paymentFee
@@ -28,6 +29,22 @@ async function getAliceFees () {
   console.log(fees.data)
 }
 ```
+{% endtab %}
+
+{% tab title="Kotlin" %}
+```kotlin
+val aliceFee = signedApi.fees.getByType(
+                FeeType.PAYMENT_FEE.value,
+                FeeParams(
+                        asset = "BNN",
+                        // Alice's account ID
+                        accountId = "GAMHW7REYETRP55IQMYTO5NWKEPF3LRV4F32C5KQSB32E6YPZEYYASXS",
+                        amount = BigDecimal("10"),
+                        subtype = PaymentFeeType.OUTGOING.value
+                )
+).execute().get()
+```
+{% endtab %} {% endtabs %}
 
 ```json
 {
@@ -49,6 +66,7 @@ Here, you can see that for this operation, Alice will have to pay a `0.1 BNN` fi
 
 Also, Jack may be required to pay certain fees as well. Let's check his fees for the required amount:
 
+{% tabs %} {% tab title="JavaScript" %}
 ```javascript
 async function getJackFees () {
   const feeType = FEE_TYPES.paymentFee
@@ -64,6 +82,23 @@ async function getJackFees () {
   console.log(fees.data)
 }
 ```
+{% endtab %}
+
+{% tab title="Kotlin" %}
+```kotlin
+val jackFee = signedApi.fees.getByType(
+                FeeType.PAYMENT_FEE.value,
+                FeeParams(
+                        asset = "BNN",
+                        // Jack's account ID
+                        accountId = "GBHL73YWIHZWBLFBCHEGGQZQ3WVCPW76DLO67HAITO3BXOGPLKPG7FRM",
+                        amount = BigDecimal("10"),
+                        subtype = PaymentFeeType.INCOMING.value
+                )
+).execute().get()
+```
+{% endtab %} {% endtabs %}
+
 
 ```json
 {
@@ -88,6 +123,7 @@ fixed fee, fortunately, is `0`.
 
 Sending tokens is available through the [Payment][4] operations. 
 
+{% tabs %} {% tab title="JavaScript" %}
 ```javascript
 function sendTokens () {
   const opertaion = PaymentV2Builder.paymentV2({
@@ -113,6 +149,73 @@ function sendTokens () {
   await horizon.transactions.submitOperations(operation)
 }
 ```
+{% endtab %}
+
+{% tab title="Kotlin" %}
+```kotlin
+// Get network params for transaction
+val netParams = api
+                .general
+                .getSystemInfo()
+                .execute()
+                .get()
+                .toNetworkParams()
+
+// List of user's balance can be obtained 
+// with get account by ID request
+// or with get balance details one:
+// https://tokend.gitlab.io/docs/?http#get-account-by-id
+// https://tokend.gitlab.io/docs/?http#get-account-balances-details
+val sourceBalanceId = getBalanceForAsset(asset)
+
+// User can choose to pay recipient's fee
+val payRecipientFee = isPayingRecipientFee()
+
+// Compose an operation
+val operation = SimplePaymentOpV2(
+        sourceBalanceId = sourceBalanceId,
+        destAccountId = recipientAccountId,
+        amount = netParams.amountToPrecised(amount),
+        subject = "Sample payment subject",
+        feeData = PaymentFeeDataV2(
+                sourceFee = FeeDataV2(
+                        fixedFee = networkParams.amountToPrecised(
+                                aliceFee.fixed
+                        ),
+                        maxPaymentFee = networkParams.amountToPrecised(
+                                aliceFee.total
+                        ),
+                        feeAsset = aliceFee.asset,
+                        ext = FeeDataV2.FeeDataV2Ext.EmptyVersion()
+                ),
+                destinationFee = FeeDataV2(
+                        fixedFee = networkParams.amountToPrecised(
+                                jackFee.fixed
+                        ),
+                        maxPaymentFee = networkParams.amountToPrecised(
+                                jackFee.total
+                        ),
+                        feeAsset = jackFee.asset,
+                        ext = FeeDataV2.FeeDataV2Ext.EmptyVersion()
+                ),
+                sourcePaysForDest = payRecipientFee,
+                ext = PaymentFeeDataV2.PaymentFeeDataV2Ext.EmptyVersion()
+        )
+)
+
+// Create a transaction
+val transaction =
+        TransactionBuilder(networkParams, walletInfo.accountId)
+                .addOperation(Operation.OperationBody.PaymentV2(operation))
+                .build()
+
+// Sign it with current account
+transaction.addSignature(account)
+
+// Submit the transaction
+api.transactions.submit(transaction.getEnvelope().toBase64()).execute()
+```
+{% endtab %} {% endtabs %}
 
 ## Other platforms
 
