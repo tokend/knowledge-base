@@ -19,10 +19,10 @@ To drop a signer, you have to set its `weight` to `0` using `SetOptionsOp`:
 * If signer's public key is equal to wallet's original account id, use SetOptionsOp with `masterWeight=0`
 * In other cases, use SetOptionsOp with `signer` having `weight=0` created from current signer's public key 
 
-**Important notice: drop the current signer last otherwise the transaction will fail.**
+> __Important notice__: drop the current signer last otherwise the transaction will fail.
 
 ## Recovery
-When there is no access to the current password, you have to obtain user's wallet in a special way:
+Recovery process is simply a password change, but when there is no access to the current password, you have to obtain user's wallet in a special way:
 
 1. Obtain [KDF parameters](https://tokend.gitlab.io/docs/#get-kdf-params) with `is_recovery` flag set to `true`
 2. Use recovery seed entered by the user as a password to [derive wallet ID](https://tokend.gitlab.io/docs/#wallet-id-derivation)
@@ -33,3 +33,9 @@ From the recovery wallet you can obtain original account ID to load signers for.
 Sign the transaction and wallet update request with a keypair initialized from the recovery seed.
 
 > __Important notice__: it is possible to perform a recovery before the account has been created. In this case, account signers request will return a 404 error, so all you need is, in the transaction, to add a new signer.
+
+## Other platforms
+
+[<img src="https://kotlinlang.org/assets/images/favicon.ico" height="16"/> Password change/recovery using Kotlin SDK][1]
+
+[1]: https://github.com/tokend/kotlin-sdk/wiki/Password-change-recovery
