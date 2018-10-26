@@ -1,11 +1,6 @@
-# TokenD Knowledge Base
+# General Overview
 
-TokenD is a white label platform that consolidates the experience gained by
-Distributed Lab in building the production-ready tokenization solutions. It allows you to issue,
-transfer, and exchange your assets with high level of privacy, security, and auditability while
-following regulations of your jurisdiction. TokenD is designed for enterprises who are willing to
-take advantage of tokenization or experiment with the blockchain technology without the need of
-maintaining the expensive team of blockchain experts and within the shortest time to market.
+TokenD is a white label platform that consolidates the experience gained by Distributed Lab in building the production-ready tokenization solutions. It allows you to issue, transfer, and exchange your assets with high level of privacy, security, and auditability while following regulations of your jurisdiction. TokenD is designed for enterprises who are willing to take advantage of tokenization or experiment with the blockchain technology without the need of maintaining the expensive team of blockchain experts and within the shortest time to market.
 
 ## Target Audience
 
@@ -25,3 +20,4 @@ Interaction with backbone of the network is performed in two ways: read-only req
 Auxillary modules support both read and write operations via REST API.
 
 Detailed description of modules is available [here](architecture.md).
+
