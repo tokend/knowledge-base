@@ -301,7 +301,7 @@ val johnFee = signedApi.fees.getByType(
 ```
 {% endtab %} {% endtabs %}
 
-John's creates hist offer as follows: 
+John's creates his offer as follows: 
 
 {% tabs %} {% tab title="JavaScript" %}
 ```javascript
