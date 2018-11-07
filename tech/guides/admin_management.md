@@ -15,7 +15,7 @@ On Charles's side, she should add to system new signer with Delta's **public key
 
 Identity - weights of admins with the same identities are not being summed up in case of multi-signature
 Weight - weight determines how important admin’s sign is
-Signer type - desired access policies
+Signer type - desired access policies, here's the list of [signer types](/technical-details/key-entities/signer#signer-types)
 
        async function addAdmin () {
           const signer = {
