@@ -2,7 +2,7 @@
 Let's suppose Charles is the admin of the TokenD system. The project is growing and the process of review user's requests taking a while. In order to reduce Charles' effort and time, he could share his resposibilities to assistant Delta.
 
 ## Add
-Adding new admin process starts with Delta signing up in system as admin and passing Charles his public key. After that Delta will looking forward for Charles response by submitting `getSignerById` request to server
+Adding new admin process starts with Delta signing up in system as admin and passing Charles his [public key](/technical-details/key-entities/accounts#account-id). After that Delta will looking forward for Charles response by submitting `getSignerById` request to server
 
        async function getSignerById () {
           const publicKey = 'GD7AHJHCDSQI6LVMEJEE2FTNCA2LJQZ4R64GUI3PWANSVEO4GEOWB636' // Delta's public key
