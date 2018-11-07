@@ -24,7 +24,6 @@ Every account has a set of properties that make certain impact on account rights
 
 ### Example
 
-Imagine Alice wants to delegate her KYC management responsibilities to her assistant Bob.
-Bob in order to be able to access and manage KYC data of users, needs `KYC_ACC_MANAGER` signer
-Alice can set `KYC_ACC_MANAGER` signer to Bob, thus allowing him manage kyc
-
+Imagine Charles wants to delegate his KYC management responsibilities to his assistant Delta.
+Delta in order to be able to access and manage KYC data of users, needs `KYC_ACC_MANAGER` signer
+Charles can set `KYC_ACC_MANAGER` signer to Delta, thus allowing him manage kyc
