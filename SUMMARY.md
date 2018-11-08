@@ -1,5 +1,5 @@
 # Table of contents
-
+* [Welcome](index.md)
 * [General Overview](README.md)
 * [Architecture Overview](architecture.md)
 * Platform Features
