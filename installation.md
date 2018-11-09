@@ -40,5 +40,5 @@ So now you're able to login as Alice and Bob by using `alice@mail.com` and `bob@
 
 ## Resources
 
-* [Knowledge base](https://tokend.gitbook.io/knowledge-base/)
+* [Knowledge base](https://github.com/tokend/knowledge-base)
 * [API reference](http://tokend.gitlab.io/docs)
