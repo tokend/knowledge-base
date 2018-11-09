@@ -1,7 +1,6 @@
 # Access management
-TokenD is a tokenization platform that allows you to issue, transfer and exchange your assets with high level of privacy, security and auditability while following regulations of your jurisdiction. It provides flexible, user friendly and secure functionalities for managing the full lifecycle of tokens, which allows customers to implement MVP solutions for various use cases with low customization and fastest time to market.
+TokenD is based on a permissioned blockchain that limit the parties (it can be wether another person or external service) who can transact on the blockchain and that set who can serve the network by writing new blocks into the chain.
 
-TokenD is based on a blockchain technology that describes the way of keeping the actual copies of ledger between distributed network nodes that includes description of principles of reaching an agreement between these nodes about updating the ledger information. 
 
 ### Accounts
 
@@ -24,6 +23,6 @@ Every account has a set of properties that make certain impact on account rights
 
 ### Example
 
-Imagine Charles wants to delegate his KYC management responsibilities to his assistant Delta.
-Delta in order to be able to access and manage KYC data of users, needs `KYC_ACC_MANAGER` signer
-Charles can set `KYC_ACC_MANAGER` signer to Delta, thus allowing him manage kyc
+Imagine Charlie wants to delegate his KYC management responsibilities to his assistant Dan.
+Dan in order to be able to access and manage KYC data of users, needs `KYC_ACC_MANAGER` signer
+Charlie can set `KYC_ACC_MANAGER` signer to Dan, thus allowing him manage kyc
