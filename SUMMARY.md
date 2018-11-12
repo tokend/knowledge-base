@@ -2,6 +2,7 @@
 * [Welcome](index.md)
 * [General Overview](README.md)
 * [Architecture Overview](architecture.md)
+* [Try the demo](installation.md)
 * Platform Features
     * [Advanced token management](features/tokens_management.md)
     * [External systems interconnection](features/exsys_connection.md)
