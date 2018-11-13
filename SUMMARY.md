@@ -55,6 +55,7 @@
         * [Anti-money laundering](features/aml_alerts.md)
         * [Participants](tech/other/participants.md)        
 * Dev Tools:
+    * [API reference](https://tokend.gitlab.io/docs/)
     * [Web client reference implementation](https://github.com/tokend/client-scaffold)
     * [JS SDK](https://github.com/tokend/js-sdk)
     * [Android client reference implementation](https://github.com/tokend/android-client)
