@@ -2,14 +2,7 @@
 Let's suppose Charlie is the admin of the TokenD system. The project is growing and the process of review user's requests taking a while. In order to reduce Charlie's effort and time, he could share his resposibilities to assistant Dan.
 
 ## Add
-Adding new admin process starts with Dan signing up in system as admin and passing Charlie his [public key](/technical-details/key-entities/accounts#account-id). After that Dan will looking forward for Charlie's response by submitting `getSignerById` request to server
-
-       async function getSignerById () {
-          const publicKey = 'GD7AHJHCDSQI6LVMEJEE2FTNCA2LJQZ4R64GUI3PWANSVEO4GEOWB636' // Dan's public key
-          const operation = base.ScopedServerCallBuilder.accounts().signer(masterAccountId, publicKey)
-    ​
-          await horizon.transactions.submitOperations(operation)
-        }
+Adding new admin process starts with Dan signing up in system as admin and passing Charlie his [public key](/technical-details/key-entities/accounts#account-id). 
 
 On Charlie's side, she should add to system new signer with Dan's **public key, name, identity, weight** and **signer type**
 
