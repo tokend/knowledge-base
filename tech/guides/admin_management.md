@@ -26,10 +26,25 @@ Signer type - desired access policies, here's the list of [signer types](/techni
 
 ## Remove
 
-If Dan's help will be redundant, Charlie can remove Dan by setting  **masterWeight** to **0**
+If Dan's help will be redundant, Charlie can remove Dan by setting  **identity, weight** and **signer type** to **0**
 
     async function removeAdmin () {
-         const operation = base.SetOptionsBuilder.setOptions({ masterWeight: 0 })
+        const signer = {
+            pubKey = 'GD7AHJHCDSQI6LVMEJEE2FTNCA2LJQZ4R64GUI3PWANSVEO4GEOWB636' // Dan's public key
+            weight: 0,
+            signerType: 0,
+            identity: 0
+         }
+        const source = 'GBYMMGDOS32QIMZ2HX4DYVXNFVDEE4G3IUSKNLM44MCTOFSCYRPF7KDE', // Charlie's account ID
+        const operation = base.SetOptionsBuilder.setOptions(signer, source)
     ​
           await horizon.transactions.submitOperations(operation)
+        }
+
+Else if Dan's appeared to be Master account, Charlie can remove Dan by setting  **masterWeight** to **0**
+
+    async function removeMasterAccountAdmin () {
+        const operation = base.SetOptionsBuilder.setOptions({ masterWeight: 0 })
+    ​
+        await horizon.transactions.submitOperations(operation)
         }
