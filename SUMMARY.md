@@ -21,6 +21,7 @@
     * [Issuance](tech/guides/issuance.md)
     * [Transfers](tech/guides/transfer.md)
     * [Trading](tech/guides/trading.md)
+    * [Add / Remove admin](tech/guides/admin_management.md)
 * Technical Details
     * [Security](tech/security.md)
     * [XDR](tech/xdr.md)
