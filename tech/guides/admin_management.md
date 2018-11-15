@@ -2,7 +2,7 @@
 Let's suppose Charlie is the admin of the TokenD system. The project is growing and the process of review user's requests taking a while. In order to reduce Charlie's effort and time, he could share his resposibilities to assistant Dan.
 
 ## Add
-Adding new admin process starts with Dan signing up in system as admin and passing Charlie his [public key](/technical-details/key-entities/accounts#account-id). 
+Adding new admin process starts with Dan signing up in system as admin and passing Charlie his [public key](/technical-details/key-entities/accounts#account-id).
 
 On Charlie's side, she should add to system new signer with Dan's **public key, name, identity, weight** and **signer type**
 
@@ -17,9 +17,9 @@ Signer type - desired access policies, here's the list of [signer types](/techni
             signerType: 524288, // Withdraw requests reviewer signer type
             identity: 2,
             name: 'Dan'
-        }
-         const source = 'GBYMMGDOS32QIMZ2HX4DYVXNFVDEE4G3IUSKNLM44MCTOFSCYRPF7KDE', // Charlie's account ID
-         const operation = base.SetOptionsBuilder.setOptions(signer, source)
+          }
+
+          const operation = base.SetOptionsBuilder.setOptions(signer)
     ​
           await horizon.transactions.submitOperations(operation)
         }
@@ -35,11 +35,11 @@ If Dan's help will be redundant, Charlie can remove Dan by setting  **identity, 
             signerType: 0,
             identity: 0
          }
-        const source = 'GBYMMGDOS32QIMZ2HX4DYVXNFVDEE4G3IUSKNLM44MCTOFSCYRPF7KDE', // Charlie's account ID
-        const operation = base.SetOptionsBuilder.setOptions(signer, source)
+
+        const operation = base.SetOptionsBuilder.setOptions(signer)
     ​
-          await horizon.transactions.submitOperations(operation)
-        }
+        await horizon.transactions.submitOperations(operation)
+    }
 
 Else if Dan's appeared to be Master account, Charlie can remove Dan by setting  **masterWeight** to **0**
 
@@ -47,4 +47,4 @@ Else if Dan's appeared to be Master account, Charlie can remove Dan by setting  
         const operation = base.SetOptionsBuilder.setOptions({ masterWeight: 0 })
     ​
         await horizon.transactions.submitOperations(operation)
-        }
+    }
