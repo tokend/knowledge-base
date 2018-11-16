@@ -3,6 +3,7 @@
 * [General Overview](README.md)
 * [Architecture Overview](architecture.md)
 * Platform Features
+    * [Aссess management](features/access_management.md)
     * [Advanced token management](features/tokens_management.md)
     * [External systems interconnection](features/exsys_connection.md)
     * [Distributed exchange](features/dex.md)
