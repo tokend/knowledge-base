@@ -11,8 +11,20 @@ In TokenD, we differ common user accounts (see [their types](/tech/key_entities/
 
 ### Signers
 
-*Signer type* is the list of rights: 
-   #### Public key— public key of the ed25519 key pair. Used as identifier of the signer. The secret seed from such keypair is owned only by the person/service who represents signer and is not available to the account owner.
-   #### Signer type  — the list of [types](/tech/key_entities/signer), each of them defines the set of operations signer can perform
-   #### Identity — identity of the signer. Two signatures created by two different signers with same identity are considered as one.
-   #### Weight — the weight the access level of signer. It means that signer's weight, in order to perform the operation, must be higher than the operation threshold level
+You can share the control of the account with multiple parties, by adding them as a signer to your account. The main use case for this is that the system owner can easily share the admin policies with his employees or/and some external services (for example, to process deposits/withdrawals). It is possible by adding a signer to the master account and giving the signer the specified set of properties:
+
+#### Public key
+   
+   *Public key* of the ed25519 key pair. Used as identifier of the signer. The secret seed from such keypair is owned only by the person/service who represents signer and is not available to the account owner.
+   
+#### Signer type 
+  
+  *Signer type* is summarized the list of [rights](/tech/key_entities/signer), each of them defines the set of operations signer can perform.
+  
+#### Identity 
+   
+   Two signatures created by two different signers with same identity are considered as one.
+ 
+#### Weight 
+   
+   *Weight* is the access level of signer. It means that signer's weight, in order to perform the operation, must be higher than the operation level threshold.
