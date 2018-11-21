@@ -6,7 +6,7 @@ TokenD uses the [Ed25519 algorithm](https://ed25519.cr.yp.to/) for authorizing a
 
 Request signature implementation is based on IETF HTTP Signatures draft RFC except of implicit headers parameter is not supported, clients must explicitly specify headers used for signing.
 
-The signature algorithm supported is ed25519-sha256 which uses public signer key as keyId.
+The signature algorithm supported is ed25519-sha256 which uses public signer key as `keyId`.
 
 Both Signature and Authorization HTTP authentication schemas are supported.
 
@@ -17,7 +17,7 @@ For the following request:
 ```http
 GET /users?type=2 HTTP/1.1
 Host: api.tokend.io
-Date: Sun, 05 Jan 2014 21:31:40 GMT
+Date: Sun, 05 Jan 2018 21:31:40 GMT
 ```
 
 Signing string would be:
@@ -27,10 +27,26 @@ date: Sun, 05 Jan 2018 21:31:40 GMT
 (request-target): get /users?type=2
 ```
 
-For `SCDMOOXVNMO6SA22AYUMZDIGLDJMBUTVEGB73FFNTLFJILBJWIU4NQ3D` private key gives the following signature string:
+> Notice that header names and HTTP method are lowercased.
+
+The next step is a conversion of the signing string to a byte array using `UTF-8` encoding and taking `SHA-256` hash of it.
+
+For the signing string above the hash would be:
+```text
+709c6f7bb52aa47bf8c90154bc277ff804a3f7e45d8c2d3ac1d77eafc051cfa3
+```
+
+Now you have to sign the hash with the private key and encode result in `Base64`. For `SCDMOOXVNMO6SA22AYUMZDIGLDJMBUTVEGB73FFNTLFJILBJWIU4NQ3D` private key the encoded signature would be:
 
 ```text
-keyId="GBLTOG6EJS5OWDNQNSCEAVDNMPBY6F73XZHHKR27YE5AKE23ZZEXOLBK",algorithm="ed25519-sha256",signature="0cvTqLDn+5i8pInkeSR833HrNSMI4xB9m1eN7rofiDVnoutKQJvpwB9hl2GhsMPcMbVXo4beUR96Stf/qU+iAg==",headers="date (request-target)"
+0cvTqLDn+5i8pInkeSR833HrNSMI4xB9m1eN7rofiDVnoutKQJvpwB9hl2GhsMPcMbVXo4beUR96Stf/qU+iAg==
+```
+
+The result HTTP header included to the request then would be:
+
+
+```text
+Authorization: keyId="GBLTOG6EJS5OWDNQNSCEAVDNMPBY6F73XZHHKR27YE5AKE23ZZEXOLBK",algorithm="ed25519-sha256",signature="0cvTqLDn+5i8pInkeSR833HrNSMI4xB9m1eN7rofiDVnoutKQJvpwB9hl2GhsMPcMbVXo4beUR96Stf/qU+iAg==",headers="date (request-target)"
 ```
 
 ## Transactions
