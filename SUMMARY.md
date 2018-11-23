@@ -7,7 +7,7 @@
     * [Aссess management](features/access_management.md)
     * [Advanced token management](features/tokens_management.md)
     * [External systems interconnection](features/exsys_connection.md)
-    * [Distributed exchange](features/dex.md)
+    * [Secondary markets](features/dex.md)
     * [Know your customer](features/kyc.md)
     * [Atomic swaps](features/atomic_swaps.md)
     * [Platform customization and application development](features/customization.md)
