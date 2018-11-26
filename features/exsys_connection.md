@@ -4,21 +4,17 @@ TokenD provides a consistent sequence of all operations occurring in the system.
 
 What is more, TokenD system has convenient methods to integrate external payment systems (core banking, fiat payment gateways, cryptocurrency networks). TokenD, on the blockchain level, ensures that there is no double spending on withdrawal and each issuance operation corresponds to one deposit operation in the external system. Reference implementation of integrations with popular cryptocurrencies and fiat payment processors and intuitive REST API will significantly reduce the time for custom integration.
 
-## General Deposit Flow
-
-High level description of deposit flow. For more details see:
-
-* BTC Family Flow
-* ETH Flow
-* ERC20 Flow
-
+Tokend supports the following deposit flows: BTC, DASH, ETH, ERC20
+ 
 ### Preparations
 
-1. Admin of the system created the token which represents a certain asset from external system;
-1. Admin of the system assigned a specific `external system ID`, which will be used to link asset in the TokenD system and external system asset; For more details on how to perform this step, see `MANAGE_ASSET`;
-1. Admin of the system generates a set of addresses (identifiers) of the external system, which will allow automated module to link transfer performed in external system to user account in the TokenD system;
-1. Admin submits a set of generated address to the core of the system with `external system ID` selected on second step using the `MANAGE_EXTERNAL_SYSTEM_ACCOUNT_ID_POOL_ENTRY` operation;
-1. Admin specifies the expiration period of the external system account id using the [MANAGE_KEY_VALUE] operation;(tech/manage_key_value.md)
+Assume that admin of the system did the following actions:
+
+1. Create the token which represents a certain asset from external system;
+1. Assign a specific `external system ID`, which will be used to link asset in the TokenD system and external system asset; For more details on how to perform this step, see `MANAGE_ASSET`;
+1. Generate a set of addresses (identifiers) of the external system, which will allow automated module to link transfer performed in external system to user account in the TokenD system;
+1. Submit a set of generated address to the core of the system with `external system ID` selected on second step using the `MANAGE_EXTERNAL_SYSTEM_ACCOUNT_ID_POOL_ENTRY` operation;
+1. Specify the expiration period of the external system account id using the [MANAGE_KEY_VALUE](tech/manage_key_value.md) operation;
 
 ### Flow
 
