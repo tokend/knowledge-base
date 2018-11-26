@@ -62,3 +62,5 @@
     * [JS SDK](https://github.com/tokend/js-sdk)
     * [Android client reference implementation](https://github.com/tokend/android-client)
     * [Kotlin SDK](https://github.com/tokend/kotlin-sdk)
+* Internal
+    * [Docker image replacement](internal/docker_image_replacement.md)
