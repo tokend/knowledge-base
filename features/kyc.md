@@ -1,6 +1,12 @@
 # Know Your Customer
 
-TokenD system provides a powerful set of data agnostic tools for easy implementation of custom KYC procedure based on the regulations of a specific jurisdiction. Tasks based approach allows to do various verification steps which could include manual verification as well as integration with external system which can provide sanction lists screening, documents verification, etc.
+Know your customer (alternatively know your client or 'KYC') is the process of a business verifying the identity of its clients and assessing potential risks of illegal intentions for the business relationship.
+
+TokenD system provides a powerful set of data agnostic tools for easy implementation of custom KYC procedure based on the regulations of a specific jurisdiction. 
+
+For example, Anti-Money Laundering (AML) laws requires financial institutions (FIs) to know who their customers are sending money to and who their customers are receiving money from. In some jurisdictions banks are able to trust the AML procedures of other licensed banks. 
+
+Tasks based approach allows to do various verification steps which could include manual verification as well as integration with external system which can provide sanction lists screening, documents verification, etc.
 
 Example of KYC request:
 
