@@ -15,4 +15,4 @@ For core & horizon, dont forget to add **pg-**
 
     horizon:
         image: registry.gitlab.com/tokend/horizon:pg-<revision>
-  3. > docker-compose up -d - to start environment with newly attached containers in the background 
+  4. > docker-compose up -d - to start environment with newly attached containers in the background 
