@@ -8,7 +8,7 @@
     * [Advanced token management](features/tokens_management.md)
     * [External systems interconnection](features/exsys_connection.md)
     * [Secondary markets](features/dex.md)
-    * [Know your customer](features/kyc.md)
+    * [Know your customer / AML](features/kyc.md)
     * [Atomic swaps](features/atomic_swaps.md)
     * [Platform customization and application development](features/customization.md)
     * [System requirements](features/sys_requirements.md)
@@ -23,6 +23,7 @@
     * [Transfers](tech/guides/transfer.md)
     * [Trading](tech/guides/trading.md)
     * [Add / Remove admin](tech/guides/admin_management.md)
+    * [External systems interconnection](tech/guides/external_interconnection.md)
 * Technical Details
     * [Security](tech/security.md)
     * [XDR](tech/xdr.md)
