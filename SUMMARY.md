@@ -1,6 +1,6 @@
 # Table of contents
 * [Welcome](index.md)
-* [General Overview](README.md)
+* [General Overview](general_overview.md)
 * [Architecture Overview](architecture.md)
 * [Try the demo](installation.md)
 * Platform Features
