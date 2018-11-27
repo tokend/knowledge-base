@@ -1,6 +1,6 @@
 # Know Your Customer
 
-Know your customer (alternatively know your client or 'KYC') is the process of a business verifying the identity of its clients and assessing potential risks of illegal intentions for the business relationship.
+Know your customer (KYC) is the process of a business verifying the identity of its clients and estimating potential risks of illegal intentions for the business relationship.
 
 TokenD system provides a powerful set of data agnostic tools for easy implementation of custom KYC procedure based on the regulations of a specific jurisdiction. 
 

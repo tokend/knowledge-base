@@ -6,5 +6,5 @@ Admin is able to manage if certain token pair is tradable. What is more it's als
 
 ## Crowdfunding
 
-Crowdfunding is a process of raising funds for tokens from users. The burden of investment is distributed across the participants.
-In the cryptocurrency world, crowdfunding is where the digital currency platform sells the pre-issued crypto-tokens for the platform under development in exchange for base assets. The funds raised are then used for further development of the platform. If funding fails to reach the goals, funders get their money back
+Crowdfunding is a process of raising funds for tokens from users.
+TokenD allows platforms to sell the pre-issued tokens in exchange for another tokens (usually they will represent cryptocurrencies, such as ETH, BTC, DASH) for the platform under development in exchange for base assets. If funding fails to reach the goals, funders get their money back
