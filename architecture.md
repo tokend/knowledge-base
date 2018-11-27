@@ -6,7 +6,7 @@ management, etc.; auxiliary modules, which interconnect DLT with external
 systems, store user data, etc. A detailed overview of these modules and their 
 connections is specified in Figure 2. 
 
-![Architecture of TokenD system](https://gitlab.com/tokend/diagrams/raw/master/png/ecosystem.png)
+![Architecture of TokenD system](https://gitlab.com/tokend/diagrams/raw/feature/test/png/ecosystem_a4.png)
 
 ### Node
 
