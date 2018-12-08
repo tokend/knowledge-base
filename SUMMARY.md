@@ -5,6 +5,7 @@
 * [Try the demo](installation.md)
 * Platform Features
     * [Aссess management](features/access_management.md)
+    * [Roles](features/roles.md)
     * [Advanced token management](features/tokens_management.md)
     * [External systems interconnection](features/exsys_connection.md)
     * [Distributed exchange](features/dex.md)
