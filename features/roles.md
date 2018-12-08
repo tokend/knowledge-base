@@ -7,7 +7,7 @@ In order to reduce the risk of fraud and collusion, different types of actions m
 
 ## Administrator
 
-Administrator is the main entity which defines rules of the system (if trading of certain asset pair is allowed, what is flow of deposit or withdrawal of the tokens) and grants permissions to users (are users allowed to create their own tokens, are users allowed to interact with token). From security perspective it is crucial to grant minimal rights to each administrator.
+Administrator is the main entity which defines rules of the system (if trading of certain asset pair is allowed, what is flow of deposit or withdrawal of the tokens) and grants permissions to users (are users allowed to create their own tokens, are users allowed to interact with token). To begin system operations it's enough to have only one *Super Administrator*, but as number of users and value of tokenized assets grows it is crucial to split rights among several administrators to ensure best user experience anh highest level of security.
 On technical level administrator is signer of special account type *Master* and it's possible to precisely define which actions admin can perform. Usually TokenD based solutions has following administrator types:
 
 * Super Administrator (Owner of the system) - can do all actions.
