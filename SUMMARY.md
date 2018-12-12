@@ -56,7 +56,8 @@
         * [Review (Withdrawal)](tech/requests/review_withdrawal.md)
     * Other
         * [Anti-money laundering](features/aml_alerts.md)
-        * [Participants](tech/other/participants.md)        
+        * [Participants](tech/other/participants.md)  
+        * [On-device key storage](tech/other/on_device_key_storage.md)      
 * Dev Tools:
     * [API reference](https://tokend.gitlab.io/docs/)
     * [Web client reference implementation](https://github.com/tokend/client-scaffold)
