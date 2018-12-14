@@ -10,11 +10,10 @@ To get rid of passwords key storage should be moved to the client side. Master k
 ![Auth flow sequence chart](https://docs.google.com/uc?export=download&id=1lOqTB3IQ19ULT0fiJ78qC0prYGW0baRQ "Auth flow")
 
 ## Auth URI
-Auth request can be represented by the URI with **tdauth** scheme.
+Auth request can be represented by the following URI: **tokend://auth**.
 ### General params
 |Name|Description|Value|
 |---|---|---|
-|action|Describes required action|**auth** - used to authorize public key|
 |api|API root URL|HTTP URL, urlencoded|
 
 ### Auth-specific params
@@ -26,10 +25,10 @@ Auth request can be represented by the URI with **tdauth** scheme.
 |expires_at|Access expiration date|Unix timestamp (UTC) - for a finite sessionn<br>0 - permanent access until revoked by user|
 ### Examples
 Authorize client app for a session:
-`tdauth://action=auth&api=https%3A%2F%2Fapi.testnet.tokend.org&app=TokenD+web&pubkey=GAUL...H23T&scope=268435455&expires_at=1541930400`
+`tokend://auth?api=https%3A%2F%2Fapi.testnet.tokend.org&app=TokenD+web&pubkey=GAUL...H23T&scope=268435455&expires_at=1541930400`
 
 Authorize Telegram bot for a permanent access with limited scope:
-`tdauth://action=auth&api=https%3A%2F%2Fapi.testnet.tokend.org&app=TokenD+bot&pubkey=GBQG...ZWSN&scope=4&expires_at=0`
+`tokend://auth?api=https%3A%2F%2Fapi.testnet.tokend.org&app=TokenD+bot&pubkey=GBQG...ZWSN&scope=4&expires_at=0`
 
 ## Requirements
 ### Account signer
@@ -55,9 +54,11 @@ After user made a decision the authenticator will set auth status and related wa
 `POST: /authresult/GDQN...EPAB`
 
 <pre>
-{  
-   "success":"true",
-   "wallet_id":"e1e8...4c40"
+{
+    "data": {  
+       "success":"true",
+       "wallet_id":"e1e8...4c40"
+    }
 }
 </pre>
 
