@@ -13,6 +13,7 @@
     * [Atomic swaps](features/atomic_swaps.md)
     * [Platform customization and application development](features/customization.md)
     * [System requirements](features/sys_requirements.md)
+    * [Crowdfunding](features/crowdfunding.md)
 * Guides
     * [Introduction](tech/guides/intro.md)
     * [Sign up](tech/guides/sign_up.md)
