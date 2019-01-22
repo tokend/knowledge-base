@@ -27,3 +27,7 @@ Amount of base asset to be distributed is fixed (equal to `max amount to be sold
 ## Fixed price
 
 `Base asset`/`default quote asset` price is fixed on creation step and cannot be changed (defined by `max amount to be sold` and `had cap`).  Number of tokens to be received by investor known on `check sale state` step.  `base asset`/`quote asset` price is calculated using `Base asset`/`default quote asset` and `default quote asset/quote asset`.
+
+# Notes
+
+Sale uses `asset` as source for tokens to be distributed. So to be able to create sale of `asset`, `asset` must have sufficient number of tokens available for issuance. 
