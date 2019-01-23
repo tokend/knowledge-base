@@ -213,7 +213,7 @@ val transaction =
 transaction.addSignature(account)
 
 // Submit the transaction
-api.transactions.submit(transaction.getEnvelope().toBase64()).execute()
+api.transactions.submit(transaction).execute()
 ```
 {% endtab %} {% endtabs %}
 

@@ -16,10 +16,10 @@ const { wallet, recoverySeed } = await api.wallets.create('vasil@tokend.io', 'p@
 
 {% tab title="Kotlin" %}
 ```kotlin
-val keyStorage = KeyStorage(api.wallets)
+val keyServer = KeyServer(api.wallets)
 try {
     val (wallet, rootAccount, recoveryAccount) =
-        KeyStorage.createAndSaveWallet("vasil@tokend.io", "p@ssw0rd".toCharArray())
+            keyServer.createAndSaveWallet("vasil@tokend.io", "p@ssw0rd".toCharArray())
 } catch (e: EmailAlreadyTakenException) {
     // Email is already taken
 }

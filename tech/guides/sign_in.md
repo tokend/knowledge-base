@@ -13,9 +13,9 @@ const wallet = api.wallets.get('foo@bar.com', 'p@ssw0rd')
 
 {% tab title="Kotlin" %}
 ```kotlin
-val keyStorage = KeyStorage(api.wallets)
+val keyServer = KeyServer(api.wallets)
 try {
-    val walletInfo = keyStorage.getWalletInfo(email, password)
+    val walletInfo = keyServer.getWalletInfo(email, password)
 } catch (e1: EmailNotVerifiedException) {
     // Email is not verified
 } catch (e2: InvalidCredentialsException) {
