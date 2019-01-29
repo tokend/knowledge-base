@@ -24,6 +24,29 @@ try {
     // Email is already taken
 }
 ```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+let keyServerApi: KeyServerApi = ...
+
+// WalletInfoModel can be constructed using WalletInfoBuilder or customly
+let walletInfo: WalletInfoModel = ...
+
+keyserverApi.createWallet(
+    walletInfo: walletInfo,
+    completion: { (result) in
+
+    switch result {
+
+    case .failure(let error):
+        // handle error
+
+    case .success(let walletInfoResponse):
+        // handle successful wallet creation 
+    }
+})
+```
 {% endtab %} {% endtabs %}
 
 
@@ -60,6 +83,33 @@ if (payload != null
     api.wallets.verify(payload).execute()
 }
 ```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+let keyServerApi: KeyServerApi = ... 
+
+// Identifier of wallet to be verified
+let walletId: String = ...
+
+guard let token = VerifyEmailWorker.verifyEmailTokenFrom(url: verificationUrl) else {
+    return false
+}
+
+keyServerApi.verifyEmail(
+    walletId: walletId,
+    token: token,
+    completion: { (result) in
+        
+        switch result {
+        
+        case .failure(let error):
+            // handle error
+        case .success:
+            // handle successful response
+        }
+})
+```
 {% endtab %} {% endtabs %}
 
 ## Create a user
@@ -80,6 +130,27 @@ await api.users.create(accountId) // will create both user and account
 ```kotlin
 val accountId = "GBYMMGDOS32QIMZ2HX4DYVXNFVDEE4G3IUSKNLM44MCTOFSCYRPF7KDE"
 signedApi.users.create(accountId).execute()
+```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+let usersApi: UsersApi = ...
+let accountId = "GBT3XFWQUHUTKZMI22TVTWRA7UHV2LIO2BIFNRCH3CXWPYVYPTMXMDGC"
+
+usersApi.createUser(
+    accountId: accountId,
+    completion: { result in
+
+    switch result {
+    
+    case .failure(let error):
+        // handle error
+    
+    case .success:
+        // handle successful response
+    }
+})
 ```
 {% endtab %} {% endtabs %}
 

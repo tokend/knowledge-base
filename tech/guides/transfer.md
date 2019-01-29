@@ -44,6 +44,36 @@ val aliceFee = signedApi.fees.getByType(
                 )
 ).execute().get()
 ```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+let tokenDApi: API = ...
+// Alice's account ID
+let accountId = "GAMHW7REYETRP55IQMYTO5NWKEPF3LRV4F32C5KQSB32E6YPZEYYASXS"
+let asset = "BNN"
+let feeType = FeeType(.paymentFee)
+let amount = 10
+let subtype = 1 // Outgoing
+
+tokenDApi.generalApi.requestFee(
+    accountId: accountId,
+    asset: asset,
+    feeType: feeType,
+    amount: amount,
+    subtype: subtype,
+    completion: { (result) in
+
+    switch result {
+    
+    case failed(let error):
+        // handle error
+    
+    case succeeded(let fee):
+        // handle successful response
+    }   
+})
+```
 {% endtab %} {% endtabs %}
 
 ```json
@@ -96,6 +126,36 @@ val jackFee = signedApi.fees.getByType(
                         subtype = PaymentFeeType.INCOMING.value
                 )
 ).execute().get()
+```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+let tokenDApi: API = ...
+// Jack's account ID
+let accountId = "GBHL73YWIHZWBLFBCHEGGQZQ3WVCPW76DLO67HAITO3BXOGPLKPG7FRM"
+let asset = "BNN"
+let feeType = FeeType(.paymentFee)
+let amount = 10
+let subtype = 2 // Incoming
+
+tokenDApi.generalApi.requestFee(
+    accountId: accountId,
+    asset: asset,
+    feeType: feeType,
+    amount: amount,
+    subtype: subtype,
+    completion: { (result) in
+
+    switch result {
+    
+    case failed(let error):
+        // handle error
+    
+    case succeeded(let fee):
+        // handle successful response
+    }   
+})
 ```
 {% endtab %} {% endtabs %}
 
@@ -214,6 +274,85 @@ transaction.addSignature(account)
 
 // Submit the transaction
 api.transactions.submit(transaction).execute()
+```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+
+// See `GeneralApi.requestNetworkInfo(...)`
+let networkInfo: NetworkInfoModel = ...
+
+// Initialize with Alice's data
+let sourceFee: FeeDataV2 = ...
+
+// Initialize with Jack's data
+let destinationFee : FeeDataV2 = ...
+
+let feeData: PaymentFeeDataV2 = ...
+
+// Convert according to network's precision
+let amount: UInt64 = ... 
+
+// BNN balanceId for Alice's account
+let sourceBalanceId: String = ...
+
+let transactionSender: TransactionSender = ...
+
+guard let sourceBalanceID = BalanceID(
+    base32EncodedString: sourceBalanceId,
+    expectedVersion: .balanceIdEd25519
+) else {
+    // handle error
+}
+
+guard let destinationAccountID = AccountID(
+    base32EncodedString: jacksAccountId,
+    expectedVersion: .accountIdEd25519
+) else {
+    // handle error
+}
+
+let operation = PaymentOpV2(
+    sourceBalanceID: sourceBalanceID,
+    destination: .account(destinationAccountID),
+    amount: amount,
+    feeData: feeData,
+    subject: self.descriptionCellText,
+    reference: self.sendPaymentModel.reference,
+    ext: .emptyVersion()
+)
+
+let transactionBuilder: TransactionBuilder = TransactionBuilder(
+    networkParams: networkInfo.networkParams,
+    sourceAccountId: alicesAccountId,
+    params: networkInfo.getTxBuilderParams(sendDate: Date())
+)
+
+transactionBuilder.add(
+    operationBody: .paymentV2(operation),
+    operationSourceAccount: alicesAccountId
+)
+do {
+    let transaction = try transactionBuilder.buildTransaction()
+
+    try transactionSender.sendTransaction(
+        transaction,
+        walletId: self.userDataProvider.walletId
+    ) { (result) in
+    
+        switch result {
+    
+        case .failed(let error):
+            // handle error
+            
+        case .succeeded:
+            // handle successful result
+        }
+    }
+} catch let error {
+    // handle error
+}
 ```
 {% endtab %} {% endtabs %}
 

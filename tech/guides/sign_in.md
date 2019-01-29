@@ -22,6 +22,24 @@ try {
     // Invalid credentials
 }
 ```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+keyServerApi.loginWith(
+    email: email,
+    password: password,
+    completion: { [weak self] (result) in
+        switch result {
+
+        case .success(let walletDataModel, let keyPair):
+            // handle successful log in
+
+        case .failure(let error):
+            // handle error
+        }
+})
+```
 {% endtab %} {% endtabs %}
 
 By doing this, you ask SDK to perform such actions:
@@ -64,6 +82,26 @@ System.out.println(walletInfo.secretSeed.joinToString(""))
 System.out.println(walletInfo.accountId)
 // => GAIEBMXUPSGW2J5ELJFOY6PR5IWXXJNHIJSDKTDHK76HHRNYRL2QYU4O
 ```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+// Hex-encoded wallet ID
+print(walletDataModel.walletId) 
+// => 4aadcd4eb44bb845d828c45dbd68d5d1196c3a182b08cd22f05c56fcf15b153c
+
+// Email
+print(walletDataModel.email)
+// => foo@bar.com
+
+// Seed for signing keypair
+print(Base32Check.encode(version: .seedEd25519, data: keyPair.getSeedData()))
+// => SAPSZ3ODNFYAESQEPGL72MAXFNL7RQTFBLYDD32DICJHYQNA36LGNGBN
+
+// Original account ID, NOT the account ID of signing keypair
+print(walletDataModel.accountId)
+// => GAIEBMXUPSGW2J5ELJFOY6PR5IWXXJNHIJSDKTDHK76HHRNYRL2QYU4O
+```
 {% endtab %} {% endtabs %}
 
 To start using wallet through SDK, you can do the following:
@@ -78,6 +116,22 @@ sdk.useWallet(wallet)
 ```kotlin
 val account = Account.fromSecretSeed(walletInfo.secretSeed)
 val signedApi = TokendApi(ROOT_URL, AccountRequestSigner(account))
+```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+let configuration: ApiConfiguration = ...
+let callbacks: ApiCallbacks = ...
+let network: NetworkProtocol = ...
+let requestSigner: RequestSigner = ...
+
+let api = TokenDSDK.API(
+    configuration: apiConfiguration,
+    callbacks: apiCallbacks,
+    network: network,
+    requestSigner: requestSigner
+)
 ```
 {% endtab %} {% endtabs %}
 

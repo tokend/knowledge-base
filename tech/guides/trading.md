@@ -65,7 +65,71 @@ transaction.addSignature(account)
 // Submit the transaction
 api.transactions.submit(transaction).execute()
 ```
-{% endtab %} {% endtabs %}
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+
+// See `GeneralApi.requestNetworkInfo(...)`
+let networkInfo: NetworkInfo = ...
+
+// Price with network precision
+let price: Int64 = ...
+
+// Identifier of account, from which transaction will be sent
+let accountId: String = ...
+
+// Identifier of wallet, from which transaction will be sent
+let walletId: String = ...
+
+// Compose an operation
+let operation = ManageAssetPairOp(
+    action: 0, // Create action
+    base = "BNN",
+    quote = "APL",
+    physicalPrice: price,
+    physicalPriceCorrection: 0,
+    maxPriceStep: 0,
+    policies = 0,
+    ext: .emptyVersion()
+)
+
+let transactionBuilder = TransactionBuilder(
+    networkParams: networkInfo.networkParams,
+    sourceAccountId: accountId,
+    params: networkInfo.getTxBuilderParams(sendDate: Date())
+)
+
+let transactionSender: TransactionSender = ...
+
+transactionBuilder.add(
+    operationBody: .manageAssetPair(operation),
+    operationSourceAccount: accountId
+)
+do {
+    let transaction = try transactionBuilder.buildTransaction()
+    
+    transactionSender.sendTransaction(
+        transaction,
+        walletId: walletId,
+        completion: { (result) in
+        
+        switch result {
+        
+        case .succeeded:
+            // handle successful result
+            
+        case .failed(let error):
+            // handle error
+        }
+    })
+} catch let error {
+    // handle error
+}
+})
+
+```
+​{% endtab %} {% endtabs %}
 
 The pair will be created once the `ASSET_MANAGER` master signer signs the transaction:
 
@@ -136,7 +200,57 @@ transaction.addSignature(account)
 // Submit the transaction
 api.transactions.submit(transaction).execute()
 ```
-{% endtab %} {% endtabs %}
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+// Compose an operation
+let operation = ManageAssetPairOp(
+    action: 2, // Update polices
+    base = "BNN",
+    quote = "APL",
+    physicalPrice: price,
+    physicalPriceCorrection: 0,
+    maxPriceStep: 0,
+    policies = 0,
+    ext: .emptyVersion()
+)
+
+let transactionBuilder = TransactionBuilder(
+    networkParams: networkInfo.networkParams,
+    sourceAccountId: accountId,
+    params: networkInfo.getTxBuilderParams(sendDate: Date())
+)
+
+let transactionSender: TransactionSender = ...
+
+transactionBuilder.add(
+    operationBody: .manageAssetPair(operation),
+    operationSourceAccount: accountId
+)
+do {
+    let transaction = try transactionBuilder.buildTransaction()
+    
+    transactionSender.sendTransaction(
+        transaction,
+        walletId: walletId,
+        completion: { (result) in
+    
+            switch result {
+            
+            case .succeeded:
+                // handle successful result
+            
+            case .failed(let error):
+                // handle error
+            }
+        })
+} catch let error {
+    // handle error
+}
+})
+```
+​{% endtab %} {% endtabs %}
 
 and after we have updated policy:
 
@@ -192,6 +306,28 @@ val aliceFee = signedApi.fees.getByType(
                         amount = BigDecimal("15")
                 )
 ).execute().get()
+```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+let api: API = ...
+api.generalApi.requestFee(
+    // Alice's account ID
+    accountId:"GALHS6JXCSMAGXIOCGQYYEJ7AKI3AXWXLRNNFN3EWAIQBHAN6YNRYUTK",
+    asset: "APL",
+    feeType: 1, // Offer fee
+    amount: 15,
+    completion: { (result) in
+        switch result {
+        
+        case .failed(let errors):
+            // handle error
+        
+        case .succeeded(let response):
+            // handle response
+        }
+})
 ```
 {% endtab %} {% endtabs %}
 
@@ -250,7 +386,69 @@ transaction.addSignature(account)
 // Submit the transaction
 api.transactions.submit(transaction).execute()
 ```
-{% endtab %} {% endtabs %}
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+
+// 5 with network's precision
+let baseAmount: Int64 = ...
+
+// 3 with network's precision
+let price: Int64 = ...
+
+// Fee with network precision
+let fee: Int64 = ...
+
+// Compose an operation
+let operation = ManageOfferOp(
+    // Alice's bananas balance ID
+    baseBalanceId: "BBKVOTHCUDI4X5MFYNQN7YEAJYY7OPS3HO7J3BBESPQCV23MXW7LLMKR",
+    // Alice's apples balance ID
+    quoteBalanceId: "BAEUBIHPHVI6X3PDC7HSIHVN5OUB7UU3AVTOGUOZHCRVUGPORPIIHS44",
+    // We are going to sell the base asset (Bananas here)
+    isBuy: false,
+    // Alice wants to sell 5 Bananas
+    baseAmount: baseAmount,
+    // 1 Banana: 3 Apples
+    price: price,
+    fee: fee
+)
+
+let transactionBuilder = TransactionBuilder(
+    networkParams: networkInfo.networkParams,
+    sourceAccountId: accountId,
+    params: networkInfo.getTxBuilderParams(sendDate: Date())
+)
+
+let transactionSender: TransactionSender = ...
+
+transactionBuilder.add(
+    operationBody: .manageOffer(operation),
+    operationSourceAccount: accountId
+)
+do {
+    let transaction = try transactionBuilder.buildTransaction()
+    
+    transactionSender.sendTransaction(
+        transaction,
+        walletId: walletId,
+        completion: { (result) in
+    
+        switch result {
+        
+        case .succeeded:
+            // handle successful result
+        
+        case .failed(let error):
+            // handle error
+        }
+    })
+} catch let error {
+    // handle error
+}
+```
+​{% endtab %} {% endtabs %}
 
 Alice has created her offer and is now waiting for it to be fulfilled. 
 
@@ -298,6 +496,29 @@ val johnFee = signedApi.fees.getByType(
                         amount = BigDecimal("6")
                 )
 ).execute().get()
+```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+let api: API = ...
+api.generalApi.requestFee(
+    // John's account ID
+    accountId:"GBHL73YWIHZWBLFBCHEGGQZQ3WVCPW76DLO67HAITO3BXOGPLKPG7FRM",
+    asset: "APL",
+    feeType: 1, // Offer fee
+    amount: 6,
+    completion: { (result) in
+    
+        switch result {
+        
+        case .failed(let errors):
+            // handle error
+        
+        case .succeeded(let response):
+            // handle response
+        }
+})
 ```
 {% endtab %} {% endtabs %}
 
@@ -356,7 +577,68 @@ transaction.addSignature(account)
 // Submit the transaction
 api.transactions.submit(transaction).execute()
 ```
-{% endtab %} {% endtabs %}
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+// 2 with network's precision
+let baseAmount: Int64 = ...
+
+// 3 with network's precision
+let price: Int64 = ...
+
+// Fee with network precision
+let fee: Int64 = ...
+
+// Compose an operation
+let operation = ManageOfferOp(
+    / John's bananas balance ID
+    baseBalanceId: "BCQOBAIMVNNH7RHZTD4OVSRUX2W575VUK4RUYELRHDPXSXJ5TMS2BHAV",
+    // John's apples balance ID
+    quoteBalanceId: "BD5R7UV4PAVGPGU7BWKNKTOOEV45JD4TVVZ5GESMO4TBP6JA3W2L4HMP",
+    // We are going to buy the base asset (Bananas here)
+    isBuy: true,
+    // John wants to buy 2 Bananas
+    baseAmount: baseAmount,
+    // 1 Banana: 3 Apples
+    price: price,
+    fee: fee
+)
+
+let transactionBuilder = TransactionBuilder(
+    networkParams: networkInfo.networkParams,
+    sourceAccountId: accountId,
+    params: networkInfo.getTxBuilderParams(sendDate: Date())
+)
+
+let transactionSender: TransactionSender = ...
+
+transactionBuilder.add(
+    operationBody: .manageOffer(operation),
+    operationSourceAccount: accountId
+)
+do {
+    let transaction = try transactionBuilder.buildTransaction()
+    
+    transactionSender.sendTransaction(
+        transaction,
+        walletId: walletId,
+        completion: { (result) in
+        
+            switch result {
+            
+            case .succeeded:
+                // handle successful result
+            
+            case .failed(let error):
+                // handle error
+            }
+    })
+} catch let error {
+    // handle error
+}
+```
+​{% endtab %} {% endtabs %}
 
 
 When the account creates an offer, it is checked against the orderbook. If the created offer matches with any existing ones, it will be fulfilled at the corresponding price. Since John's offer matches with that of Alice, it will be fulfilled automatically and John will eventually have 2 bananas, while Alice will have 6 apples and her 3 remaining bananas (that are still are about to be sold on secondary market).
