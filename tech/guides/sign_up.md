@@ -83,6 +83,33 @@ if (payload != null
     api.wallets.verify(payload).execute()
 }
 ```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+let keyServerApi: KeyServerApi = ... 
+
+// Identifier of wallet to be verified
+let walletId: String = ...
+
+guard let token = VerifyEmailWorker.verifyEmailTokenFrom(url: verificationUrl) else {
+    return false
+}
+
+keyServerApi.verifyEmail(
+    walletId: walletId,
+    token: token,
+    completion: { (result) in
+        
+        switch result {
+        
+        case .failure(let error):
+            // handle error
+        case .success:
+            // handle successful response
+        }
+})
+```
 {% endtab %} {% endtabs %}
 
 ## Create a user

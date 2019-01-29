@@ -497,6 +497,29 @@ val johnFee = signedApi.fees.getByType(
                 )
 ).execute().get()
 ```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+let api: API = ...
+api.generalApi.requestFee(
+    // John's account ID
+    accountId:"GBHL73YWIHZWBLFBCHEGGQZQ3WVCPW76DLO67HAITO3BXOGPLKPG7FRM",
+    asset: "APL",
+    feeType: 1, // Offer fee
+    amount: 6,
+    completion: { (result) in
+    
+        switch result {
+        
+        case .failed(let errors):
+            // handle error
+        
+        case .succeeded(let response):
+            // handle response
+        }
+})
+```
 {% endtab %} {% endtabs %}
 
 John's creates his offer as follows: 
