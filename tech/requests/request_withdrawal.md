@@ -48,7 +48,7 @@ const operation = base.CreateWithdrawRequestBuilder.createWithdrawWithAutoConver
 
 ## Tasks
 
-The issuance requests comes with the [Tasks][3] features. It means that every 
+The withdrawal requests comes with the [Tasks][3] features. It means that every 
 request may contain a set of pending tasks that should be resolved by master.
 The request may become approved only if all tasks are resolved. 
 
