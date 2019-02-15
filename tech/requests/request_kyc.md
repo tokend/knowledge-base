@@ -68,5 +68,5 @@ const operation = CreateUpdateKYCRequestBuilder.createUpdateKYCRequest({
 
 [1]: https://tokend.gitlab.io/docs/#blobs
 [2]: https://tokend.gitlab.io/docs/#key-value-storage
-[3]: /tech/requests.md
+[3]: /tech/requests/review_kyc.md
 [4]: review.md#tasks
