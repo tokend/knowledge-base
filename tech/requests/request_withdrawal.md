@@ -46,6 +46,18 @@ const operation = base.CreateWithdrawRequestBuilder.createWithdrawWithAutoConver
 })
 ```
 
+## Tasks
+
+The issuance requests comes with the [Tasks][3] features. It means that every 
+request may contain a set of pending tasks that should be resolved by master.
+The request may become approved only if all tasks are resolved. 
+
+To make the request approved automatically, source needs to create it with 
+`allTasks` set to `0`. If source hasn't provided any tasks (the `allTasks` 
+parameter is neither defined nor set to `0`), tasks will be taken
+from the [Key Value storage][2] by key `withdrawal_tasks:{asset code}` 
+(e.g. `withdrawal_tasks:BTC`, `withdrawal_tasks:*`);
+
 ## Possible errors
 
 | Error                             | Code | Description                                                                                     |
@@ -66,4 +78,6 @@ const operation = base.CreateWithdrawRequestBuilder.createWithdrawWithAutoConver
 | INVALID_PRE_CONFIRMATION_DETAILS  | -14  | Pre-confiramtion details must be empty.                                                         | 
 | LOWER_BOUND_NOT_EXCEEDED          | -15  | Amount to be withdrawn is less than the min withdrawn amount.                                       |
 
-[1]: /tech/requestshdrawal.md
+[1]: /tech/requests/review_withdrawal.md
+[2]: https://tokend.gitlab.io/docs/#key-value-storage
+[3]: review.md#tasks
