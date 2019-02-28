@@ -43,7 +43,7 @@ automatization of user identity verification.
 **_KYC Storage_** is a GDPR compliant module which stores data collected 
 during the KYC (know your customer) procedure. To access the data, a user or 
 admin needs to provide the digital signature, which is verified against 
-the most rest state of the ledger. Such an approach provides a high level of 
+the most recent state of the ledger. Such an approach provides a high level of 
 security that can be further improved with full data encryption at rest and 
 transit.
 
