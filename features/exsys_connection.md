@@ -4,33 +4,8 @@ TokenD provides a consistent sequence of all operations occurring in the system.
 
 What is more, TokenD system has convenient methods to integrate external payment systems (core banking, fiat payment gateways, cryptocurrency networks). TokenD, on the blockchain level, ensures that there is no double spending on withdrawal and each issuance operation corresponds to one deposit operation in the external system. Reference implementation of integrations with popular cryptocurrencies and fiat payment processors and intuitive REST API will significantly reduce the time for custom integration.
 
-## General Deposit Flow
-
-High level description of deposit flow. For more details see:
-
-* BTC Family Flow
-* ETH Flow
-* ERC20 Flow
-
-### Preparations
-
-1. Admin of the system created the token which represents a certain asset from external system;
-1. Admin of the system assigned a specific `external system ID`, which will be used to link asset in the TokenD system and external system asset; For more details on how to perform this step, see `MANAGE_ASSET`;
-1. Admin of the system generates a set of addresses (identifiers) of the external system, which will allow automated module to link transfer performed in external system to user account in the TokenD system;
-1. Admin submits a set of generated address to the core of the system with `external system ID` selected on second step using the `MANAGE_EXTERNAL_SYSTEM_ACCOUNT_ID_POOL_ENTRY` operation;
-1. Admin specifies the expiration period of the external system account id using the [MANAGE_KEY_VALUE] operation;(tech/manage_key_value.md)
-
-### Flow
-
-1. User binds external system account id using `BIND_EXTERNAL_SYSTEM_ACCOUNT_ID`;
-1. User initiates transfer in external system to the specified account id;
-1. Automated `deposit` module monitors the external system for new incoming transfers. If a new one is confirmed, `deposit` crafts TokenD `create issuance request` transaction with corresponding details, unique reference of the deposit and `null` tasks, signs it, and sends to the `core`;
-1. `core` creates an issuance request with default tasks taken from `KeyValue` table. Assume that the value of tasks is `DEPOSIT_VERIFY`;
-1. User is now able to see deposit operations in the TokenD system;
-1. `deposit_verify` retrieves request from the `core`, finds the corresponding transfer in the external system, ensures that they are matching, and submits the transaction that removes `DEPOSIT_VERIFY` flag to TokenD;
-1. During the transaction processing, if tasks equal to `0`, the `core` tries to fulfill the issuance request. If the issuance amount is insufficient, the `core` will set `INSUFFICIENT_AVAILABLE_FOR_ISSUANCE_AMOUNT` flag in tasks bitmask. If asset to be issued has a `ISSUANCE_MANUAL_REVIEW_REQUIRED` policy, the `core` will set `ISSUANCE_MANUAL_REVIEW_REQUIRED` flag in tasks bitmask. The request will be fulfilled if, after the review, tasks are equal to `0`.
-1. `funnel` module monitors the state of external system; on the new incoming transfers if total amount of funds does not exceed the threshold, it performs transfer to a Hot Wallet, otherwise to a Cold Wallet;
-
+Tokend supports the following deposit flows: BTC, DASH, ETH, ERC20
+ 
 ## Examples of audit log
 
 Example of the operation sequence:
